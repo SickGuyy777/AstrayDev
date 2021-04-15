@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     private RangeInteractor interactor;
     private Movement movement;
+    
     private Vector2 mousePos => Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 

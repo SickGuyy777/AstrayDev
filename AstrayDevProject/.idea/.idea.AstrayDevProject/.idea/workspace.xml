@@ -29,10 +29,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Player/InteractionSystem/IInteractable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Player/InteractionSystem/ISelectionResponse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Player/InteractionSystem/RangeInteractor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Item.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/ItemData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Player/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -43,8 +44,16 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Player/InteractionSystem/IInteractable.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/InteractionSystem/ISelectionResponse.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/InteractionSystem/TestItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/InteractionSystem/RangeInteractor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Player/InteractionSystem/OutlineSelectionResponse.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Player/InteractionSystem/ChangeMaterialSelectionResponse.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/TestItem/TestItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Player/Inventory.cs" />
       </list>
     </option>
   </component>
@@ -94,7 +103,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618483947434</updated>
-      <workItem from="1618483958384" duration="2544000" />
+      <workItem from="1618483958384" duration="5599000" />
     </task>
     <servers />
   </component>
@@ -118,9 +127,28 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="794" y="221" key="RiderGenerateDialog" timestamp="1618485382859">
+    <state x="794" y="221" key="RiderGenerateDialog" timestamp="1618487694545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="221" key="RiderGenerateDialog/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1618485382859" />
+    <state x="794" y="221" key="RiderGenerateDialog/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1618487694545" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Project/Player/Inventory.cs</url>
+          <line>10</line>
+          <properties documentPath="C:\Users\Justin\Desktop\Game Dev\Games\AstrayDevProject\AstrayDev\AstrayDevProject\Assets\_Project\Player\Inventory.cs" initialLine="9">
+            <startOffsets>
+              <option value="201" />
+            </startOffsets>
+            <endOffsets>
+              <option value="201" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
