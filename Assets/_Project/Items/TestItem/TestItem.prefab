@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5612554728523970729}
   - component: {fileID: 7786584140325292316}
   - component: {fileID: 1337991755170397154}
-  - component: {fileID: 2288537402214474025}
+  - component: {fileID: 613420914264479460}
   - component: {fileID: 1196821754}
   m_Layer: 0
   m_Name: TestItem
@@ -82,7 +82,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &2288537402214474025
+--- !u!114 &613420914264479460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,10 +91,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8047921035357597928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faeef390a7cc9e246ab84b00af185512, type: 3}
+  m_Script: {fileID: 11500000, guid: 9643123ee144556458acdd3632922f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInfo: {fileID: 11400000, guid: fb61afd42bb4d494b8a7aad72b24ce83, type: 2}
+  info: {fileID: 11400000, guid: 1c094f5fc323b9349a07868885f75688, type: 2}
 --- !u!114 &1196821754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49967797d89aa504a9ca466c482cccaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 5a6db85ebb9466f4b90af9ebdd3c4fdc, type: 2}
+  material: {fileID: 2100000, guid: 2e11399f47603e84b8fe5edc07c9cfed, type: 2}
 --- !u!1 &8988120315738495376
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,11 +179,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 12c972deaa93e6e43a95429f0143ba72, type: 3}
-  m_Color: {r: 0.28741115, g: 0.7264151, b: 0.2775454, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 7c6c865891805e14c8bb1a0d5419879d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 1
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0

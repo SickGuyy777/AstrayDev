@@ -2,16 +2,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private InventoryDisplay inventoryDisplay;
+    
+    private Inventory inventory;
     private RangeInteractor interactor;
     private Movement movement;
-    
-    private Vector2 mousePos => Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+    public Inventory Inventory => inventory;
 
 
     private void Awake()
     {
+        inventory = GetComponent<Inventory>();
         interactor = GetComponent<RangeInteractor>();
         movement = GetComponent<Movement>();
+        
+        inventoryDisplay.TurnOff();
     }
 
     private void Update()
@@ -19,12 +25,15 @@ public class PlayerController : MonoBehaviour
         if(PlayerInput.InteractKeyDown)
             interactor.Interact(this);
         
+        if(PlayerInput.InventoryKeyDown)
+            inventoryDisplay.Toggle();
+        
         UpdateMovement();
     }
 
     private void UpdateMovement()
     {
-        Vector2 lookDirection = (mousePos - (Vector2) transform.position).normalized;
+        Vector2 lookDirection = (PlayerInput.MousePos - (Vector2) transform.position).normalized;
         
         movement.Move(PlayerInput.MovementDirection, Time.deltaTime);
         movement.LookInDirection(lookDirection);
