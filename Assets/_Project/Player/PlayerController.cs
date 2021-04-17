@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     {
         if(PlayerInput.InteractKeyDown)
             interactor.Interact(this);
-        
-        if(PlayerInput.InventoryKeyDown)
+
+        if (PlayerInput.InventoryKeyDown)
             inventoryDisplay.Toggle();
         
         UpdateMovement();
