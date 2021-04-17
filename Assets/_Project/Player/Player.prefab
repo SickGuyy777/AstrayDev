@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c4a843321aaa941b57dd2b48d57d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displaySlot: {fileID: 8454893081945970614}
+  grabDisplay: {fileID: 8454893081945970614}
 --- !u!1 &590399627
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +425,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6289773, y: 1.1225289}
   m_EdgeRadius: 0
 --- !u!95 &3402317822131186537
 Animator:
@@ -591,7 +591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3224823617533655071
 RectTransform:
   m_ObjectHideFlags: 0
@@ -771,7 +771,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9114463996613493589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.244, y: 0.038, z: 0}
+  m_LocalPosition: {x: 0.244, y: 0.07, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 3402317822131186536}

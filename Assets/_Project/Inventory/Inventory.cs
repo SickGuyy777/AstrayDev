@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
     public Item[] Items => items;
 
 
-    public void AddToInventory(Item itemToAdd, int slotToAdd = -1)
+    public void AddToInventory(Item itemToAdd, int slotIndex = -1)
     {
         if(itemToAdd.Info == null)
             return;
@@ -15,13 +15,13 @@ public class Inventory : MonoBehaviour
         {
             int slot = GetBestSlot(itemToAdd.Info);
             
-            if (slotToAdd != -1)
+            if (slotIndex != -1)
             {
-                Item item = items[slotToAdd];
+                Item item = items[slotIndex];
                 if (IsSameItem(itemToAdd.Info, item.Info) && !item.IsFull)
-                    slot = slotToAdd;
+                    slot = slotIndex;
                 if (item.IsEmpty)
-                    slot = slotToAdd;
+                    slot = slotIndex;
             }
 
             if (slot == -1)
@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
     
     private bool IsSameItem(ItemInfo info1, ItemInfo info2) => info1 == info2;
 
-    private bool IsFull(int slot) => items[slot].Amount >= items[slot].MaxStack;
+    private bool IsFull(int slotIndex) => items[slotIndex].Amount >= items[slotIndex].MaxStack;
 
-    private bool IsEmpty(int slot) => items[slot].Amount <= 0;
+    private bool IsEmpty(int slotIndex) => items[slotIndex].Amount <= 0;
 }

@@ -1,79 +1,16 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(InventoryDisplaySlot))]
-public class ItemDragable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class ItemDragable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private static ItemDragable currentSelectedDragable;
-    private InventoryDisplaySlot displaySlot;
-    private bool pendingDragAction = false;
+    public static ItemDragable currentSelectedDragable;
+    public InventoryDisplaySlot DisplaySlot { get; private set; }
 
 
-    private void Awake()
-    {
-        displaySlot = GetComponent<InventoryDisplaySlot>();
-    }
+    private void Awake() => DisplaySlot = GetComponent<InventoryDisplaySlot>();
 
-    private void Update()
-    {
-        if (pendingDragAction)
-        {
-            if (currentSelectedDragable != null)
-            {
-                Item selectedItemSlot = currentSelectedDragable.displaySlot.ItemSlot;
-                Item draggingItem = PlayerCursor.Instance.HoldingItem;
+    public void OnPointerEnter(PointerEventData eventData) => currentSelectedDragable = this;
 
-                if (selectedItemSlot.IsEmpty)
-                {
-                    PlayerCursor.Instance.PlaceItem(currentSelectedDragable.displaySlot);
-                    pendingDragAction = false;
-                }
-                else
-                {
-                    PlayerCursor.Instance.SwapItem(currentSelectedDragable.displaySlot);
-                    pendingDragAction = false;
-                }
-                    
-            }
-            else if (!EventSystem.current.IsPointerOverGameObject())
-            {
-                PlayerCursor.Instance.HoldingItem.Drop(displaySlot.Inventory.transform.position);
-                pendingDragAction = false;
-            }
-        }
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        if(pendingDragAction)
-            return;
-        
-        PlayerCursor.Instance.GrabItem(displaySlot);
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        if(pendingDragAction)
-            return;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        if(pendingDragAction)
-            return;
-        
-        pendingDragAction = true;
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        currentSelectedDragable = this;
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if(currentSelectedDragable == this)
-            currentSelectedDragable = null;
-    }
+    public void OnPointerExit(PointerEventData eventData) => currentSelectedDragable = null;
 }

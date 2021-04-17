@@ -11,7 +11,7 @@ public class ItemObject : MonoBehaviour, IInteractable
     
     protected virtual void Awake()
     {
-        Item = new Item(info, 1);
+        Item = new Item(info, 1, ItemTypeContainer.ItemTypeDictionary[info.itemType]);
         selectionResponse = GetComponent<ISelectionResponse>();
     }
 

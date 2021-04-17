@@ -18,12 +18,11 @@ public class InventoryDisplay : MonoBehaviour
         
         for (int i = 0; i < inventoryReference.Items.Length; i++)
         {
-            Debug.Log("awaked");
             InventoryDisplaySlot displaySlot = Instantiate(displaySlotPrefab, Vector2.zero, Quaternion.identity, group.transform);
             displaySlots[i] = displaySlot;
-            displaySlot.SetItem(inventoryReference.Items[i]);
-            displaySlot.SetInventory(inventoryReference);
-            displaySlot.SetIndex(i);
+            
+            displaySlot.SetItemReference(inventoryReference.Items[i]);
+            displaySlot.Setup(inventoryReference, i);
         }
     }
     

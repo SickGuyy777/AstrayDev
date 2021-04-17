@@ -14,6 +14,8 @@
             <e p="ItemDragable.cs" t="Include" />
           </e>
           <e p="Items" t="Include">
+            <e p="EquipPrimaryFunctionality.cs" t="Include" />
+            <e p="Functionality.cs" t="Include" />
             <e p="InteractionSystem" t="Include">
               <e p="ChangeMaterialSelectionResponse.cs" t="Include" />
               <e p="IInteractable.cs" t="Include" />
@@ -23,6 +25,7 @@
             <e p="Item.cs" t="Include" />
             <e p="ItemInfo.cs" t="Include" />
             <e p="ItemObject.cs" t="Include" />
+            <e p="ItemType.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="Movement.cs" t="Include" />

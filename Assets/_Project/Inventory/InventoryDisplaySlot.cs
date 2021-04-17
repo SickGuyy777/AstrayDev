@@ -7,35 +7,30 @@ public class InventoryDisplaySlot : MonoBehaviour
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text amountText;
 
-    private Color textColor;
-    private Item itemSlot;
-    private Inventory inventory;
-
-    public Inventory Inventory => inventory;
-    public Item ItemSlot => itemSlot;
-    public int Slot { get; private set; }
-
-
-    private void Awake()
-    {
-        textColor = amountText.color;
-    }
-
-    public void SetItem(Item newItem) => this.itemSlot = newItem;
-
-    public void SetInventory(Inventory aInventory) => this.inventory = aInventory;
+    public Item CurrentItem { get; private set; }
+    public Inventory Inventory { get; private set; }
     
-    public void SetIndex(int slotIndex) => this.Slot = slotIndex;
+    public int SlotIndex { get; private set; }
+
+    
+    public void SetItemReference(Item newItem) => this.CurrentItem = newItem;
+
+    public void Setup(Inventory aInventory, int slotIndex)
+    {
+        this.Inventory = aInventory;
+        SlotIndex = slotIndex;
+    }
 
     private void Update()
     {
-        if (itemSlot != null)
+        if (CurrentItem != null)
         {
-            icon.sprite = itemSlot.Icon;
-            icon.color = !itemSlot.IsEmpty ? Color.white : Color.clear;
-        
-            amountText.color = itemSlot.IsEmpty != null && itemSlot.Amount > 1 ? textColor : Color.clear;
-            amountText.text = itemSlot.IsEmpty != null && itemSlot.Amount > 1 ? itemSlot.Amount.ToString("0") : "";
+            icon.sprite = CurrentItem.Icon;
+            icon.color = !CurrentItem.IsEmpty ? Color.white : Color.clear;
+
+            bool showAmountText = CurrentItem.Amount > 1 && !CurrentItem.IsEmpty;
+            
+            amountText.text = showAmountText? CurrentItem.Amount.ToString("0") : "";
         }
     }
 }
