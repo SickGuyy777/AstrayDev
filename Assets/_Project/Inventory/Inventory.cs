@@ -1,38 +1,49 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private Item[] items = new Item[30];
+    [SerializeField] private ItemTypeContainer.SetItemType[] functionalityWhiteList;
+    
     public Item[] Items => items;
+    private Functionality[] filter;
 
 
-    public void AddToInventory(Item itemToAdd, int slotIndex = -1)
+    private void Awake()
     {
-        if(itemToAdd.Info == null)
-            return;
+        filter = EnumToFunctionalitys();
+    }
+
+    public bool CanAdd(Item itemToAdd) => ContainedInFilter(itemToAdd) && !itemToAdd.IsEmpty;
+
+    public bool AddToInventory(Item itemToAdd, int slotIndex = -1)
+    {
+        if(!CanAdd(itemToAdd))
+            return false;
         
         while(itemToAdd.Amount > 0)
         {
-            int slot = GetBestSlot(itemToAdd.Info);
-            
+            int bestSlotIndex = GetBestSlot(itemToAdd.Info);
+
             if (slotIndex != -1)
             {
-                Item item = items[slotIndex];
+                Item item = Items[slotIndex];
                 if (IsSameItem(itemToAdd.Info, item.Info) && !item.IsFull)
-                    slot = slotIndex;
+                    bestSlotIndex = slotIndex;
                 if (item.IsEmpty)
-                    slot = slotIndex;
+                    bestSlotIndex = slotIndex;
             }
 
-            if (slot == -1)
+            if (bestSlotIndex == -1)
                 break;
             
-            Item itemSlot = items[slot];
-            
-            itemSlot.Info = itemToAdd.Info;
-            itemSlot.Amount++;
-            itemToAdd.Amount--;
+            Items[bestSlotIndex].Add(itemToAdd, 1);
         }
+
+        return true;
     }
 
     public void AddToInventory(Item[] itemsToAdd)
@@ -45,17 +56,17 @@ public class Inventory : MonoBehaviour
 
     private int GetBestSlot(ItemInfo info)
     {
-        for (int i = 0; i < items.Length; i++)
+        for (int i = 0; i < Items.Length; i++)
         {
-            Item item = items[i];
+            Item item = Items[i];
 
-            bool sameItemSlot = IsSameItem(item.Info, info) && !IsFull(i);
+            bool sameItemSlot = IsSameItem(item?.Info, info) && !IsFull(i);
 
             if (sameItemSlot)
                 return i;
         }
         
-        for (int i = 0; i < items.Length; i++)
+        for (int i = 0; i < Items.Length; i++)
         {
             if (IsEmpty(i))
                 return i;
@@ -66,7 +77,31 @@ public class Inventory : MonoBehaviour
     
     private bool IsSameItem(ItemInfo info1, ItemInfo info2) => info1 == info2;
 
-    private bool IsFull(int slotIndex) => items[slotIndex].Amount >= items[slotIndex].MaxStack;
+    private bool IsFull(int slotIndex) => Items[slotIndex].Amount >= Items[slotIndex].MaxStack;
 
-    private bool IsEmpty(int slotIndex) => items[slotIndex].Amount <= 0;
+    private bool IsEmpty(int slotIndex) => Items[slotIndex]?.Amount <= 0;
+
+    private bool ContainedInFilter(Item item)
+    {
+        foreach (Functionality functionality in filter)
+        {
+            if(item.ItemType.Functionalities.Contains(functionality))
+                return true;
+        }
+
+        return false;
+    }
+    
+    private Functionality[] EnumToFunctionalitys()
+    {
+        List<Functionality> newFilter = new List<Functionality>();
+
+        foreach (ItemTypeContainer.SetItemType i in functionalityWhiteList)
+        {
+            newFilter.AddRange(ItemTypeContainer.ItemTypeDictionary[i].Functionalities);
+        }
+
+        return newFilter.ToArray();
+    }
+
 }

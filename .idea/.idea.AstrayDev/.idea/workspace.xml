@@ -11,10 +11,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/ItemFunctionality.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryFunctionality.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Functionality.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/ItemDragable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/EquipSecondaryFunctionality.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/InventoryObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -24,18 +27,22 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemType.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Functionality.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryFunctionality.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplaySlot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/ItemDragable.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Functionality.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/ItemDisplaySlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryFunctionality.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemFunctionality.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/EquipSecondaryFunctionality.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemType.cs" />
       </list>
     </option>
   </component>
@@ -86,7 +93,7 @@
       <updated>1618576254988</updated>
       <workItem from="1618576261901" duration="18763000" />
       <workItem from="1618672927637" duration="2322000" />
-      <workItem from="1618690818670" duration="5170000" />
+      <workItem from="1618690818670" duration="20830000" />
     </task>
     <servers />
   </component>
@@ -103,5 +110,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="221" key="RiderGenerateDialog/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1618673532052" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1618758159340">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1618758159340" />
   </component>
 </project>

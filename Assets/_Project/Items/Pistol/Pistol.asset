@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777052483f1916942985d760fb985336, type: 3}
+  m_Name: Pistol
+  m_EditorClassIdentifier: 
+  itemName: Pistol
+  itemType: 2
+  maxStack: 1
+  itemIcon: {fileID: 8576984676087211775, guid: 3fde28d4ad52a884eb9729884d83beef, type: 3}
+  itemPrefab: {fileID: 393963516775047493, guid: 3d24e3df181c87348a42214d99bce837, type: 3}

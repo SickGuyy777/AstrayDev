@@ -27,7 +27,7 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void Interact(PlayerController player)
     {
-        player.Inventory.AddToInventory(this.Item);
+        player.BackPack.AddToInventory(this.Item.Transfer());
         Destroy(this.gameObject);
     }
 }

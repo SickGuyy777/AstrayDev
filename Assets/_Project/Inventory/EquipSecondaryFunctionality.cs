@@ -1,10 +1,8 @@
 
-public class EquipPrimaryFunctionality : Functionality
+public class EquipSecondaryFunctionality : Functionality
 {
     public override void Execute()
     {
         
     }
 }
-
-

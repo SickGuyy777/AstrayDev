@@ -12,8 +12,11 @@ public class Item
         set
         {
             if (value == null)
+            {
+                this.ItemType =  null;
                 amount = 0;
-
+            }
+            
             info = value;
         }
     }
@@ -26,8 +29,11 @@ public class Item
         set
         {
             if (value <= 0)
+            {
+                this.ItemType = null;
                 info = null;
-            
+            }
+
             amount = value;
         }
     }
@@ -38,30 +44,54 @@ public class Item
     public ItemObject Prefab => Info?.itemPrefab;
     public bool IsEmpty => Info == null;
     public bool IsFull => amount >= info.maxStack;
-    public ItemType ItemType { get; private set; }
+    public ItemType ItemType { get; private set; } = null;
 
 
     public Item(ItemInfo info, int amount, ItemType itemType = null)
     {
-        this.ItemType = itemType ?? ItemTypeContainer.None;
+        if (info != null && amount > 0)
+            this.ItemType = itemType ?? ItemTypeContainer.None;
+        else
+            this.ItemType = null;
         
         this.info = info;
         this.amount = amount;
     }
     
-    public Item Copy() => new Item(Info, Amount);
+    public Item Clone() => new Item(info, amount, ItemType);
+    
+    public void Copy(Item itemToCopy)
+    {
+        this.Amount = itemToCopy.Amount;
+        this.Info = itemToCopy.Info;
+        this.ItemType = itemToCopy.ItemType;
+    }
+    
+    public void CopyInfo(Item itemToCopy)
+    {
+        this.Info = itemToCopy.Info;
+        this.ItemType = itemToCopy.ItemType;
+    }
 
     public Item Transfer(int transferAmount = -1)
     {
-        Item copy = Copy();
-        
+        Item copy = Clone();
+
         if (transferAmount <= -1)
             transferAmount = Amount;
         
         Amount -= transferAmount;
         copy.Amount = transferAmount;
-        
+
         return copy;
+    }
+
+    public void Add(Item itemToAdd, int transferAmount)
+    {
+        CopyInfo(itemToAdd);
+        
+        Amount += transferAmount;
+        itemToAdd.Amount -= transferAmount;
     }
 
     public bool IsSameItem(Item item) => item.info == info;
@@ -90,6 +120,12 @@ public class Item
 
     public T GetFunctionality<T>() where T : Functionality
     {
+        if (IsEmpty)
+            return null;
+        
+        if (ItemType == null)
+            return null;
+        
         foreach (Functionality functionality in ItemType.Functionalities)
         {
             if (functionality is T t)

@@ -5,12 +5,12 @@ public class PlayerCursor : MonoBehaviour
 {
     public static PlayerCursor Instance;
     
-    [SerializeField] private InventoryDisplaySlot grabDisplay;
+    [SerializeField] private ItemDisplaySlot grabDisplay;
     
     public Item HoldingItem { get; private set; } = new Item(null, 0);
 
     private bool dragging => !HoldingItem.IsEmpty;
-    private InventoryDisplaySlot lastInventorySlot;
+    private ItemDisplaySlot lastItemSlot;
 
 
     private void Awake()
@@ -36,7 +36,7 @@ public class PlayerCursor : MonoBehaviour
 
     private void UpdateDragging()
     {
-        InventoryDisplaySlot hoveringDisplaySlot = ItemDragable.currentSelectedDragable?.DisplaySlot;
+        ItemDisplaySlot hoveringDisplaySlot = ItemDragable.currentSelectedDragable?.DisplaySlot;
         bool selectedASlot = hoveringDisplaySlot != null;
         bool hoveringOverUI = EventSystem.current.IsPointerOverGameObject();
         
@@ -52,7 +52,8 @@ public class PlayerCursor : MonoBehaviour
             else if (!hoveringOverUI)
                 Drop();
         }
-        else if (Input.GetMouseButtonDown(1))
+        
+        if (Input.GetMouseButtonDown(1))
         {
             if (selectedASlot)
             {
@@ -67,21 +68,28 @@ public class PlayerCursor : MonoBehaviour
         }
     }
     
-    private void GrabItem(InventoryDisplaySlot slot, int grabAmount = -1)
+    private void GrabItem(ItemDisplaySlot slot, int grabAmount = -1)
     {
-        lastInventorySlot = slot;
+        lastItemSlot = slot;
         
         Item item = slot.CurrentItem;
-        Item newItem = item.Transfer(grabAmount);
+        if(item.IsEmpty)
+            return;
         
+        Item newItem = item.Transfer(grabAmount);
+
         HoldingItem = newItem;
         grabDisplay.SetItemReference(HoldingItem);
     }
 
-    private void PlaceItem(InventoryDisplaySlot slot, int placeAmount = -1)
+    private void PlaceItem(ItemDisplaySlot slot, int placeAmount = -1)
     {
         bool empty = slot.CurrentItem.IsEmpty;
         bool sameItem = slot.CurrentItem.IsSameItem(HoldingItem);
+        
+        Inventory inventory = slot.Inventory;
+        if(!inventory.CanAdd(HoldingItem.Clone().Transfer()))
+            return;
         
         if(empty || sameItem && !slot.CurrentItem.IsFull)
             AddItem(slot, placeAmount);
@@ -89,7 +97,7 @@ public class PlayerCursor : MonoBehaviour
             SwapWithHand(slot);
     }
     
-    private void AddItem(InventoryDisplaySlot slot, int addAmount)
+    private void AddItem(ItemDisplaySlot slot, int addAmount)
     {
         bool empty = slot.CurrentItem.IsEmpty;
         bool sameItem = slot.CurrentItem.IsSameItem(HoldingItem);
@@ -101,22 +109,28 @@ public class PlayerCursor : MonoBehaviour
             return;
 
         Inventory inventory = slot.Inventory;
-        Item newItem = HoldingItem.Transfer(addAmount);
-        inventory.AddToInventory(newItem, slot.SlotIndex);
-        lastInventorySlot = null;
+        
+        if(!inventory.CanAdd(HoldingItem.Clone().Transfer()))
+            return;
+        
+        inventory.AddToInventory(HoldingItem.Transfer(addAmount), slot.SlotIndex);
+        lastItemSlot = null;
         grabDisplay.SetItemReference(HoldingItem);
     }
     
-    private void SwapWithHand(InventoryDisplaySlot slot)
+    private void SwapWithHand(ItemDisplaySlot slot)
     {
         if(HoldingItem == null) 
             return;
 
         Inventory inventory = slot.Inventory;
-        Item handItem = HoldingItem.Transfer();
+        
+        if(!inventory.CanAdd(HoldingItem.Clone().Transfer()))
+            return;
+        
         Item slotItem = slot.CurrentItem.Transfer();
         
-        inventory.AddToInventory(handItem, slot.SlotIndex);
+        inventory.AddToInventory(HoldingItem.Transfer(), slot.SlotIndex);
         HoldingItem = slotItem;
         
         grabDisplay.SetItemReference(HoldingItem);
@@ -124,11 +138,9 @@ public class PlayerCursor : MonoBehaviour
 
     public void Drop(int amount = -1)
     {
-        if(lastInventorySlot == null)
+        if(lastItemSlot == null)
             return;
         
-        HoldingItem?.Drop(lastInventorySlot.Inventory.transform.position, amount);
+        HoldingItem?.Drop(lastItemSlot.Inventory.transform.position, amount);
     }
-
-    
 }
