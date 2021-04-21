@@ -1,11 +1,14 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Items/ItemInfo")]
-public class ItemInfo : ScriptableObject
+public abstract class ItemInfo : ScriptableObject
 {
     public string itemName = "New Item";
-    public ItemTypeContainer.SetItemType itemType = ItemTypeContainer.SetItemType.None;
     public int maxStack = 16;
     public Sprite itemIcon;
     public ItemObject itemPrefab;
+
+
+    protected abstract Functionality[] GetFunctionalities();
+
+    public Item GetNewItem() => new Item(this, 1, GetFunctionalities());
 }

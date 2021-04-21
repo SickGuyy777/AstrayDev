@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     
     private RangeInteractor interactor;
     private Movement movement;
+    private WeaponHolder weaponHolder;
+    
     public Inventory BackPack => backPack;
     private bool inventoryShown => backPackUI.activeSelf;
 
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         interactor = GetComponent<RangeInteractor>();
         movement = GetComponent<Movement>();
+        weaponHolder = GetComponent<WeaponHolder>();
         
         backPackUI.SetActive(false);
     }
@@ -27,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
         if (PlayerInput.InventoryKeyDown)
             ToggleInventory();
+        
+        if(PlayerInput.IsScrolling)
+            weaponHolder.ScrollEquip((int)Mathf.Clamp(PlayerInput.ScrollDelta * float.MaxValue, -1, 1));
         
         UpdateMovement();
     }

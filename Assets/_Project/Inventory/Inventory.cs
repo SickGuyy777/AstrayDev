@@ -1,30 +1,37 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private Item[] items = new Item[30];
-    [SerializeField] private ItemTypeContainer.SetItemType[] functionalityWhiteList;
-    
+
     public Item[] Items => items;
-    private Functionality[] filter;
+    private InventoryFilter filter;
+    public Action OnChanged;
 
 
     private void Awake()
     {
-        filter = EnumToFunctionalitys();
+        filter = GetComponent<InventoryFilter>();
     }
 
-    public bool CanAdd(Item itemToAdd) => ContainedInFilter(itemToAdd) && !itemToAdd.IsEmpty;
+    public bool CanAdd(Item itemToAdd) => filter == null ||  filter != null && filter.ContainedInWhitelist(itemToAdd);
 
-    public bool AddToInventory(Item itemToAdd, int slotIndex = -1)
+    public bool AddToInventory(Item itemToAdd, int slotIndex = -1, int amount = -1)
     {
-        if(!CanAdd(itemToAdd))
+        if (amount == -1)
+            amount = itemToAdd.Amount;
+
+        int endAmount = itemToAdd.Amount - amount;
+
+        if (!CanAdd(itemToAdd))
+        {
+            Debug.Log(":(");
             return false;
+        }
+            
         
-        while(itemToAdd.Amount > 0)
+        while(itemToAdd.Amount > endAmount)
         {
             int bestSlotIndex = GetBestSlot(itemToAdd.Info);
 
@@ -43,6 +50,7 @@ public class Inventory : MonoBehaviour
             Items[bestSlotIndex].Add(itemToAdd, 1);
         }
 
+        OnChanged?.Invoke();
         return true;
     }
 
@@ -80,28 +88,4 @@ public class Inventory : MonoBehaviour
     private bool IsFull(int slotIndex) => Items[slotIndex].Amount >= Items[slotIndex].MaxStack;
 
     private bool IsEmpty(int slotIndex) => Items[slotIndex]?.Amount <= 0;
-
-    private bool ContainedInFilter(Item item)
-    {
-        foreach (Functionality functionality in filter)
-        {
-            if(item.ItemType.Functionalities.Contains(functionality))
-                return true;
-        }
-
-        return false;
-    }
-    
-    private Functionality[] EnumToFunctionalitys()
-    {
-        List<Functionality> newFilter = new List<Functionality>();
-
-        foreach (ItemTypeContainer.SetItemType i in functionalityWhiteList)
-        {
-            newFilter.AddRange(ItemTypeContainer.ItemTypeDictionary[i].Functionalities);
-        }
-
-        return newFilter.ToArray();
-    }
-
 }

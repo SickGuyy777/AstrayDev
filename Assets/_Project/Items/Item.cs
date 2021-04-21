@@ -13,7 +13,7 @@ public class Item
         {
             if (value == null)
             {
-                this.ItemType =  null;
+                this.Functionalities =  null;
                 amount = 0;
             }
             
@@ -30,7 +30,7 @@ public class Item
         {
             if (value <= 0)
             {
-                this.ItemType = null;
+                this.Functionalities = null;
                 info = null;
             }
 
@@ -44,33 +44,29 @@ public class Item
     public ItemObject Prefab => Info?.itemPrefab;
     public bool IsEmpty => Info == null;
     public bool IsFull => amount >= info.maxStack;
-    public ItemType ItemType { get; private set; } = null;
+    public Functionality[] Functionalities { get; private set; } = null;
 
 
-    public Item(ItemInfo info, int amount, ItemType itemType = null)
+    public Item(ItemInfo info, int amount, Functionality[] functionalities = null)
     {
-        if (info != null && amount > 0)
-            this.ItemType = itemType ?? ItemTypeContainer.None;
-        else
-            this.ItemType = null;
-        
+        this.Functionalities = functionalities;
         this.info = info;
         this.amount = amount;
     }
     
-    public Item Clone() => new Item(info, amount, ItemType);
+    public Item Clone() => new Item(info, amount, Functionalities);
     
     public void Copy(Item itemToCopy)
     {
         this.Amount = itemToCopy.Amount;
         this.Info = itemToCopy.Info;
-        this.ItemType = itemToCopy.ItemType;
+        this.Functionalities = itemToCopy.Functionalities;
     }
     
     public void CopyInfo(Item itemToCopy)
     {
         this.Info = itemToCopy.Info;
-        this.ItemType = itemToCopy.ItemType;
+        this.Functionalities = itemToCopy.Functionalities;
     }
 
     public Item Transfer(int transferAmount = -1)
@@ -123,10 +119,10 @@ public class Item
         if (IsEmpty)
             return null;
         
-        if (ItemType == null)
+        if (Functionalities == null)
             return null;
         
-        foreach (Functionality functionality in ItemType.Functionalities)
+        foreach (Functionality functionality in Functionalities)
         {
             if (functionality is T t)
                 return t;

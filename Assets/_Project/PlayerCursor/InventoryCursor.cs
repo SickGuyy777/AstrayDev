@@ -80,13 +80,16 @@ public class InventoryCursor : MonoBehaviour
         lastItemSlot = slot;
         
         Item item = slot.CurrentItem;
+        
         if(item.IsEmpty)
             return;
-        
+
+        Inventory inventory = slot.Inventory;
         Item newItem = item.Transfer(grabAmount);
 
         HoldingItem = newItem;
         grabDisplay.SetItemReference(HoldingItem);
+        inventory.OnChanged?.Invoke();
     }
 
     private void PlaceItem(ItemDisplaySlot slot, int placeAmount = -1)

@@ -8,16 +8,26 @@
       <e p="Assets" t="Include">
         <e p="_Project" t="Include">
           <e p="Inventory" t="Include">
-            <e p="EquipSecondaryFunctionality.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
-            <e p="InventoryDisplay.cs" t="Include" />
-            <e p="InventoryObject.cs" t="Include" />
-            <e p="ItemDisplaySlot.cs" t="Include" />
-            <e p="ItemDragable.cs" t="Include" />
+            <e p="InventoryFilter.cs" t="Include" />
+            <e p="PrimaryWeaponFilter.cs" t="Include" />
+            <e p="SecondaryWeaponFilter.cs" t="Include" />
+            <e p="UI" t="Include">
+              <e p="InventoryDisplay.cs" t="Include" />
+              <e p="InventoryObject.cs" t="Include" />
+              <e p="ItemDisplaySlot.cs" t="Include" />
+              <e p="ItemDragable.cs" t="Include" />
+            </e>
           </e>
           <e p="Items" t="Include">
+            <e p="DefaultInfo.cs" t="Include" />
             <e p="EquipPrimaryFunctionality.cs" t="Include" />
+            <e p="EquipSecondaryFunctionality.cs" t="Include" />
             <e p="Functionality.cs" t="Include" />
+            <e p="Guns" t="Include">
+              <e p="GunFunctionality.cs" t="Include" />
+              <e p="GunInfo.cs" t="Include" />
+            </e>
             <e p="InteractionSystem" t="Include">
               <e p="ChangeMaterialSelectionResponse.cs" t="Include" />
               <e p="IInteractable.cs" t="Include" />
@@ -28,13 +38,12 @@
             <e p="ItemFunctionality.cs" t="Include" />
             <e p="ItemInfo.cs" t="Include" />
             <e p="ItemObject.cs" t="Include" />
-            <e p="ItemType.cs" t="Include" />
-            <e p="WeaponShoot.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="Movement.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerInput.cs" t="Include" />
+            <e p="WeaponHolder.cs" t="Include" />
           </e>
           <e p="PlayerCursor" t="Include">
             <e p="InventoryCursor.cs" t="Include" />

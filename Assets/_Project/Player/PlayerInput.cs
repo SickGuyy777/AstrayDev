@@ -6,4 +6,6 @@ public static class PlayerInput
     public static Vector2 MovementDirection => new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     public static bool InteractKeyDown => Input.GetKeyDown(KeyCode.E);
     public static bool InventoryKeyDown => Input.GetKeyDown(KeyCode.Tab);
+    public static float ScrollDelta => Input.mouseScrollDelta.y;
+    public static bool IsScrolling => ScrollDelta != 0;
 }
