@@ -1,18 +1,19 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerCursor : MonoBehaviour
 {
     public static PlayerCursor Instance;
     
-    [SerializeField] private ItemDisplaySlot grabDisplay;
+    [SerializeField] private Texture2D defaultCursor;
+    [SerializeField] private CursorAnimation[] animations;
     
-    public Item HoldingItem { get; private set; } = new Item(null, 0);
-
-    private bool dragging => !HoldingItem.IsEmpty;
-    private ItemDisplaySlot lastItemSlot;
-
-
+    private Dictionary<string, CursorAnimation> animationDictionary = new Dictionary<string, CursorAnimation>();
+    private Coroutine currentAnimationCoroutine;
+    
+    
     private void Awake()
     {
         #region Singleton
@@ -25,122 +26,59 @@ public class PlayerCursor : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
         #endregion
-    }
 
-    private void Update()
-    {
-        transform.position = Input.mousePosition;
-
-        UpdateDragging();
-    }
-
-    private void UpdateDragging()
-    {
-        ItemDisplaySlot hoveringDisplaySlot = ItemDragable.currentSelectedDragable?.DisplaySlot;
-        bool selectedASlot = hoveringDisplaySlot != null;
-        bool hoveringOverUI = EventSystem.current.IsPointerOverGameObject();
+        SetCursor(defaultCursor);
         
-        if (Input.GetMouseButtonDown(0))
+        foreach (CursorAnimation cursorAnimation in animations)
         {
-            if (selectedASlot)
-            {
-                if (!dragging)
-                    GrabItem(hoveringDisplaySlot);
-                else
-                    PlaceItem(hoveringDisplaySlot);
-            }
-            else if (!hoveringOverUI)
-                Drop();
-        }
-        
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (selectedASlot)
-            {
-                int half = Mathf.CeilToInt(hoveringDisplaySlot.CurrentItem.Amount / 2f);
-                if (!dragging)
-                    GrabItem(hoveringDisplaySlot, half);
-                else
-                    AddItem(hoveringDisplaySlot, 1);
-            }
-            else if (!hoveringOverUI)
-                Drop(1);
+            animationDictionary.Add(cursorAnimation.animName, cursorAnimation);
         }
     }
-    
-    private void GrabItem(ItemDisplaySlot slot, int grabAmount = -1)
-    {
-        lastItemSlot = slot;
-        
-        Item item = slot.CurrentItem;
-        if(item.IsEmpty)
-            return;
-        
-        Item newItem = item.Transfer(grabAmount);
 
-        HoldingItem = newItem;
-        grabDisplay.SetItemReference(HoldingItem);
+    public void StartPlayAnimation(string animName)
+    {
+        if(currentAnimationCoroutine != null)
+            StopCoroutine(currentAnimationCoroutine);
+
+        if (!animationDictionary.ContainsKey(animName))
+        {
+            Debug.LogError("Cursor animation does not exist with name: " + animName);
+            return;
+        }
+        
+        CursorAnimation cursorAnimation = animationDictionary[animName];
+        currentAnimationCoroutine = StartCoroutine(PlayAnimation(cursorAnimation));
     }
 
-    private void PlaceItem(ItemDisplaySlot slot, int placeAmount = -1)
+    private void SetCursor(Texture2D texture2D)
     {
-        bool empty = slot.CurrentItem.IsEmpty;
-        bool sameItem = slot.CurrentItem.IsSameItem(HoldingItem);
-        
-        Inventory inventory = slot.Inventory;
-        if(!inventory.CanAdd(HoldingItem.Clone().Transfer()))
-            return;
-        
-        if(empty || sameItem && !slot.CurrentItem.IsFull)
-            AddItem(slot, placeAmount);
-        else
-            SwapWithHand(slot);
-    }
-    
-    private void AddItem(ItemDisplaySlot slot, int addAmount)
-    {
-        bool empty = slot.CurrentItem.IsEmpty;
-        bool sameItem = slot.CurrentItem.IsSameItem(HoldingItem);
-        
-        if(!empty && !sameItem)
-            return;
-        
-        if(HoldingItem == null) 
-            return;
-
-        Inventory inventory = slot.Inventory;
-        
-        if(!inventory.CanAdd(HoldingItem.Clone().Transfer()))
-            return;
-        
-        inventory.AddToInventory(HoldingItem.Transfer(addAmount), slot.SlotIndex);
-        lastItemSlot = null;
-        grabDisplay.SetItemReference(HoldingItem);
-    }
-    
-    private void SwapWithHand(ItemDisplaySlot slot)
-    {
-        if(HoldingItem == null) 
-            return;
-
-        Inventory inventory = slot.Inventory;
-        
-        if(!inventory.CanAdd(HoldingItem.Clone().Transfer()))
-            return;
-        
-        Item slotItem = slot.CurrentItem.Transfer();
-        
-        inventory.AddToInventory(HoldingItem.Transfer(), slot.SlotIndex);
-        HoldingItem = slotItem;
-        
-        grabDisplay.SetItemReference(HoldingItem);
+        Cursor.SetCursor(texture2D, new Vector2(-1, 1), CursorMode.ForceSoftware);
     }
 
-    public void Drop(int amount = -1)
+    private IEnumerator PlayAnimation(CursorAnimation cursorAnim)
     {
-        if(lastItemSlot == null)
-            return;
+        float duration = cursorAnim.duration / cursorAnim.textures.Length;
+
+        do
+        {
+            foreach (Texture2D texture in cursorAnim.textures)
+            {
+                SetCursor(texture);
+                yield return new WaitForSeconds(duration);
+            }
+            
+        } while (cursorAnim.looping);
         
-        HoldingItem?.Drop(lastItemSlot.Inventory.transform.position, amount);
+        SetCursor(defaultCursor);
+        currentAnimationCoroutine = null;
     }
+}
+
+[Serializable]
+public class CursorAnimation
+{
+    public string animName = "New Animation";
+    public float duration = 1;
+    public bool looping = false;
+    public Texture2D[] textures = null;
 }

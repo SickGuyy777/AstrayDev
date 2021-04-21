@@ -14,8 +14,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/ItemFunctionality.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryFunctionality.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Functionality.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/ItemDragable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/EquipSecondaryFunctionality.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/InventoryObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -30,19 +31,21 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplaySlot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/ItemDragable.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Functionality.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/ItemDisplaySlot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryFunctionality.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemFunctionality.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/EquipSecondaryFunctionality.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemType.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Weapon/WeaponScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -93,7 +96,9 @@
       <updated>1618576254988</updated>
       <workItem from="1618576261901" duration="18763000" />
       <workItem from="1618672927637" duration="2322000" />
-      <workItem from="1618690818670" duration="20830000" />
+      <workItem from="1618690818670" duration="20992000" />
+      <workItem from="1618792662935" duration="1222000" />
+      <workItem from="1618955407563" duration="5306000" />
     </task>
     <servers />
   </component>

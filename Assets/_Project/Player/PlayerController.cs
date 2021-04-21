@@ -3,13 +3,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Inventory")]
-    [SerializeField] private GameObject backPackDisplay;
+    [SerializeField] private GameObject backPackUI;
     [SerializeField] private Inventory backPack;
-    private bool inventoryShown => backPackDisplay.activeSelf;
-
+    
     private RangeInteractor interactor;
     private Movement movement;
     public Inventory BackPack => backPack;
+    private bool inventoryShown => backPackUI.activeSelf;
 
 
     private void Awake()
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
         interactor = GetComponent<RangeInteractor>();
         movement = GetComponent<Movement>();
         
-        backPackDisplay.SetActive(false);
+        backPackUI.SetActive(false);
     }
 
     private void Update()
@@ -39,11 +39,23 @@ public class PlayerController : MonoBehaviour
         movement.LookInDirection(lookDirection);
     }
 
+    private void InventoryOn()
+    {
+        InventoryCursor.Instance?.Drop();
+        backPackUI.SetActive(true);
+    }
+
+    private void InventoryOff()
+    {
+        InventoryCursor.Instance?.Drop();
+        backPackUI.SetActive(false);
+    }
+    
     private void ToggleInventory()
     {
         if(inventoryShown)
-            backPackDisplay.SetActive(false);
+            InventoryOff();
         else
-            backPackDisplay.SetActive(true);
+            InventoryOn();
     }
 }
