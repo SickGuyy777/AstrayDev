@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IWeaponArgsHolder
 {
     [Header("Inventory")]
     [SerializeField] private GameObject backPackUI;
@@ -25,24 +25,32 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(PlayerInput.InteractKeyDown)
-            interactor.Interact(this);
-
-        if (PlayerInput.InventoryKeyDown)
-            ToggleInventory();
-        
-        if(PlayerInput.IsScrolling)
-            weaponHolder.ScrollEquip((int)Mathf.Clamp(PlayerInput.ScrollDelta * float.MaxValue, -1, 1));
+        HandleInput();
         
         UpdateMovement();
     }
 
+    private void HandleInput()
+    {
+        if (PlayerInput.InventoryKeyDown)
+            ToggleInventory();
+        
+        if (PlayerInput.InteractKeyDown)
+            interactor.Interact(this);
+
+        if (PlayerInput.IsScrolling)
+            weaponHolder.ScrollEquip((int) Mathf.Clamp(PlayerInput.ScrollDelta * float.MaxValue, -1, 1));
+        
+        if (PlayerInput.PrimaryFire && !inventoryShown)
+            weaponHolder.HoldingWeapon?.Primary(this);
+    }
+
     private void UpdateMovement()
     {
-        Vector2 lookDirection = (PlayerInput.MousePos - (Vector2) transform.position).normalized;
-        
-        movement.Move(PlayerInput.MovementDirection, Time.deltaTime);
+        Vector2 lookDirection = !inventoryShown ? (PlayerInput.MousePos - (Vector2) transform.position).normalized : (Vector2)transform.right;
+
         movement.LookInDirection(lookDirection);
+        movement.Move(PlayerInput.MovementDirection, Time.deltaTime);
     }
 
     private void InventoryOn()
@@ -64,4 +72,6 @@ public class PlayerController : MonoBehaviour
         else
             InventoryOn();
     }
+    
+    public WeaponArgs GetWeaponArgs() => new WeaponArgs(new Ray(transform.position, transform.right), this.gameObject);
 }

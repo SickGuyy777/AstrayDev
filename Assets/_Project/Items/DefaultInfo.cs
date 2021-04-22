@@ -3,11 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/DefaultInfo")]
 public class DefaultInfo : ItemInfo
 {
-    protected override Functionality[] GetFunctionalities()
+    protected override ItemComponent[] GetComponents()
     {
-        return new Functionality[]
-        {
-            new ItemFunctionality()
-        };
+        return null;
     }
 }

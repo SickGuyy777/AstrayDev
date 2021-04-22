@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
@@ -13,7 +15,7 @@ public class Item
         {
             if (value == null)
             {
-                this.Functionalities =  null;
+                this.Components =  null;
                 amount = 0;
             }
             
@@ -30,7 +32,7 @@ public class Item
         {
             if (value <= 0)
             {
-                this.Functionalities = null;
+                this.Components = null;
                 info = null;
             }
 
@@ -44,29 +46,31 @@ public class Item
     public ItemObject Prefab => Info?.itemPrefab;
     public bool IsEmpty => Info == null;
     public bool IsFull => amount >= info.maxStack;
-    public Functionality[] Functionalities { get; private set; } = null;
+    public List<ItemComponent> Components { get; private set; }
 
 
-    public Item(ItemInfo info, int amount, Functionality[] functionalities = null)
+    public Item(ItemInfo info, int amount, ItemComponent[] components = null)
     {
-        this.Functionalities = functionalities;
+        Components = new List<ItemComponent>();
+        AttachComponents(components);
+
         this.info = info;
         this.amount = amount;
     }
     
-    public Item Clone() => new Item(info, amount, Functionalities);
+    public Item Clone() => new Item(info, amount, Components.ToArray());
     
     public void Copy(Item itemToCopy)
     {
         this.Amount = itemToCopy.Amount;
         this.Info = itemToCopy.Info;
-        this.Functionalities = itemToCopy.Functionalities;
+        this.Components = itemToCopy.Components;
     }
     
     public void CopyInfo(Item itemToCopy)
     {
         this.Info = itemToCopy.Info;
-        this.Functionalities = itemToCopy.Functionalities;
+        this.Components = itemToCopy.Components;
     }
 
     public Item Transfer(int transferAmount = -1)
@@ -114,20 +118,43 @@ public class Item
         Amount -= dropAmount;
     }
 
-    public T GetFunctionality<T>() where T : Functionality
+    public T GetComponent<T>() where T : ItemComponent
     {
-        if (IsEmpty)
-            return null;
-        
-        if (Functionalities == null)
-            return null;
-        
-        foreach (Functionality functionality in Functionalities)
+        foreach (ItemComponent component in Components)
         {
-            if (functionality is T t)
+            if (component is T t)
                 return t;
         }
 
         return null;
+    }
+    
+    public T AddComponent<T>() where T : ItemComponent, new()
+    {
+        T createdComponent = new T();
+        
+        AttachComponent(createdComponent);
+        
+        return createdComponent;
+    }
+
+    public void AttachComponent(ItemComponent component)
+    {
+        if(component == null)
+            return;
+        
+        Components.Add(component);
+        component.SetItem(this);
+    }
+    
+    public void AttachComponents(ItemComponent[] components)
+    {
+        if(components == null)
+            return;
+        
+        foreach (ItemComponent component in components)
+        {
+            AttachComponent(component);
+        }
     }
 }

@@ -2,15 +2,15 @@ using UnityEngine;
 
 public abstract class InventoryFilter : MonoBehaviour
 {
-    protected abstract Functionality[] GetFunctionalityWhitelist();
+    protected abstract ItemComponent[] GetFunctionalityWhitelist();
     
     public bool ContainedInWhitelist(Item item)
     {
-        Functionality[] filterFunctionalities = GetFunctionalityWhitelist();
+        ItemComponent[] filterFunctionalities = GetFunctionalityWhitelist();
         
-        foreach (Functionality functionality in item.Functionalities)
+        foreach (ItemComponent functionality in item.Components)
         {
-            foreach (Functionality filterFunctionality in filterFunctionalities)
+            foreach (ItemComponent filterFunctionality in filterFunctionalities)
             {
                 if (functionality.GetType() == filterFunctionality.GetType())
                     return true;

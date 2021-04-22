@@ -6,9 +6,9 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField] private Transform handPos;
     [SerializeField] private Inventory[] weaponInventories;
     
-    public GameObject HoldingWeapon { get; private set; }
+    public Weapon HoldingWeapon { get; private set; }
     
-    private List<GameObject> weaponPrefabs = new List<GameObject>();
+    private List<Weapon> weaponPrefabs = new List<Weapon>();
     private bool hasWeapon => weaponPrefabs.Count > 0;
 
     private int weaponIndex;
@@ -57,8 +57,10 @@ public class WeaponHolder : MonoBehaviour
                 if(item.IsEmpty || item == null)
                     continue;
 
-                GunFunctionality gunFunc = item.GetFunctionality<GunFunctionality>();
-                weaponPrefabs.Add(gunFunc.gunPrefab);
+                WeaponComponent weaponFunc = item.GetComponent<WeaponComponent>();
+                
+                if(weaponFunc != null)
+                    weaponPrefabs.Add(weaponFunc.weaponPrefab);
             }
         }
         
@@ -74,8 +76,8 @@ public class WeaponHolder : MonoBehaviour
             Destroy(HoldingWeapon.gameObject);
         
         currentWeaponIndex = index;
-        GameObject weaponPrefab = weaponPrefabs[currentWeaponIndex];
-        GameObject createdWeapon = Instantiate(weaponPrefab, handPos.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90), transform);
+        Weapon weaponPrefab = weaponPrefabs[currentWeaponIndex];
+        Weapon createdWeapon = Instantiate(weaponPrefab, handPos.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90), transform);
         HoldingWeapon = createdWeapon;
     }
 

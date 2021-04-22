@@ -8,7 +8,7 @@ public abstract class ItemInfo : ScriptableObject
     public ItemObject itemPrefab;
 
 
-    protected abstract Functionality[] GetFunctionalities();
+    protected abstract ItemComponent[] GetComponents();
 
-    public Item GetNewItem() => new Item(this, 1, GetFunctionalities());
+    public Item GetNewItem() => new Item(this, 1, GetComponents());
 }

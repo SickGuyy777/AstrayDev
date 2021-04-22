@@ -7,6 +7,10 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_Project" t="Include">
+          <e p="Entities" t="Include">
+            <e p="DamageableObject.cs" t="Include" />
+            <e p="IDamageable.cs" t="Include" />
+          </e>
           <e p="Inventory" t="Include">
             <e p="Inventory.cs" t="Include" />
             <e p="InventoryFilter.cs" t="Include" />
@@ -21,13 +25,8 @@
           </e>
           <e p="Items" t="Include">
             <e p="DefaultInfo.cs" t="Include" />
-            <e p="EquipPrimaryFunctionality.cs" t="Include" />
-            <e p="EquipSecondaryFunctionality.cs" t="Include" />
-            <e p="Functionality.cs" t="Include" />
-            <e p="Guns" t="Include">
-              <e p="GunFunctionality.cs" t="Include" />
-              <e p="GunInfo.cs" t="Include" />
-            </e>
+            <e p="EquipPrimaryComponent.cs" t="Include" />
+            <e p="EquipSecondaryComponent.cs" t="Include" />
             <e p="InteractionSystem" t="Include">
               <e p="ChangeMaterialSelectionResponse.cs" t="Include" />
               <e p="IInteractable.cs" t="Include" />
@@ -35,9 +34,17 @@
               <e p="RangeInteractor.cs" t="Include" />
             </e>
             <e p="Item.cs" t="Include" />
-            <e p="ItemFunctionality.cs" t="Include" />
+            <e p="ItemComponent.cs" t="Include" />
             <e p="ItemInfo.cs" t="Include" />
             <e p="ItemObject.cs" t="Include" />
+            <e p="Weapons" t="Include">
+              <e p="IWeaponArgsHolder.cs" t="Include" />
+              <e p="RayGun.cs" t="Include" />
+              <e p="Weapon.cs" t="Include" />
+              <e p="WeaponArgs.cs" t="Include" />
+              <e p="WeaponComponent.cs" t="Include" />
+              <e p="WeaponInfo.cs" t="Include" />
+            </e>
           </e>
           <e p="Player" t="Include">
             <e p="Movement.cs" t="Include" />

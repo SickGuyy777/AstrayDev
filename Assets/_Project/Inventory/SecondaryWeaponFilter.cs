@@ -1,11 +1,11 @@
 
 public class SecondaryWeaponFilter : InventoryFilter
 {
-    protected override Functionality[] GetFunctionalityWhitelist()
+    protected override ItemComponent[] GetFunctionalityWhitelist()
     {
-        return new Functionality[]
+        return new ItemComponent[]
         {
-            new EquipSecondaryFunctionality()
+            new EquipSecondaryComponent()
         };
     }
 }

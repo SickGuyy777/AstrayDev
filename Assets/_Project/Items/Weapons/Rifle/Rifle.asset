@@ -16,5 +16,5 @@ MonoBehaviour:
   maxStack: 1
   itemIcon: {fileID: -2701895060895805947, guid: 3fde28d4ad52a884eb9729884d83beef, type: 3}
   itemPrefab: {fileID: 393963516775047493, guid: 50847ab0196cbea46bcca9dcf9cb7731, type: 3}
-  gunType: 0
-  gunPrefab: {fileID: 2086808530202132877, guid: 6bc2d135c8a63de45969aaad0e2d1c3b, type: 3}
+  weaponType: 0
+  weaponPrefab: {fileID: 7028083391473714345, guid: 6bc2d135c8a63de45969aaad0e2d1c3b, type: 3}
