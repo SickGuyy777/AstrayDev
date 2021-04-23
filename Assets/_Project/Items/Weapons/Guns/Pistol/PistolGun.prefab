@@ -80,9 +80,9 @@ MonoBehaviour:
   damage: 4
   inAccuracy: 9
   lineEffectPrefab: {fileID: 1690355991132869052, guid: ddd60f34c62448646af3b71101d80982, type: 3}
-  lineColor: {r: 1, g: 1, b: 1, a: 1}
-  lineWidth: 0.03
-  lineLifeTime: 0.5
+  lineColor: {r: 0.92648184, g: 0.9716981, b: 0.48126557, a: 0.4}
+  lineWidth: 0.04
+  lineLifeTime: 0.6
 --- !u!1 &6919112052377972445
 GameObject:
   m_ObjectHideFlags: 0
