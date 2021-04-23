@@ -35,6 +35,14 @@ public class PlayerCursor : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+            StartPlayAnimation("Click");
+        if(Input.GetMouseButtonUp(0))
+            StopPlayAnimation();
+    }
+
     public void StartPlayAnimation(string animName)
     {
         if(currentAnimationCoroutine != null)
@@ -48,6 +56,15 @@ public class PlayerCursor : MonoBehaviour
         
         CursorAnimation cursorAnimation = animationDictionary[animName];
         currentAnimationCoroutine = StartCoroutine(PlayAnimation(cursorAnimation));
+    }
+    
+    public void StopPlayAnimation()
+    {
+        if(currentAnimationCoroutine != null)
+            StopCoroutine(currentAnimationCoroutine);
+
+        SetCursor(defaultCursor);
+        currentAnimationCoroutine = null;
     }
 
     private void SetCursor(Texture2D texture2D)

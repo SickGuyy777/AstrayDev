@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
 {
-
     [SerializeField] private float maxSpeed = 5;
     [SerializeField] private float acceleration = 12;
     [SerializeField] private float deceleration = 12;

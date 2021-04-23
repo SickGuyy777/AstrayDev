@@ -12,7 +12,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/InventoryFilter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Weapons/RayGun.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/DefaultInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -29,7 +28,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemData.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplaySlot.cs" />
@@ -42,7 +40,6 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/EquipSecondaryFunctionality.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemType.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Weapon/WeaponScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunFunctionality.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
@@ -61,13 +58,10 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunItemComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipSecondaryComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/WeaponInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/WeaponComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/WeaponHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Entities/IDamageable.cs" />
@@ -77,9 +71,14 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgs.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgsHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/RayGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Player/Movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
       </list>
     </option>
   </component>
@@ -134,7 +133,8 @@
       <workItem from="1618792662935" duration="1222000" />
       <workItem from="1618955407563" duration="5306000" />
       <workItem from="1619028977787" duration="12055000" />
-      <workItem from="1619105105348" duration="8489000" />
+      <workItem from="1619105105348" duration="9085000" />
+      <workItem from="1619185452373" duration="2754000" />
     </task>
     <servers />
   </component>

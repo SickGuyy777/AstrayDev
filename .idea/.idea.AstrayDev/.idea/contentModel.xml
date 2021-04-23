@@ -38,8 +38,10 @@
             <e p="ItemInfo.cs" t="Include" />
             <e p="ItemObject.cs" t="Include" />
             <e p="Weapons" t="Include">
+              <e p="Guns" t="Include">
+                <e p="RayGun.cs" t="Include" />
+              </e>
               <e p="IWeaponArgsHolder.cs" t="Include" />
-              <e p="RayGun.cs" t="Include" />
               <e p="Weapon.cs" t="Include" />
               <e p="WeaponArgs.cs" t="Include" />
               <e p="WeaponComponent.cs" t="Include" />
