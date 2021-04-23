@@ -23,7 +23,7 @@ public class Item
     }
 
     private int amount;
-    public int Amount```
+    public int Amount
     {
         get => amount;
 
