@@ -15,7 +15,7 @@ public class ItemDisplaySlot : MonoBehaviour
     public int SlotIndex { get; private set; } = 0;
 
 
-    private void Start() => CurrentItem ??= inventory?.Items[SlotIndex];
+    private void Start() => CurrentItem ??= inventory?.Slots[SlotIndex].Item;
 
     public void SetItemReference(Item newItem) => this.CurrentItem = newItem;
 

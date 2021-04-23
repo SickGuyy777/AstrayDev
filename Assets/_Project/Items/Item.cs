@@ -110,9 +110,7 @@ public class Item
         itemToAdd.Amount -= transferAmount;
     }
 
-    public bool IsSameItem(Item item) => item.info == info;
-    
-    public bool IsSameItem(ItemInfo itemInfo) => itemInfo == info;
+    public bool IsSameItemType(ItemInfo itemInfo) => itemInfo == info;
 
     public void Drop(Vector2 position, int dropAmount = 0)
     {
@@ -174,4 +172,30 @@ public class Item
     }
 
     private bool IsNullOrThis(Item item) => item == null || item == this;
+
+    public override bool Equals(object obj) => (Item)obj == this;
+
+    public override int GetHashCode() => base.GetHashCode();
+
+    public static bool operator ==(Item a, Item b)
+    {
+        if (a is null && b is null)
+            return true;
+
+        if (a is null && !(b is null) || !(a is null) && b is null)
+            return false;
+
+        return a.instanceID == b.instanceID;
+    }
+
+    public static bool operator !=(Item a, Item b)
+    {
+        if (a is null && b is null)
+            return false;
+
+        if (a is null && !(b is null) || !(a is null) && b is null)
+            return true;
+
+        return a.instanceID != b.instanceID;
+    }
 }

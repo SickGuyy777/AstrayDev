@@ -1,14 +1,13 @@
-using System;
+using Assets._Project.Inventory;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private Item[] items = new Item[30];
+    [SerializeField] private Slot[] slots = new Slot[30];
 
-    public Item[] Items => items;
+    public Slot[] Slots => slots;
     private InventoryFilter filter;
-    public Action OnChanged;
-
+    public System.Action OnChanged;
 
     private void Awake()
     {
@@ -17,12 +16,12 @@ public class Inventory : MonoBehaviour
 
     public bool CanAdd(Item itemToAdd) => filter == null ||  filter != null && filter.ContainedInWhitelist(itemToAdd);
 
-    public bool AddToInventory(Item itemToAdd, int slotIndex = -1, int amount = -1)
+    public bool AddToInventory(Item itemToAdd, int slotIndex = -1, int amountToAdd = 0)
     {
-        if (amount == -1)
-            amount = itemToAdd.Amount;
+        if (amountToAdd <= 0 || amountToAdd > itemToAdd.Amount)
+            amountToAdd = itemToAdd.Amount;
 
-        int endAmount = itemToAdd.Amount - amount;
+        int endAmount = itemToAdd.Amount - amountToAdd;
 
         if (!CanAdd(itemToAdd))
         {
@@ -37,7 +36,7 @@ public class Inventory : MonoBehaviour
 
             if (slotIndex != -1)
             {
-                Item item = Items[slotIndex];
+                Item item = Slots[slotIndex].Item;
                 if (IsSameItem(itemToAdd.Info, item.Info) && !item.IsFull)
                     bestSlotIndex = slotIndex;
                 if (item.IsEmpty)
@@ -47,7 +46,7 @@ public class Inventory : MonoBehaviour
             if (bestSlotIndex == -1)
                 break;
             
-            Items[bestSlotIndex].Add(itemToAdd, 1);
+            Slots[bestSlotIndex].Item.Add(itemToAdd, 1);
         }
 
         OnChanged?.Invoke();
@@ -64,17 +63,17 @@ public class Inventory : MonoBehaviour
 
     private int GetBestSlot(ItemInfo info)
     {
-        for (int i = 0; i < Items.Length; i++)
+        for (int i = 0; i < Slots.Length; i++)
         {
-            Item item = Items[i];
+            Item item = Slots[i].Item;
 
-            bool sameItemSlot = IsSameItem(item?.Info, info) && !IsFull(i);
+            bool sameItemSlot = IsSameItem(item?.Info, info) && !IsSlotFull(i);
 
             if (sameItemSlot)
                 return i;
         }
         
-        for (int i = 0; i < Items.Length; i++)
+        for (int i = 0; i < Slots.Length; i++)
         {
             if (IsEmpty(i))
                 return i;
@@ -85,7 +84,7 @@ public class Inventory : MonoBehaviour
     
     private bool IsSameItem(ItemInfo info1, ItemInfo info2) => info1 == info2;
 
-    private bool IsFull(int slotIndex) => Items[slotIndex].Amount >= Items[slotIndex].MaxStack;
+    private bool IsSlotFull(int slotIndex) => Slots[slotIndex].Amount == Slots[slotIndex].MaxStack;
 
-    private bool IsEmpty(int slotIndex) => Items[slotIndex]?.Amount <= 0;
+    private bool IsEmpty(int slotIndex) => Slots[slotIndex]?.Amount <= 0;
 }

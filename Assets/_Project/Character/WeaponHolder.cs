@@ -1,3 +1,4 @@
+using Assets._Project.Inventory;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -49,11 +50,12 @@ public class WeaponHolder : MonoBehaviour
 
         foreach (Inventory inventory in weaponInventories)
         {
-            if(inventory.Items == null)
+            if(inventory.Slots == null)
                 continue;
             
-            foreach (Item item in inventory.Items)
+            foreach (Slot slot in inventory.Slots)
             {
+                Item item = slot.Item;
                 if(item.IsEmpty || item == null)
                     continue;
 

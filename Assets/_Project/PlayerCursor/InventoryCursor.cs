@@ -8,7 +8,7 @@ public class InventoryCursor : MonoBehaviour
     
     public Item HoldingItem { get; private set; } = new Item(null, 0);
 
-    private bool dragging => !HoldingItem.IsEmpty;
+    private bool Dragging => !HoldingItem.IsEmpty;
     private ItemDisplaySlot lastItemSlot;
     private RectTransform rectTransform;
 
@@ -49,7 +49,7 @@ public class InventoryCursor : MonoBehaviour
             
             if (selectedASlot)
             {
-                if (!dragging)
+                if (!Dragging)
                     GrabItem(hoveringDisplaySlot);
                 else
                     PlaceItem(hoveringDisplaySlot);
@@ -67,7 +67,7 @@ public class InventoryCursor : MonoBehaviour
             if (selectedASlot)
             {
                 int half = Mathf.CeilToInt(hoveringDisplaySlot.CurrentItem.Amount / 2f);
-                if (!dragging)
+                if (!Dragging)
                     GrabItem(hoveringDisplaySlot, half);
                 else
                     AddItem(hoveringDisplaySlot, 1);
@@ -95,7 +95,7 @@ public class InventoryCursor : MonoBehaviour
     private void PlaceItem(ItemDisplaySlot slot, int placeAmount = -1)
     {
         bool empty = slot.CurrentItem.IsEmpty;
-        bool sameItem = slot.CurrentItem.IsSameItem(HoldingItem);
+        bool sameItem = slot.CurrentItem.IsSameItemType(HoldingItem.Info);
         
         Inventory inventory = slot.Inventory;
         if(!inventory.CanAdd(HoldingItem.Clone().Transfer()))
@@ -110,7 +110,7 @@ public class InventoryCursor : MonoBehaviour
     private void AddItem(ItemDisplaySlot slot, int addAmount)
     {
         bool empty = slot.CurrentItem.IsEmpty;
-        bool sameItem = slot.CurrentItem.IsSameItem(HoldingItem);
+        bool sameItem = slot.CurrentItem.IsSameItemType(HoldingItem.Info);
         
         if(!empty && !sameItem)
             return;
