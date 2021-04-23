@@ -25,7 +25,7 @@ public class ItemObject : MonoBehaviour, IInteractable
         selectionResponse?.OnDeselect();
     }
 
-    public void Interact(PlayerController player)
+    public void Interact(PlayerCharacter player)
     {
         player.BackPack.AddToInventory(this.Item.Transfer());
         Destroy(this.gameObject);

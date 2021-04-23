@@ -11,7 +11,7 @@ public struct WeaponArgs
 
     public IDamageable HitDamageable => hitCollider?.GetComponent<IDamageable>();
 
-    public PlayerController HitPlayer => hitCollider?.GetComponentInParent<PlayerController>();
+    public PlayerCharacter HitPlayer => hitCollider?.GetComponentInParent<PlayerCharacter>();
     
 
     public WeaponArgs(Ray ray, params GameObject[] objectsToIgnore)

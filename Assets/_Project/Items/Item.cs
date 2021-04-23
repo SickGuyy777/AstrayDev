@@ -5,6 +5,9 @@ using UnityEngine;
 [Serializable]
 public class Item
 {
+    private static int LastInstanceID;
+    private int instanceID;
+    
     private ItemInfo info;
     public ItemInfo Info
     {
@@ -12,6 +15,9 @@ public class Item
 
         set
         {
+            if(value == info)
+                return;
+            
             if (value == null)
             {
                 this.Components =  null;
@@ -29,6 +35,9 @@ public class Item
 
         set
         {
+            if(value == amount)
+                return;
+            
             if (value <= 0)
             {
                 this.Components = null;
@@ -50,6 +59,9 @@ public class Item
 
     public Item(ItemInfo info, int amount, ItemComponent[] components = null)
     {
+        instanceID = LastInstanceID + 1;
+        LastInstanceID++;
+        
         Components = new List<ItemComponent>();
         AttachComponents(components);
 
@@ -61,23 +73,28 @@ public class Item
     
     public void Copy(Item itemToCopy)
     {
+        if(IsNullOrThis(itemToCopy))
+            return;
+        
         this.Amount = itemToCopy.Amount;
-        this.Info = itemToCopy.Info;
-        this.Components = itemToCopy.Components;
+        
+        CopyAttributes(itemToCopy);
     }
     
-    public void CopyInfo(Item itemToCopy)
+    public void CopyAttributes(Item itemToCopy)
     {
+        if(IsNullOrThis(itemToCopy))
+            return;
+        
         this.Info = itemToCopy.Info;
         this.Components = itemToCopy.Components;
     }
 
-    public Item Transfer(int transferAmount = -1)
+    public Item Transfer(int transferAmount = 0)
     {
         Item copy = Clone();
 
-        if (transferAmount <= -1)
-            transferAmount = Amount;
+        transferAmount = transferAmount <= 0 ? Amount : amount;
         
         Amount -= transferAmount;
         copy.Amount = transferAmount;
@@ -87,7 +104,7 @@ public class Item
 
     public void Add(Item itemToAdd, int transferAmount)
     {
-        CopyInfo(itemToAdd);
+        CopyAttributes(itemToAdd);
         
         Amount += transferAmount;
         itemToAdd.Amount -= transferAmount;
@@ -97,13 +114,12 @@ public class Item
     
     public bool IsSameItem(ItemInfo itemInfo) => itemInfo == info;
 
-    public void Drop(Vector2 position, int dropAmount = -1)
+    public void Drop(Vector2 position, int dropAmount = 0)
     {
         if(IsEmpty)
             return;
         
-        if (dropAmount <= -1)
-            dropAmount = Amount;
+        dropAmount = dropAmount <= 0 ? Amount : amount;
         
         for (int i = 0; i < dropAmount; i++)
         {
@@ -156,4 +172,6 @@ public class Item
             AttachComponent(component);
         }
     }
+
+    private bool IsNullOrThis(Item item) => item == null || item == this;
 }

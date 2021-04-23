@@ -1156,8 +1156,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c7d8acd2b5b874394815eb3cede5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCursor: {fileID: 2800000, guid: 04fafaaf7ab692b449d495329fce697d, type: 3}
-  animations: []
+  defaultCursor: {fileID: 2800000, guid: 425eb02834947944390b9a1f1cf1452c, type: 3}
+  animations:
+  - animName: Click
+    duration: 1
+    looping: 1
+    textures:
+    - {fileID: 2800000, guid: 82ebfa9651e6a4a46ba7a9a13843d693, type: 3}
 --- !u!4 &713343124
 Transform:
   m_ObjectHideFlags: 0
@@ -2097,6 +2102,18 @@ MonoBehaviour:
   weaponInventories:
   - {fileID: 1728889381}
   - {fileID: 100917758}
+--- !u!114 &1261712413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261712404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94107b3c209e8ee4a9d422888150b0df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1264725437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5612554728523970729, guid: eaddc73a5327f504a9727c3eb7f393cc, type: 3}

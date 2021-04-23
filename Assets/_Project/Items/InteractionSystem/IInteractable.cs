@@ -3,5 +3,5 @@ public interface IInteractable
 {
     void Select();
     void Deselect();
-    void Interact(PlayerController player);
+    void Interact(PlayerCharacter player);
 }

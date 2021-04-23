@@ -20,30 +20,17 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Weapons/WeaponArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/PrimaryWeaponFilter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Player/WeaponHolder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Entities/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Entities/DamageableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Effects/LineEffect.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/InventoryDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplaySlot.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/ItemDragable.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Functionality.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/ItemDisplaySlot.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryFunctionality.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemFunctionality.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/EquipSecondaryFunctionality.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemType.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Weapon/WeaponScript.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunFunctionality.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/WeaponFilter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Primary.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/PrimaryWeaponFilter.cs" />
@@ -71,14 +58,25 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgs.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgsHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Player/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/CharacterAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Player/Movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/CharacterMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerCharacter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Interactor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Pickup.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/IPickup.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/InteractionSystem/IInteractable.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/InteractionSystem/RangeInteractor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/LineEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
       </list>
     </option>
   </component>
@@ -134,7 +132,7 @@
       <workItem from="1618955407563" duration="5306000" />
       <workItem from="1619028977787" duration="12055000" />
       <workItem from="1619105105348" duration="9085000" />
-      <workItem from="1619185452373" duration="2754000" />
+      <workItem from="1619185452373" duration="8704000" />
     </task>
     <servers />
   </component>
@@ -147,10 +145,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="794" y="221" key="RiderGenerateDialog" timestamp="1618673532052">
+    <state x="794" y="221" key="RiderGenerateDialog" timestamp="1619195935693">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="221" key="RiderGenerateDialog/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1618673532052" />
+    <state x="794" y="221" key="RiderGenerateDialog/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1619195935693" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1618758159340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

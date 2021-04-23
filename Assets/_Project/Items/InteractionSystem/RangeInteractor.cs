@@ -10,7 +10,7 @@ public class RangeInteractor : MonoBehaviour
 
     private void Update() => UpdatedSelectedInteractable();
 
-    public void Interact(PlayerController player)
+    public void Interact(PlayerCharacter player)
     {
         selectedInteractable?.Interact(player);
     }

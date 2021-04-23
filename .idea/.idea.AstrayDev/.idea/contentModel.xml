@@ -7,9 +7,16 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_Project" t="Include">
-          <e p="Entities" t="Include">
+          <e p="Character" t="Include">
+            <e p="CharacterAnimator.cs" t="Include" />
+            <e p="CharacterMovement.cs" t="Include" />
             <e p="DamageableObject.cs" t="Include" />
             <e p="IDamageable.cs" t="Include" />
+            <e p="Player" t="Include">
+              <e p="PlayerCharacter.cs" t="Include" />
+              <e p="PlayerInput.cs" t="Include" />
+            </e>
+            <e p="WeaponHolder.cs" t="Include" />
           </e>
           <e p="Inventory" t="Include">
             <e p="Inventory.cs" t="Include" />
@@ -39,6 +46,7 @@
             <e p="ItemObject.cs" t="Include" />
             <e p="Weapons" t="Include">
               <e p="Guns" t="Include">
+                <e p="LineEffect.cs" t="Include" />
                 <e p="RayGun.cs" t="Include" />
               </e>
               <e p="IWeaponArgsHolder.cs" t="Include" />
@@ -47,12 +55,6 @@
               <e p="WeaponComponent.cs" t="Include" />
               <e p="WeaponInfo.cs" t="Include" />
             </e>
-          </e>
-          <e p="Player" t="Include">
-            <e p="Movement.cs" t="Include" />
-            <e p="PlayerController.cs" t="Include" />
-            <e p="PlayerInput.cs" t="Include" />
-            <e p="WeaponHolder.cs" t="Include" />
           </e>
           <e p="PlayerCursor" t="Include">
             <e p="InventoryCursor.cs" t="Include" />
