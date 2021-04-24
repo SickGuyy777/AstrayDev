@@ -174,7 +174,7 @@ public class Item
 
     private bool IsNullOrThis(Item item) => item == null || item == this;
 
-    /*public override bool Equals(object obj) => (Item)obj == this;
+    public override bool Equals(object obj) => (Item)obj == this;
 
     public override int GetHashCode() => base.GetHashCode();
 
@@ -198,5 +198,5 @@ public class Item
             return true;
 
         return a.instanceID != b.instanceID;
-    }*/
+    }
 }
