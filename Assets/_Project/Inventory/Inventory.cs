@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[DefaultExecutionOrder(-int.MaxValue)]
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private Slot[] slots = new Slot[30];

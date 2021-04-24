@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e345866ef0c1e41adb310027414c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backPackDisplay: {fileID: 2146769641}
+  backPackUI: {fileID: 0}
   backPack: {fileID: 9133307578722208268}
 --- !u!114 &3402317822131186538
 MonoBehaviour:
@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 1
+  searchCooldown: 0.04
 --- !u!1 &3710984124662208526
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2792989514735548504}
   - component: {fileID: 1948735437296764084}
+  - component: {fileID: 8077932033340662434}
   m_Layer: 0
   m_Name: PrimaryWeapon
   m_TagString: Untagged
@@ -811,8 +813,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d2026e49283b34fab4e307e22832fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
-  functionalityWhiteList: 01000000
+  slots: []
+--- !u!114 &8077932033340662434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7107487002644448359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41387f98ba358274bb44900acb6ea66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7418131388495723260
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,8 +869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d2026e49283b34fab4e307e22832fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
-  functionalityWhiteList: 02000000
+  slots: []
 --- !u!1 &7845941042875165945
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,8 +913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d2026e49283b34fab4e307e22832fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
-  functionalityWhiteList: 000000000100000002000000
+  slots: []
 --- !u!1 &9114463996613493589
 GameObject:
   m_ObjectHideFlags: 0

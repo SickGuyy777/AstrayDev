@@ -1,23 +1,39 @@
+using System.Collections;
 using UnityEngine;
 
 public class RangeInteractor : MonoBehaviour
 {
     [SerializeField] private float range = 1;
+    [SerializeField] private float searchCooldown = 0.02f;
     
     private IInteractable selectedInteractable;
     private GameObject selectedInteractableObject;
 
-
-    private void Update() => UpdatedSelectedInteractable();
+    private void Start()
+    {
+        StartCoroutine(SearchForInteractables());
+    }
 
     public void Interact(PlayerCharacter player)
     {
         selectedInteractable?.Interact(player);
     }
     
+    private IEnumerator SearchForInteractables()
+    {
+        while (true)
+        {
+            UpdatedSelectedInteractable();
+            yield return new WaitForSeconds(searchCooldown);
+        }
+    }
+
     private void UpdatedSelectedInteractable()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, range);
+        if (colliders.Length == 0)
+            return;
+
         IInteractable interactable = GetClosestInteractable(colliders, out GameObject selectedObj);
 
         if (selectedInteractable != interactable)
@@ -34,18 +50,17 @@ public class RangeInteractor : MonoBehaviour
 
     private IInteractable GetClosestInteractable(Collider2D[] colliders, out GameObject obj)
     {
-        float closestRange = float.MaxValue;
+        float lowestMagnitude = int.MaxValue;
         IInteractable closestInteractable = null;
         GameObject closestObj = null;
 
         foreach (Collider2D col in colliders)
         {
-            float distance = Vector2.Distance(transform.position, col.transform.position);
-
+            float magnitude = (col.transform.position - transform.position).magnitude;
             IInteractable interactable = col.GetComponent<IInteractable>();
-            if (interactable != null && distance < closestRange)
+            if (interactable != null && magnitude < lowestMagnitude)
             {
-                closestRange = range;
+                lowestMagnitude = magnitude;
                 closestInteractable = interactable;
                 closestObj = col.gameObject;
             }
