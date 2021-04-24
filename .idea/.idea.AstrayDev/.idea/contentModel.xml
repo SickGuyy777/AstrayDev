@@ -32,7 +32,7 @@
             </e>
           </e>
           <e p="Items" t="Include">
-            <e p="Bullets" t="Include">
+            <e p="Ammo" t="Include">
               <e p="AmmoComponent.cs" t="Include" />
               <e p="AmmoInfo.cs" t="Include" />
             </e>

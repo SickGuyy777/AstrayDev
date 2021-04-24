@@ -12,7 +12,7 @@ public class WeaponComponent : ItemComponent
     public Weapon Instantiate(Vector3 position, Quaternion rotation, Transform parent = null)
     {
         Weapon gunObj = GameObject.Instantiate(weaponPrefab, position, rotation, parent);
-        gunObj.SetItemReference(item);
+        gunObj.SetUp(Item);
         
         return gunObj;
     }

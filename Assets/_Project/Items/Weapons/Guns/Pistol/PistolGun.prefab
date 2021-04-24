@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useTime: 0.5
+  ammoType: 1
   firePoint: {fileID: 2927286993849887857}
   damage: 4
   inAccuracy: 9

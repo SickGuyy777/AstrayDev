@@ -1,8 +1,8 @@
 
 public abstract class ItemComponent
 {
-    protected Item item;
-    
-    
-    public void SetItem(Item aItem) => this.item = aItem;
+    public Item Item { get; private set; }
+
+
+    public void SetItem(Item aItem) => this.Item = aItem;
 }

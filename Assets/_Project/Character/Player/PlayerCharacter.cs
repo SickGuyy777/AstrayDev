@@ -78,4 +78,6 @@ public class PlayerCharacter : MonoBehaviour, IWeaponArgsHolder
     }
     
     public WeaponArgs GetWeaponArgs() => new WeaponArgs(new Ray(transform.position, transform.right), new LayerMask(), this.gameObject);
+    
+    public Inventory GetAmmoSupply() => BackPack;
 }

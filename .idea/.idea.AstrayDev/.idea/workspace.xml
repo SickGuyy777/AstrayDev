@@ -21,9 +21,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Weapons/WeaponArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/PrimaryWeaponFilter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/9e/79b2e448/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Effects/LineEffect.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Bullets/AmmoInfo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -45,10 +45,8 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Entities/DamageableObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgsHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/CharacterAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
@@ -63,22 +61,24 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/LineEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/ItemDisplaySlot.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgs.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/DamageableObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/GunComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/AmmoComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/BulletInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/AmmoComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/AmmoInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerCharacter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
       </list>
     </option>
   </component>

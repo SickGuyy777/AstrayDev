@@ -17,5 +17,5 @@ public abstract class Weapon : MonoBehaviour
         canUse = true;
     }
 
-    public void SetItemReference(Item itemReference) => this.item = itemReference;
+    public void SetUp(Item itemReference) => this.item = itemReference;
 }

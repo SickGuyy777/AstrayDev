@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private Slot[] slots = new Slot[30];
+    [SerializeField] private int inventorySize = 30;
+    [SerializeField] private Slot[] slots;
 
     public Slot[] Slots => slots;
     private InventoryFilter filter;
@@ -13,8 +15,12 @@ public class Inventory : MonoBehaviour
     {
         filter = GetComponent<InventoryFilter>();
 
-        for (int i = 0; i < Slots.Length; i++)
+        slots = new Slot[inventorySize];
+        for (int i = 0; i < inventorySize; i++)
+        {
             Slots[i] = new Slot();
+        }
+            
     }
 
     public bool IsItemTypeAllowed(Item itemToAdd) => filter == null ||  filter != null && filter.ContainedInWhitelist(itemToAdd);
@@ -58,6 +64,24 @@ public class Inventory : MonoBehaviour
 
         OnChanged?.Invoke();
         return remaining;
+    }
+
+    public T[] GetItemsOfType<T>() where T : ItemComponent
+    {
+        List<T> listOfComponents = new List<T>();
+        
+        foreach (Slot slot in Slots)
+        {
+            if(slot.IsEmpty)
+                continue;
+            
+            T component = slot.Item.GetComponent<T>();
+            
+            if(component != null)
+                listOfComponents.Add(component);
+        }
+
+        return listOfComponents.ToArray();
     }
 
     public void AddToInventory(Item[] itemsToAdd)

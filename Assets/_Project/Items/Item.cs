@@ -55,11 +55,12 @@ public class Item
     public ItemObject Prefab => Info?.itemPrefab;
     public bool IsEmpty => Amount <= 0;
     public bool IsFull => amount >= info.maxStack;
-    public List<ItemComponent> Components { get; private set; } = new List<ItemComponent>();
+    public List<ItemComponent> Components { get; private set; }
 
 
     public Item(ItemInfo info, int amount, ItemComponent[] components = null, int id = -1)
     {
+        Components = new List<ItemComponent>();
         instanceID = id  <= -1 ? LastInstanceID + 1 : id;
         LastInstanceID = instanceID;
         
@@ -68,9 +69,15 @@ public class Item
         this.info = info;
         this.amount = amount;
     }
-    
-    public Item Clone() => new Item(info, amount, Components?.ToArray(), instanceID);
-    
+
+    public Item Clone()
+    {
+        Item item = new Item(info, amount);
+        item.CopyAttributes(this);
+
+        return item;
+    }
+
     public void Copy(Item itemToCopy)
     {
         if(IsNullOrThis(itemToCopy))
@@ -86,8 +93,8 @@ public class Item
         if(IsNullOrThis(itemToCopy))
             return;
         
-        this.Info = itemToCopy.Info;
-        this.Components = itemToCopy.Components;
+        AttachComponents(itemToCopy.Components?.ToArray());
+        this.Info = itemToCopy.Info; 
         this.instanceID = itemToCopy.instanceID;
     }
 
@@ -134,6 +141,9 @@ public class Item
 
     public T GetComponent<T>() where T : ItemComponent
     {
+        if (Components == null)
+            return null;
+        
         foreach (ItemComponent component in Components)
         {
             if (component is T t)
@@ -156,6 +166,9 @@ public class Item
     {
         if(component == null)
             return;
+        
+        if(Components == null)
+            Components = new List<ItemComponent>();
         
         Components.Add(component);
         component.SetItem(this);
