@@ -388,6 +388,9 @@ GameObject:
   - component: {fileID: 312813085}
   - component: {fileID: 312813087}
   - component: {fileID: 312813084}
+  - component: {fileID: 312813089}
+  - component: {fileID: 312813088}
+  - component: {fileID: 312813090}
   m_Layer: 0
   m_Name: TestDummy
   m_TagString: Untagged
@@ -442,7 +445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312813083}
   m_LocalRotation: {x: -0, y: -0, z: -0.71200967, w: 0.7021697}
-  m_LocalPosition: {x: 0.05, y: 3.68, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 393694571}
@@ -466,6 +469,84 @@ MonoBehaviour:
   getFromChildren: 0
   health: 100
   maxHealth: 120
+--- !u!114 &312813088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312813083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  radius: 1
+  height: 2
+  repathRate: 0.5
+  canSearch: 1
+  canMove: 1
+  maxSpeed: 1
+  gravity: {x: 0, y: 0, z: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  centerOffsetCompatibility: NaN
+  orientation: 1
+  enableRotation: 1
+  targetCompatibility: {fileID: 0}
+  maxAcceleration: -2.5
+  rotationSpeed: 360
+  slowdownDistance: 0.6
+  pickNextWaypointDist: 1.2
+  endReachedDistance: 0.2
+  alwaysDrawGizmos: 0
+  slowWhenNotFacingTarget: 1
+  whenCloseToDestination: 0
+  constrainInsideGraph: 0
+--- !u!114 &312813089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312813083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &312813090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312813083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 1261712411}
 --- !u!4 &347193329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5612554728523970729, guid: eaddc73a5327f504a9727c3eb7f393cc, type: 3}
@@ -563,7 +644,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393694570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.178, y: 0.0601, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 312813086}
@@ -2381,6 +2462,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d140d21b877af140995236628d2d3a2, type: 3}
+--- !u!4 &1261712411 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3402317822131186536, guid: 01464cea5d1785f48ac9761975c7717f, type: 3}
+  m_PrefabInstance: {fileID: 3402317821557198810}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1264725437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5612554728523970729, guid: eaddc73a5327f504a9727c3eb7f393cc, type: 3}
@@ -2448,6 +2534,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5612554728523970729, guid: 5d140d21b877af140995236628d2d3a2, type: 3}
   m_PrefabInstance: {fileID: 394048397}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1356515669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356515670}
+  - component: {fileID: 1356515671}
+  m_Layer: 0
+  m_Name: A*
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1356515670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356515669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356515671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356515669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAAAQIezxq9FeWgIAAP8EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty4jAQ/BVK5yVlHCCwt11CyB5IUiFbufgipDFWIUsuPQIkxb/vSDbY8Z4Q3fPoHo38RYSyFTCnzcoIvtYcyM8BCWfyY9CSj3CkO6024hMuMe+CuyIE0RjzSp3QiI9CmtUlOCPYL7WTIThB0CuRa1Mu+Q4W2jqLcE6lBaSMdiFbIfQ1IEf8Gc5DyglP6V04feJpngzOeGSgHJhOaHoznyXpbZqOl8Pkrkm7JNU5XjFJywp4MNCmpmkTParDFFprIoINpqUUttFF3KmKvjdVAQaCcS4o2oxaQngBYle4ULab+5znFlyjyNDTvTA4rboo+a3rEZbU7mtZH1T60GY6jorqmuv/6OEo0rnR5eOl7SgJLVwh2P6Vnhi1rjPiLnz/XbdXByr3dCvhvQD1pFdGe8WRdMaHVG8hvW//Xp0tCmD7Fq+l9kBftdNOelcTPJyj+eNCinIbqJtxDWykjtOOawAG7+UPCo5LYpsSiAYVfy280V13mxriQRjrkGpcqiBvq70JoWQZZxbceLfQRkGEG9EVKCrd6QXLuP4N9rhO2x7zQMO7aZo33OU59FIi3MYnSY960YfrZdlCH9Zgi2fvpFDQig7EE85poZWqF6w7k0vaxpucsk7azgv+fbUIS+l8y3k+uRvd3k7ns+GUziaTacIhnzE+SSYk7p5Q6JPKl1poMx68NdUWV7hnl8/JYGVoFZedG3pYic9SdwUKlesNMwDquS5xVQ4Gu+Cj5EsucEIbcE6oeOHkKyNSsz3w7Nozi1aXR2do1lbJSCU+tAtIRhbxA5KRMzn/A1BLAwQUAAAICAAAECHspsrPTm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UrJRomVSSkqaqbmhsbGZpYWuWaKFqamZQUpqmkVyiqmBqVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAECHs8avRXloCAAD/BAAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAECHspsrPTm0AAAB4AAAACQAkAAAAAAAAAAAAAACnAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAF8DAAAAAA==
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
 --- !u!4 &1386219587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5612554728523970729, guid: eaddc73a5327f504a9727c3eb7f393cc, type: 3}
