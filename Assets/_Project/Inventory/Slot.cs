@@ -2,12 +2,30 @@
 [System.Serializable]
 public class Slot
 {
-    public Item Item { get; private set; }
+    private Item item;
+    public Item Item
+    {
+        get => item; 
+        
+        set
+        {
+            item = value;
 
+            if (value == null)
+            {
+                Info = null;
+                return;
+            }
+
+            Info = item.Info;
+        }
+    }
+
+    public ItemInfo Info { get; private set; }
     public int Amount => Item.Amount;
-    public int MaxStack => Item.MaxStack;
-    public bool IsEmpty => Item == null || Item.IsEmpty;
-    public bool IsFull => Item != null && !Item.IsEmpty && Item.IsFull;
+    public int MaxStack => Info.maxStack;
+    public bool IsEmpty => Item == null || Amount == 0;
+    public bool IsFull => Item != null && Amount == MaxStack;
 
 
     public Slot(Item item = null)

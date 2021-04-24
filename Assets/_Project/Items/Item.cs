@@ -44,7 +44,7 @@ public class Item
                 info = null;
                 instanceID = -1;
             }
-
+            
             amount = value;
         }
     }
@@ -53,7 +53,7 @@ public class Item
     public int MaxStack => Info.maxStack;
     public Sprite Icon => Info?.itemIcon;
     public ItemObject Prefab => Info?.itemPrefab;
-    public bool IsEmpty => Info == null;
+    public bool IsEmpty => Amount <= 0;
     public bool IsFull => amount >= info.maxStack;
     public List<ItemComponent> Components { get; private set; } = new List<ItemComponent>();
 
@@ -69,7 +69,7 @@ public class Item
         this.amount = amount;
     }
     
-    public Item Clone() => new Item(info, amount, Components.ToArray(), instanceID);
+    public Item Clone() => new Item(info, amount, Components?.ToArray(), instanceID);
     
     public void Copy(Item itemToCopy)
     {

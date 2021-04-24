@@ -75,8 +75,8 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/ItemDisplaySlot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
       </list>
     </option>
@@ -134,7 +134,7 @@
       <workItem from="1619028977787" duration="12055000" />
       <workItem from="1619105105348" duration="9085000" />
       <workItem from="1619185452373" duration="8704000" />
-      <workItem from="1619216084963" duration="2613000" />
+      <workItem from="1619216084963" duration="3821000" />
     </task>
     <servers />
   </component>

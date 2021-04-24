@@ -42,7 +42,7 @@ public class Inventory : MonoBehaviour
             
             if (startingSlot != null && startingSlot.CanAdd(itemToAdd.Info))
                 amountToAdd = startingSlot.AddItem(itemToAdd, amountToAdd);
-            else
+            else if(startingSlot == null)
                 amountToAdd = GetBestSlot(itemToAdd.Info).AddItem(itemToAdd, amountToAdd);
             
             if (i >= 100)
