@@ -50,7 +50,6 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Gun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Entities/DamageableObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgs.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgsHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/RayGun.cs" />
@@ -62,7 +61,6 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/CharacterMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Interactor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Pickup.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/IPickup.cs" />
@@ -70,7 +68,6 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/InteractionSystem/RangeInteractor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/LineEffect.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/ItemDisplaySlot.cs" />
@@ -78,6 +75,9 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgs.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerCharacter.cs" />
       </list>
     </option>
   </component>

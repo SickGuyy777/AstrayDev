@@ -7,6 +7,8 @@ public class RayGun : Weapon
     [SerializeField] private Transform firePoint;
     [SerializeField] private float damage = 1f;
     [SerializeField] private float inAccuracy = 5f;
+    [SerializeField] private LayerMask mask;
+    
     
     [Header("LineEffect")] 
     [SerializeField] private LineEffect lineEffectPrefab;
@@ -27,7 +29,7 @@ public class RayGun : Weapon
         Vector2 offset = new Vector2(Random.Range(-inAccuracy, inAccuracy), Random.Range(-inAccuracy, inAccuracy)) / 150;
         Vector2 newDirection = (Vector2)weaponArgs.ray.direction + offset;
         
-        WeaponArgs shootArgs = new WeaponArgs(new Ray(weaponArgs.ray.origin, newDirection), weaponArgs.objectsToIgnore);
+        WeaponArgs shootArgs = new WeaponArgs(new Ray(weaponArgs.ray.origin, newDirection), mask, weaponArgs.objectsToIgnore);
         Shoot(shootArgs);
     }
 

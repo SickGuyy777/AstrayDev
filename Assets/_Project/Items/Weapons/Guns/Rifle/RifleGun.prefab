@@ -49,6 +49,9 @@ MonoBehaviour:
   firePoint: {fileID: 911469930880716446}
   damage: 1.5
   inAccuracy: 15
+  mask:
+    serializedVersion: 2
+    m_Bits: 183
   lineEffectPrefab: {fileID: 1690355991132869052, guid: ddd60f34c62448646af3b71101d80982, type: 3}
   lineColor: {r: 0.92941177, g: 0.972549, b: 0.48235294, a: 0.4}
   lineWidth: 0.02

@@ -5,7 +5,7 @@ public class PlayerCharacter : MonoBehaviour, IWeaponArgsHolder
     [Header("Inventory")]
     [SerializeField] private GameObject backPackUI;
     [SerializeField] private Inventory backPack;
-    
+
     private RangeInteractor interactor;
     private CharacterMovement characterMovement;
     private WeaponHolder weaponHolder;
@@ -77,5 +77,5 @@ public class PlayerCharacter : MonoBehaviour, IWeaponArgsHolder
             InventoryOn();
     }
     
-    public WeaponArgs GetWeaponArgs() => new WeaponArgs(new Ray(transform.position, transform.right), this.gameObject);
+    public WeaponArgs GetWeaponArgs() => new WeaponArgs(new Ray(transform.position, transform.right), new LayerMask(), this.gameObject);
 }

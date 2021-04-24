@@ -7,19 +7,18 @@ public struct WeaponArgs
     public RaycastHit2D hit;
     public Collider2D hitCollider;
     public readonly GameObject[] objectsToIgnore;
-
-
+    public readonly LayerMask mask;
+    
     public IDamageable HitDamageable => hitCollider?.GetComponent<IDamageable>();
 
-    public PlayerCharacter HitPlayer => hitCollider?.GetComponentInParent<PlayerCharacter>();
-    
 
-    public WeaponArgs(Ray ray, params GameObject[] objectsToIgnore)
+    public WeaponArgs(Ray ray, LayerMask mask, params GameObject[] objectsToIgnore)
     {
         this.ray = ray;
         this.objectsToIgnore = objectsToIgnore;
+        this.mask = mask;
         
-        RaycastHit2D[] hits = Physics2D.RaycastAll(ray.origin, ray.direction);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(ray.origin, ray.direction, 9999f, mask);
         
         hit = new RaycastHit2D();
         hit.point = ray.direction * 9999f;
@@ -38,7 +37,7 @@ public struct WeaponArgs
             }
         }
     }
-
+    
     private bool IsIgnoredObject(GameObject checkObject, GameObject[] newObjectsToIgnore)
     {
         Transform root = checkObject.transform.root;
