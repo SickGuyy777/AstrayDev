@@ -341,6 +341,8 @@ GameObject:
   - component: {fileID: 3402317822131186543}
   - component: {fileID: 3402317822131186538}
   - component: {fileID: 1073341616}
+  - component: {fileID: 6851453586235271848}
+  - component: {fileID: 5477999042700362591}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -362,6 +364,7 @@ Transform:
   - {fileID: 7541537004703578999}
   - {fileID: 8447534993828677795}
   - {fileID: 2146769646}
+  - {fileID: 7116980051059684498}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -443,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e345866ef0c1e41adb310027414c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backPackUI: {fileID: 0}
+  backPackUI: {fileID: 2146769641}
   backPack: {fileID: 9133307578722208268}
 --- !u!114 &3402317822131186538
 MonoBehaviour:
@@ -474,6 +477,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 1
   searchCooldown: 0.04
+--- !u!114 &6851453586235271848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3402317822131186549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6625237ca0beed046a1a231ceb130026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handPos: {fileID: 7116980051059684498}
+  weaponInventories:
+  - {fileID: 1948735437296764084}
+  - {fileID: 5903477424420256811}
+--- !u!114 &5477999042700362591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3402317822131186549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94107b3c209e8ee4a9d422888150b0df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3710984124662208526
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8447534993828677795}
   m_Layer: 0
-  m_Name: Inventorys
+  m_Name: Inventories
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -769,6 +800,36 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &6934668728573328967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7116980051059684498}
+  m_Layer: 0
+  m_Name: HandPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7116980051059684498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6934668728573328967}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.45, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3402317822131186536}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7107487002644448359
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1758617281716532516}
   - component: {fileID: 5903477424420256811}
+  - component: {fileID: 9212609923863545652}
   m_Layer: 0
   m_Name: SecondaryWeapon
   m_TagString: Untagged
@@ -870,6 +932,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slots: []
+--- !u!114 &9212609923863545652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7418131388495723260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65bbfd2de32a11b45a89a5ae5e0fb429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7845941042875165945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1431,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5373283176506838834, guid: 1fa83e18cad655f4082a8517c935ec37, type: 3}
+    - {fileID: 5201307991945495213, guid: 1fa83e18cad655f4082a8517c935ec37, type: 3}
+    - {fileID: 2071812601532748764, guid: 1fa83e18cad655f4082a8517c935ec37, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1fa83e18cad655f4082a8517c935ec37, type: 3}
 --- !u!224 &1293103770427812766 stripped
 RectTransform:
