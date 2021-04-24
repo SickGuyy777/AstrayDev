@@ -1,12 +1,11 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
+[System.Serializable]
 public class Item
 {
     private static int LastInstanceID;
-    private int instanceID;
+    private int instanceID = -1;
     
     private ItemInfo info;
     public ItemInfo Info
@@ -22,6 +21,7 @@ public class Item
             {
                 this.Components =  null;
                 amount = 0;
+                instanceID = -1;
             }
             
             info = value;
@@ -42,6 +42,7 @@ public class Item
             {
                 this.Components = null;
                 info = null;
+                instanceID = -1;
             }
 
             amount = value;
@@ -54,22 +55,21 @@ public class Item
     public ItemObject Prefab => Info?.itemPrefab;
     public bool IsEmpty => Info == null;
     public bool IsFull => amount >= info.maxStack;
-    public List<ItemComponent> Components { get; private set; }
+    public List<ItemComponent> Components { get; private set; } = new List<ItemComponent>();
 
 
-    public Item(ItemInfo info, int amount, ItemComponent[] components = null)
+    public Item(ItemInfo info, int amount, ItemComponent[] components = null, int id = -1)
     {
-        instanceID = LastInstanceID + 1;
-        LastInstanceID++;
+        instanceID = id  <= -1 ? LastInstanceID + 1 : id;
+        LastInstanceID = instanceID;
         
-        Components = new List<ItemComponent>();
         AttachComponents(components);
 
         this.info = info;
         this.amount = amount;
     }
     
-    public Item Clone() => new Item(info, amount, Components.ToArray());
+    public Item Clone() => new Item(info, amount, Components.ToArray(), instanceID);
     
     public void Copy(Item itemToCopy)
     {
@@ -88,13 +88,14 @@ public class Item
         
         this.Info = itemToCopy.Info;
         this.Components = itemToCopy.Components;
+        this.instanceID = itemToCopy.instanceID;
     }
 
     public Item Transfer(int transferAmount = 0)
     {
         Item copy = Clone();
 
-        transferAmount = transferAmount <= 0 ? Amount : amount;
+        transferAmount = transferAmount <= 0 ? Amount : transferAmount;
         
         Amount -= transferAmount;
         copy.Amount = transferAmount;
@@ -173,7 +174,7 @@ public class Item
 
     private bool IsNullOrThis(Item item) => item == null || item == this;
 
-    public override bool Equals(object obj) => (Item)obj == this;
+    /*public override bool Equals(object obj) => (Item)obj == this;
 
     public override int GetHashCode() => base.GetHashCode();
 
@@ -197,5 +198,5 @@ public class Item
             return true;
 
         return a.instanceID != b.instanceID;
-    }
+    }*/
 }

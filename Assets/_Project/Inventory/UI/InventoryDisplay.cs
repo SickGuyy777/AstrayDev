@@ -13,7 +13,7 @@ public class InventoryDisplay : MonoBehaviour
         {
             ItemDisplaySlot displaySlot = Instantiate(displaySlotPrefab, Vector2.zero, Quaternion.identity, group.transform);
             displaySlot.Setup(inventoryReference, i);
-            displaySlot.SetItemReference(inventoryReference.Slots[i].Item);
+            displaySlot.SetSlotReference(inventoryReference.Slots[i]);
         }
     }
 }

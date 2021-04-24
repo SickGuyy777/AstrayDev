@@ -1,4 +1,3 @@
-using Assets._Project.Inventory;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -9,48 +8,51 @@ public class Inventory : MonoBehaviour
     private InventoryFilter filter;
     public System.Action OnChanged;
 
+    
     private void Awake()
     {
         filter = GetComponent<InventoryFilter>();
+
+        foreach (Slot slot in slots)
+        {
+            slot.SetItem(new Item(null, 0));
+        }
     }
 
-    public bool CanAdd(Item itemToAdd) => filter == null ||  filter != null && filter.ContainedInWhitelist(itemToAdd);
+    public bool IsItemTypeAllowed(Item itemToAdd) => filter == null ||  filter != null && filter.ContainedInWhitelist(itemToAdd);
 
-    public bool AddToInventory(Item itemToAdd, int slotIndex = -1, int amountToAdd = 0)
+    public bool IsFullForItemType(ItemInfo info) => GetBestSlot(info) == null;
+
+    public void AddToInventory(Item itemToAdd, Slot startingSlot = null, int amountToAdd = 0)
     {
+        if (!IsItemTypeAllowed(itemToAdd))
+            return;
+        
         if (amountToAdd <= 0 || amountToAdd > itemToAdd.Amount)
             amountToAdd = itemToAdd.Amount;
-
-        int endAmount = itemToAdd.Amount - amountToAdd;
-
-        if (!CanAdd(itemToAdd))
-        {
-            Debug.Log(":(");
-            return false;
-        }
-            
         
-        while(itemToAdd.Amount > endAmount)
+        int i = 0;
+        while (amountToAdd > 0)
         {
-            int bestSlotIndex = GetBestSlot(itemToAdd.Info);
-
-            if (slotIndex != -1)
-            {
-                Item item = Slots[slotIndex].Item;
-                if (IsSameItem(itemToAdd.Info, item.Info) && !item.IsFull)
-                    bestSlotIndex = slotIndex;
-                if (item.IsEmpty)
-                    bestSlotIndex = slotIndex;
-            }
-
-            if (bestSlotIndex == -1)
-                break;
+            if(IsFullForItemType(itemToAdd.Info))
+                return;
             
-            Slots[bestSlotIndex].Item.Add(itemToAdd, 1);
+            Debug.Log("looped x" + i + " times");
+            i++;
+            
+            if (startingSlot != null && startingSlot.CanAdd(itemToAdd.Info))
+                amountToAdd = startingSlot.AddItem(itemToAdd, amountToAdd);
+            else
+                amountToAdd = GetBestSlot(itemToAdd.Info).AddItem(itemToAdd, amountToAdd);
+            
+            if (i >= 100)
+            {
+                Debug.LogError("While loop will go on forever");
+                break;
+            }
         }
-
+        
         OnChanged?.Invoke();
-        return true;
     }
 
     public void AddToInventory(Item[] itemsToAdd)
@@ -61,30 +63,22 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private int GetBestSlot(ItemInfo info)
+    private Slot GetBestSlot(ItemInfo info)
     {
-        for (int i = 0; i < Slots.Length; i++)
+        foreach (Slot slot in Slots)
         {
-            Item item = Slots[i].Item;
-
-            bool sameItemSlot = IsSameItem(item?.Info, info) && !IsSlotFull(i);
+            bool sameItemSlot = slot.IsSameItemType(info) && !slot.IsFull;
 
             if (sameItemSlot)
-                return i;
+                return slot;
         }
-        
-        for (int i = 0; i < Slots.Length; i++)
+
+        foreach (Slot slot in Slots)
         {
-            if (IsEmpty(i))
-                return i;
+            if (slot.IsEmpty)
+                return slot;
         }
 
-        return -1;
+        return null;
     }
-    
-    private bool IsSameItem(ItemInfo info1, ItemInfo info2) => info1 == info2;
-
-    private bool IsSlotFull(int slotIndex) => Slots[slotIndex].Amount == Slots[slotIndex].MaxStack;
-
-    private bool IsEmpty(int slotIndex) => Slots[slotIndex]?.Amount <= 0;
 }

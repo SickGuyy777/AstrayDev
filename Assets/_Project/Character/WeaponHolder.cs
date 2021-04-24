@@ -1,4 +1,3 @@
-using Assets._Project.Inventory;
 using System.Collections.Generic;
 using UnityEngine;
 

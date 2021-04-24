@@ -15,29 +15,24 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/DefaultInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Effects/LineEffect.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/SecondaryWeaponFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Weapons/WeaponArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/PrimaryWeaponFilter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Effects/LineEffect.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemType.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Weapon/WeaponScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunFunctionality.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/WeaponFilter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Primary.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/PrimaryWeaponFilter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/SecondaryWeaponFilter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryFilter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryItemComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipSecondaryItemComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemItemComponent.cs" />
@@ -63,7 +58,6 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/CharacterAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/Movement.cs" />
@@ -77,6 +71,13 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/LineEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/InventoryDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/ItemDisplaySlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
       </list>
     </option>
   </component>
@@ -133,6 +134,7 @@
       <workItem from="1619028977787" duration="12055000" />
       <workItem from="1619105105348" duration="9085000" />
       <workItem from="1619185452373" duration="8704000" />
+      <workItem from="1619216084963" duration="2613000" />
     </task>
     <servers />
   </component>

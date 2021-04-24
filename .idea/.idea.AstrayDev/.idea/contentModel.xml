@@ -23,6 +23,7 @@
             <e p="InventoryFilter.cs" t="Include" />
             <e p="PrimaryWeaponFilter.cs" t="Include" />
             <e p="SecondaryWeaponFilter.cs" t="Include" />
+            <e p="Slot.cs" t="Include" />
             <e p="UI" t="Include">
               <e p="InventoryDisplay.cs" t="Include" />
               <e p="InventoryObject.cs" t="Include" />

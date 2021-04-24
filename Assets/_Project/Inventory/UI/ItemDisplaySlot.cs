@@ -9,15 +9,15 @@ public class ItemDisplaySlot : MonoBehaviour
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text amountText;
 
-    public Item CurrentItem { get; private set; }
+    public Slot CurrentSlot { get; private set; }
     public Inventory Inventory => inventory;
 
     public int SlotIndex { get; private set; } = 0;
 
 
-    private void Start() => CurrentItem ??= inventory?.Slots[SlotIndex].Item;
+    private void Start() => CurrentSlot ??= inventory?.Slots[SlotIndex];
 
-    public void SetItemReference(Item newItem) => this.CurrentItem = newItem;
+    public void SetSlotReference(Slot slot) => this.CurrentSlot = slot;
 
     public void Setup(Inventory aInventory, int slotIndex)
     {
@@ -27,14 +27,14 @@ public class ItemDisplaySlot : MonoBehaviour
 
     private void Update()
     {
-        if (CurrentItem != null)
+        if (CurrentSlot != null)
         {
-            icon.sprite = CurrentItem.Icon;
-            icon.color = !CurrentItem.IsEmpty ? Color.white : Color.clear;
+            icon.sprite = CurrentSlot.Item.Icon;
+            icon.color = !CurrentSlot.IsEmpty ? Color.white : Color.clear;
 
-            bool showAmountText = CurrentItem.Amount > 1 && !CurrentItem.IsEmpty;
+            bool showAmountText = CurrentSlot.Amount > 1 && !CurrentSlot.IsEmpty;
             
-            amountText.text = showAmountText? CurrentItem.Amount.ToString("0") : "";
+            amountText.text = showAmountText? CurrentSlot.Amount.ToString("0") : "";
         }
     }
 }
