@@ -21,6 +21,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Weapons/WeaponArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/PrimaryWeaponFilter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/InventoryImporter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/9e/79b2e448/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Effects/LineEffect.cs" root0="SKIP_HIGHLIGHTING" />
@@ -28,9 +29,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryItemComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipSecondaryItemComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemItemComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/DefaultInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunItemComponent.cs" />
@@ -71,14 +69,17 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/AmmoComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/AmmoInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerCharacter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AstarPath.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryImporter.cs" />
       </list>
     </option>
   </component>
@@ -156,5 +157,24 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1618758159340" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Project/Items/Item.cs</url>
+          <line>172</line>
+          <properties documentPath="C:\Users\Justin\Desktop\Game Dev\Games\AstrayDevProject\AstrayDev\Assets\_Project\Items\Item.cs" initialLine="169">
+            <startOffsets>
+              <option value="4078" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4104" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

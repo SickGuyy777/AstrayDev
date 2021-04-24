@@ -10,6 +10,8 @@ public class RayGun : Weapon
     [SerializeField] private Transform firePoint;
     [SerializeField] private float damage = 1f;
     [SerializeField] private float inAccuracy = 5f;
+    [SerializeField] private float numOfProjectiles = 1;
+    
     [SerializeField] private LayerMask mask;
     
     [Header("LineEffect")] 
@@ -51,11 +53,15 @@ public class RayGun : Weapon
         
         WeaponArgs weaponArgs = holder.GetWeaponArgs();
 
-        Vector2 offset = new Vector2(Random.Range(-inAccuracy, inAccuracy), Random.Range(-inAccuracy, inAccuracy)) / 150;
-        Vector2 newDirection = (Vector2)weaponArgs.ray.direction + offset;
-        
-        WeaponArgs shootArgs = new WeaponArgs(new Ray(weaponArgs.ray.origin, newDirection), mask, weaponArgs.objectsToIgnore);
-        Shoot(shootArgs);
+        for (int i = 0; i < numOfProjectiles; i++)
+        {
+            Vector2 offset = new Vector2(Random.Range(-inAccuracy, inAccuracy), Random.Range(-inAccuracy, inAccuracy)) / 150;
+            Vector2 newDirection = (Vector2)weaponArgs.ray.direction + offset;
+            
+
+            WeaponArgs shootArgs = new WeaponArgs(new Ray(weaponArgs.ray.origin, newDirection), mask, weaponArgs.objectsToIgnore);
+            Shoot(shootArgs);
+        }
     }
 
     private void UpdateAmmo() => ammo = GetAmmo();

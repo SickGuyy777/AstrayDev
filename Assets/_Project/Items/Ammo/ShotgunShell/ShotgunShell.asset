@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0f3d07b48ebbf74e9d9b9de1d38078f, type: 3}
-  m_Name: PistolBullet
+  m_Name: ShotgunShell
   m_EditorClassIdentifier: 
-  itemName: Pistol Bullet
+  itemName: Shotgun Shell
   maxStack: 99
-  itemIcon: {fileID: -7976837497307082302, guid: 2062ffa195f26ae4db64936277ca5794, type: 3}
-  itemPrefab: {fileID: 613420914264479460, guid: eaddc73a5327f504a9727c3eb7f393cc, type: 3}
-  AmmoType: 1
+  itemIcon: {fileID: -7803065417098437583, guid: 2062ffa195f26ae4db64936277ca5794, type: 3}
+  itemPrefab: {fileID: 613420914264479460, guid: 2a9480078db268e418856b6eb205d53e, type: 3}
+  AmmoType: 2

@@ -148,8 +148,7 @@ public class InventoryCursor : MonoBehaviour
 
         inventory.AddToInventory(handItem.Transfer(), displaySlot.CurrentSlot);
         HoldingSlot.SetItem(placingItem.Transfer());
-        HoldingSlot.SetItem(null);
-        
+
         grabDisplay.SetSlotReference(HoldingSlot);
     }
 
