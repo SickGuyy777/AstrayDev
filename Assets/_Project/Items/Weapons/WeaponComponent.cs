@@ -9,9 +9,10 @@ public class WeaponComponent : ItemComponent
 
     public void SetWeaponPrefab(Weapon aGunPrefab) => this.weaponPrefab = aGunPrefab;
 
-    public Weapon SpawnWeapon(Transform handPos)
+    public Weapon Instantiate(Vector3 position, Quaternion rotation, Transform parent = null)
     {
-        Weapon gunObj = GameObject.Instantiate(weaponPrefab, handPos.position, Quaternion.identity);
+        Weapon gunObj = GameObject.Instantiate(weaponPrefab, position, rotation, parent);
+        gunObj.SetItemReference(item);
         
         return gunObj;
     }

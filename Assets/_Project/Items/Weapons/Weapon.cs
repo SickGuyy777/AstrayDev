@@ -4,6 +4,7 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] private float useTime = .5f;
+    protected Item item;
     protected bool canUse = true;
 
 
@@ -15,4 +16,6 @@ public abstract class Weapon : MonoBehaviour
         yield return new WaitForSeconds(useTime);
         canUse = true;
     }
+
+    public void SetItemReference(Item itemReference) => this.item = itemReference;
 }

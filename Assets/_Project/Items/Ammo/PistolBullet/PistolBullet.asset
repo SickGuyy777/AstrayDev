@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1db348c1e5c8bd648a71e0f6f69c3bec, type: 3}
-  m_Name: GreenBlob
+  m_Script: {fileID: 11500000, guid: a0f3d07b48ebbf74e9d9b9de1d38078f, type: 3}
+  m_Name: PistolBullet
   m_EditorClassIdentifier: 
-  itemName: GreenBlob
-  maxStack: 16
-  itemIcon: {fileID: 21300000, guid: 7c6c865891805e14c8bb1a0d5419879d, type: 3}
+  itemName: Pistol Bullet
+  maxStack: 99
+  itemIcon: {fileID: -7976837497307082302, guid: 6222eed2fe1ae564dbaeaf63140b4313, type: 3}
   itemPrefab: {fileID: 613420914264479460, guid: eaddc73a5327f504a9727c3eb7f393cc, type: 3}
+  AmmoType: 1

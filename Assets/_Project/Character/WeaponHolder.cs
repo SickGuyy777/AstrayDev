@@ -7,9 +7,9 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField] private Inventory[] weaponInventories;
     
     public Weapon HoldingWeapon { get; private set; }
-    
-    private List<Weapon> weaponPrefabs = new List<Weapon>();
-    private bool hasWeapon => weaponPrefabs.Count > 0;
+
+    private List<WeaponComponent> weaponComponents = new List<WeaponComponent>();
+    private bool hasWeapon => weaponComponents.Count > 0;
 
     private int weaponIndex;
     private int currentWeaponIndex
@@ -18,10 +18,10 @@ public class WeaponHolder : MonoBehaviour
 
         set
         {
-            if (value > weaponPrefabs.Count - 1)
+            if (value > weaponComponents.Count - 1)
                 value = 0;
             else if (value < 0)
-                value = weaponPrefabs.Count - 1;
+                value = weaponComponents.Count - 1;
 
             weaponIndex = value;
         }
@@ -45,7 +45,7 @@ public class WeaponHolder : MonoBehaviour
     
     private void UpdateWeapons()
     {
-        weaponPrefabs.Clear();
+        weaponComponents.Clear();
 
         foreach (Inventory inventory in weaponInventories)
         {
@@ -58,10 +58,10 @@ public class WeaponHolder : MonoBehaviour
                 if(item.IsEmpty || item == null)
                     continue;
 
-                WeaponComponent weaponFunc = item.GetComponent<WeaponComponent>();
+                WeaponComponent weaponComponent = item.GetComponent<WeaponComponent>();
                 
-                if(weaponFunc != null)
-                    weaponPrefabs.Add(weaponFunc.weaponPrefab);
+                if(weaponComponent != null)
+                    weaponComponents.Add(weaponComponent);
             }
         }
         
@@ -77,8 +77,8 @@ public class WeaponHolder : MonoBehaviour
             Destroy(HoldingWeapon.gameObject);
         
         currentWeaponIndex = index;
-        Weapon weaponPrefab = weaponPrefabs[currentWeaponIndex];
-        Weapon createdWeapon = Instantiate(weaponPrefab, handPos.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90), transform);
+        WeaponComponent weaponComponent = weaponComponents[currentWeaponIndex];
+        Weapon createdWeapon = weaponComponent.Instantiate(handPos.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90), handPos);
         HoldingWeapon = createdWeapon;
     }
 

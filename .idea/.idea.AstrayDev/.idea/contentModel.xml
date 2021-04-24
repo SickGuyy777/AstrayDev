@@ -32,6 +32,10 @@
             </e>
           </e>
           <e p="Items" t="Include">
+            <e p="Bullets" t="Include">
+              <e p="AmmoComponent.cs" t="Include" />
+              <e p="AmmoInfo.cs" t="Include" />
+            </e>
             <e p="DefaultInfo.cs" t="Include" />
             <e p="EquipPrimaryComponent.cs" t="Include" />
             <e p="EquipSecondaryComponent.cs" t="Include" />
