@@ -41,7 +41,7 @@ public class Inventory : MonoBehaviour
         Slot bestSlot = Slots[bestSlotIndex];
         for (int i = 0; i < 3; i++)
         {
-            if (bestSlot.IsFull)
+            if (!bestSlot.IsEmpty && bestSlot.IsFull)
             {
                 bestSlotIndex = GetBestSlot(itemToAdd.Info);
                 if (bestSlotIndex < 0)
