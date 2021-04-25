@@ -35,30 +35,7 @@ public class RayGun : Weapon
         if(!canUse)
             return;
 
-        if (bulletSupply == null)
-            bulletSupply = holder.GetAmmoSupply();
-
-        UpdateAmmo();
-        StartCoroutine(WaitCD());
-        
-        if (ammoItems.Count <= 0)
-            return;
-        
-        ammoItems.Peek().Item.Amount--;
-        
-        if (ammoItems.Peek().Item.IsEmpty)
-            ammoItems.Dequeue();
-
-        WeaponArgs weaponArgs = holder.GetWeaponArgs();
-
-        for (int i = 0; i < numOfProjectiles; i++)
-        {
-            Vector2 offset = new Vector2(Random.Range(-inAccuracy, inAccuracy), Random.Range(-inAccuracy, inAccuracy)) / 150;
-            Vector2 newDirection = (Vector2)weaponArgs.ray.direction + offset;
-            
-            WeaponArgs shootArgs = new WeaponArgs(new Ray(weaponArgs.ray.origin, newDirection), mask, weaponArgs.objectsToIgnore);
-            Shoot(shootArgs);
-        }
+        Shoot(holder);
     }
     
     private void UpdateAmmo()
@@ -75,12 +52,31 @@ public class RayGun : Weapon
         ammoItems = sameTypeBullets;
     }
 
-    private void Shoot(WeaponArgs shootArgs)
+    private void Shoot(IWeaponArgsHolder holder)
     {
-        LineEffect createdLineEffect = lineEffectPool.Instantiate(transform.position, Quaternion.identity);
-        createdLineEffect.Setup(firePoint.position, shootArgs.hit.point, lineColor, lineWidth, lineLifeTime);
+        if (bulletSupply == null)
+            bulletSupply = holder.GetAmmoSupply();
+
+        UpdateAmmo();
+        StartCoroutine(WaitCD());
         
-        shootArgs.HitDamageable?.Damage(damage);
+        if (ammoItems.Count <= 0)
+            return;
+        
+        WeaponArgs weaponArgs = holder.GetWeaponArgs();
+        ammoItems.Peek().Item.Amount--;
+
+        for (int i = 0; i < numOfProjectiles; i++)
+        {
+            Vector2 offset = new Vector2(Random.Range(-inAccuracy, inAccuracy), Random.Range(-inAccuracy, inAccuracy)) / 150;
+            Vector2 newDirection = (Vector2)weaponArgs.ray.direction + offset;
+            
+            WeaponArgs shootArgs = new WeaponArgs(new Ray(weaponArgs.ray.origin, newDirection), mask, weaponArgs.objectsToIgnore);
+            LineEffect createdLineEffect = lineEffectPool.Instantiate(transform.position, Quaternion.identity);
+            createdLineEffect.Setup(firePoint.position, shootArgs.hit.point, lineColor, lineWidth, lineLifeTime);
+        
+            shootArgs.HitDamageable?.Damage(damage);
+        }
     }
 
     private void OnDestroy()

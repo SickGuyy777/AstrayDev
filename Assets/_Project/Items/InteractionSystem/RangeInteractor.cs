@@ -14,7 +14,7 @@ public class RangeInteractor : MonoBehaviour
         StartCoroutine(SearchForInteractables());
     }
 
-    public void Interact(PlayerCharacter player)
+    public void Interact(PlayerController player)
     {
         selectedInteractable?.Interact(player);
     }

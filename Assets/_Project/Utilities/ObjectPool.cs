@@ -1,15 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPool<T> where T : MonoBehaviour, IPoolObject<T>
 {
-    public readonly T objPrefab;
-    public int size { get; private set; }
-    public readonly Queue<T> objects = new Queue<T>();
+    private readonly T objPrefab;
+    private readonly Queue<T> pool = new Queue<T>();
 
-
+    private int size;
+    private bool destroyed;
+    
+    
     public ObjectPool(T objPrefab, int poolSize)
     {
         this.objPrefab = objPrefab;
@@ -20,10 +21,10 @@ public class ObjectPool<T> where T : MonoBehaviour, IPoolObject<T>
 
     public T Instantiate(Vector3 position, Quaternion rotation, Transform parent = null)
     {
-        if(objects.Count <= 0)
+        if(pool.Count <= 0)
             IncreaseSize();
 
-        T createdObj = objects.Dequeue();
+        T createdObj = pool.Dequeue();
 
         createdObj.gameObject.SetActive(true);
         createdObj.OnStart();
@@ -44,22 +45,31 @@ public class ObjectPool<T> where T : MonoBehaviour, IPoolObject<T>
     
     public void Destroy(T objectToDestroy)
     {
-        objectToDestroy.gameObject.SetActive(false);
-        objects.Enqueue(objectToDestroy);
+        if (!destroyed)
+        {
+            objectToDestroy.gameObject.SetActive(false);
+            pool.Enqueue(objectToDestroy);
+        }
+        else
+        {
+            if(objectToDestroy == null || objectToDestroy.gameObject == null)
+                return;
+            
+            GameObject.Destroy(objectToDestroy.gameObject);
+        }
     }
 
     public IEnumerator Destroy(T objectToDestroy, float seconds = 0)
     {
         if (seconds > 0);
             yield return new WaitForSeconds(seconds);
-        
-        objectToDestroy.gameObject.SetActive(false);
-        objects.Enqueue(objectToDestroy);
+
+        Destroy(objectToDestroy);
     }
 
     public void DestroyPool()
     {
-        foreach (T poolObject in objects)
+        foreach (T poolObject in pool)
         {
             if(poolObject == null || poolObject.gameObject == null)
                 continue;
@@ -67,16 +77,21 @@ public class ObjectPool<T> where T : MonoBehaviour, IPoolObject<T>
             GameObject.Destroy(poolObject.gameObject);
         }
         
-        objects.Clear();
+        destroyed = true;
+        pool.Clear();
     }
     
-
-    private void PreCreateObjects()
+    private List<T> PreCreateObjects()
     {
+        List<T> createdObjs = new List<T>();
+        
         for (int i = 0; i < size; i++)
         {
-            PrecreateObject();
+            T obj = PrecreateObject();
+            createdObjs.Add(obj);
         }
+
+        return createdObjs;
     }
     
     private T PrecreateObject()
@@ -84,9 +99,9 @@ public class ObjectPool<T> where T : MonoBehaviour, IPoolObject<T>
         T createdObject = GameObject.Instantiate(objPrefab, new Vector3(-9999f, -9999f, -9999f), Quaternion.identity, null);
         createdObject.CurrentPool = this;
         createdObject.OnPreStarted();
-        objects.Enqueue(createdObject);
+        pool.Enqueue(createdObject);
         createdObject.gameObject.SetActive(false);
-
+        
         return createdObject;
     }
 }

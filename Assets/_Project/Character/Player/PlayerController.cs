@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class PlayerCharacter : MonoBehaviour, IWeaponArgsHolder
+public class PlayerController : MonoBehaviour, IWeaponArgsHolder
 {
     [Header("Inventory")]
     [SerializeField] private GameObject backPackUI;
     [SerializeField] private Inventory backPack;
 
     private RangeInteractor interactor;
-    private CharacterMovement characterMovement;
+    private Movement movement;
     private WeaponHolder weaponHolder;
     private CharacterAnimator charAnimator;
     
@@ -18,7 +18,7 @@ public class PlayerCharacter : MonoBehaviour, IWeaponArgsHolder
     private void Awake()
     {
         interactor = GetComponent<RangeInteractor>();
-        characterMovement = GetComponent<CharacterMovement>();
+        movement = GetComponent<Movement>();
         weaponHolder = GetComponent<WeaponHolder>();
         charAnimator = GetComponent<CharacterAnimator>();
         
@@ -50,10 +50,10 @@ public class PlayerCharacter : MonoBehaviour, IWeaponArgsHolder
     private void UpdateMovement()
     {
         Vector2 lookDirection = !inventoryShown ? (PlayerInput.MousePos - (Vector2) transform.position).normalized : (Vector2)transform.right;
-        bool moving = characterMovement.Velocity.magnitude > .2f;
+        bool moving = movement.Velocity.magnitude > .2f;
 
-        characterMovement.LookInDirection(lookDirection);
-        characterMovement.Move(PlayerInput.MovementDirection, Time.deltaTime);
+        movement.LookInDirection(lookDirection, Time.deltaTime);
+        movement.Move(PlayerInput.MovementDirection, Time.deltaTime);
         charAnimator.SetWalkAnimation(moving);
     }
 

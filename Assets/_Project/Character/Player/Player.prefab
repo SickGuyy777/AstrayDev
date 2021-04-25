@@ -463,6 +463,7 @@ MonoBehaviour:
   maxSpeed: 5
   acceleration: 12
   deceleration: 12
+  lookSpeed: 9999
 --- !u!114 &1073341616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,6 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d2026e49283b34fab4e307e22832fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventorySize: 30
   slots: []
 --- !u!114 &8077932033340662434
 MonoBehaviour:
@@ -931,6 +933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d2026e49283b34fab4e307e22832fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventorySize: 30
   slots: []
 --- !u!114 &9212609923863545652
 MonoBehaviour:
@@ -987,6 +990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d2026e49283b34fab4e307e22832fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventorySize: 30
   slots: []
 --- !u!1 &9114463996613493589
 GameObject:

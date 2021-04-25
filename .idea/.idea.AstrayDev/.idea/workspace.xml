@@ -12,35 +12,31 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/InventoryFilter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/TickClockObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/RangeVision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/DefaultInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/AIVision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/SecondaryWeaponFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Weapons/WeaponArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../../2020.3.3f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.2d.tilemap/Editor/GridPaintPaletteClipboard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/PrimaryWeaponFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/InventoryImporter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/TickClock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/MutantSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/9e/79b2e448/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../PoolingSystem/ObjectPool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Effects/LineEffect.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/BasicMutantAI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/WeaponInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/WeaponComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Player/WeaponHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Entities/IDamageable.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Gun.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Entities/DamageableObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgsHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/RayGun.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/CharacterAnimator.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/CharacterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Interactor.cs" />
@@ -51,8 +47,6 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/ItemDisplaySlot.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgs.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/DamageableObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/GunComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/AmmoComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/BulletInfo.cs" />
@@ -74,12 +68,26 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipSecondaryComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Utilities/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Utilities/ObjectPool.cs" />
+        <option value="$PROJECT_DIR$/../../../PoolingSystem/ObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/TickClock.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/TickClockObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/DamageableObject.cs" />
+        <option value="$PROJECT_DIR$/../../../../../../../2020.3.3f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.2d.tilemap/Editor/GridPaintPaletteClipboard.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/AIVision.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/RangeVision.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgs.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/HealthManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/Spawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/BasicMutantAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/MutantSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
       </list>
     </option>
   </component>
@@ -137,7 +145,7 @@
       <workItem from="1619105105348" duration="9085000" />
       <workItem from="1619185452373" duration="8704000" />
       <workItem from="1619216084963" duration="3821000" />
-      <workItem from="1619356549634" duration="5409000" />
+      <workItem from="1619356549634" duration="15602000" />
     </task>
     <servers />
   </component>
@@ -150,10 +158,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="794" y="221" key="RiderGenerateDialog" timestamp="1619356747006">
+    <state x="794" y="221" key="RiderGenerateDialog" timestamp="1619371139221">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="221" key="RiderGenerateDialog/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1619356747006" />
+    <state x="794" y="221" key="RiderGenerateDialog/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1619371139221" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1618758159340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
