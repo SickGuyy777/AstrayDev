@@ -18,10 +18,10 @@ public struct WeaponArgs
         this.objectsToIgnore = objectsToIgnore;
         this.mask = mask;
         
-        RaycastHit2D[] hits = Physics2D.RaycastAll(ray.origin, ray.direction, 9999f, mask);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(ray.origin, ray.direction, 20f, mask);
         
         hit = new RaycastHit2D();
-        hit.point = ray.direction * 9999f;
+        hit.point = ray.direction * 20f;
         hitCollider = null;
 
         foreach (RaycastHit2D rayHit in SortRayCastAllHits(ray.origin, hits))

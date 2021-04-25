@@ -78,7 +78,7 @@ public class WeaponHolder : MonoBehaviour
         
         currentWeaponIndex = index;
         WeaponComponent weaponComponent = weaponComponents[currentWeaponIndex];
-        Weapon createdWeapon = weaponComponent.Instantiate(handPos.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90), handPos);
+        Weapon createdWeapon = weaponComponent.Instantiate(handPos.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z), handPos);
         HoldingWeapon = createdWeapon;
     }
 

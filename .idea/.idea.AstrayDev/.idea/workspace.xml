@@ -53,7 +53,6 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/ItemDisplaySlot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgs.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/DamageableObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/GunComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/AmmoComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/BulletInfo.cs" />
@@ -78,8 +77,9 @@
         <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Utilities/ObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
       </list>
     </option>
   </component>
@@ -137,7 +137,7 @@
       <workItem from="1619105105348" duration="9085000" />
       <workItem from="1619185452373" duration="8704000" />
       <workItem from="1619216084963" duration="3821000" />
-      <workItem from="1619356549634" duration="4344000" />
+      <workItem from="1619356549634" duration="5409000" />
     </task>
     <servers />
   </component>
