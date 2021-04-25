@@ -1,12 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [System.Serializable]
 public class Item
 {
-    private static int LastInstanceID;
-    private int instanceID = -1;
-    
     private ItemInfo info;
     public ItemInfo Info
     {
@@ -19,9 +18,8 @@ public class Item
             
             if (value == null)
             {
-                this.Components =  null;
+                this.Components.Clear();
                 amount = 0;
-                instanceID = -1;
             }
             
             info = value;
@@ -40,9 +38,8 @@ public class Item
             
             if (value <= 0)
             {
-                this.Components = null;
+                this.Components.Clear();
                 info = null;
-                instanceID = -1;
             }
             
             amount = value;
@@ -58,13 +55,12 @@ public class Item
     public List<ItemComponent> Components { get; private set; }
 
 
-    public Item(ItemInfo info, int amount, ItemComponent[] components = null, int id = -1)
+    public Item(ItemInfo info, int amount, List<ItemComponent> components = null)
     {
         Components = new List<ItemComponent>();
-        instanceID = id  <= -1 ? LastInstanceID + 1 : id;
-        LastInstanceID = instanceID;
-        
-        AttachComponents(components);
+
+        if(components != null)
+            CopyComponents(components);
 
         this.info = info;
         this.amount = amount;
@@ -93,9 +89,8 @@ public class Item
         if(IsNullOrThis(itemToCopy))
             return;
         
-        AttachComponents(itemToCopy.Components?.ToArray());
-        this.Info = itemToCopy.Info; 
-        this.instanceID = itemToCopy.instanceID;
+        this.Info = itemToCopy.Info;
+        CopyComponents(itemToCopy.Components);
     }
 
     public Item Transfer(int transferAmount = 0)
@@ -108,6 +103,14 @@ public class Item
         copy.Amount = transferAmount;
 
         return copy;
+    }
+    
+    public int TransferAmount(int transferAmount = 0)
+    {
+        transferAmount = transferAmount <= 0 ? Amount : transferAmount;
+        Amount -= transferAmount;
+
+        return transferAmount;
     }
 
     public void Add(Item itemToAdd, int transferAmount)
@@ -129,11 +132,11 @@ public class Item
         
         for (int i = 0; i < dropAmount; i++)
         {
-            float x = UnityEngine.Random.Range(-.5f, .5f);
-            float y = UnityEngine.Random.Range(-.5f, .5f);
+            float x = Random.Range(-.5f, .5f);
+            float y = Random.Range(-.5f, .5f);
             Vector2 randOffset = new Vector2(x, y);
             
-            ItemObject itemObject = GameObject.Instantiate(Prefab, position + randOffset, Quaternion.identity, null);
+            GameObject.Instantiate(Prefab, position + randOffset, Quaternion.identity, null);
         }
 
         Amount -= dropAmount;
@@ -162,19 +165,26 @@ public class Item
         return createdComponent;
     }
 
+    public void CopyComponents(List<ItemComponent> components)
+    {
+        foreach (ItemComponent itemComponent in components)
+        {
+            AttachComponent(itemComponent.Copy());
+        }
+    }
+
     public void AttachComponent(ItemComponent component)
     {
         if(component == null)
             return;
         
-        if(Components == null)
-            Components = new List<ItemComponent>();
+        Components ??= new List<ItemComponent>();
         
         Components.Add(component);
         component.SetItem(this);
     }
     
-    public void AttachComponents(ItemComponent[] components)
+    public void AttachComponents(List<ItemComponent> components)
     {
         if(components == null)
             return;
@@ -186,30 +196,4 @@ public class Item
     }
 
     private bool IsNullOrThis(Item item) => item == null || item == this;
-
-    public override bool Equals(object obj) => (Item)obj == this;
-
-    public override int GetHashCode() => base.GetHashCode();
-
-    public static bool operator ==(Item a, Item b)
-    {
-        if (a is null && b is null)
-            return true;
-
-        if (a is null && !(b is null) || !(a is null) && b is null)
-            return false;
-
-        return a.instanceID == b.instanceID;
-    }
-
-    public static bool operator !=(Item a, Item b)
-    {
-        if (a is null && b is null)
-            return false;
-
-        if (a is null && !(b is null) || !(a is null) && b is null)
-            return true;
-
-        return a.instanceID != b.instanceID;
-    }
 }

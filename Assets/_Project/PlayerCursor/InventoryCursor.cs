@@ -87,10 +87,10 @@ public class InventoryCursor : MonoBehaviour
             return;
 
         Inventory inventory = displaySlot.Inventory;
-        Item newItem = item.Transfer(grabAmount);
 
-        HoldingSlot.SetItem(newItem);
+        HoldingSlot.SetItem(item.Transfer(grabAmount));
         grabDisplay.SetSlotReference(HoldingSlot);
+        
         inventory.OnChanged?.Invoke();
     }
 
@@ -128,7 +128,7 @@ public class InventoryCursor : MonoBehaviour
         if(!canAdd)
             return;
         
-        inventory.AddToInventory(HoldingSlot.Item.Transfer(addAmount), slot.CurrentSlot);
+        inventory.AddToInventory(HoldingSlot.Item, slot.CurrentSlot, addAmount);
         lastItemSlot = slot;
         grabDisplay.SetSlotReference(HoldingSlot);
     }
@@ -146,7 +146,7 @@ public class InventoryCursor : MonoBehaviour
         Item placingItem = displaySlot.CurrentSlot.Item.Transfer();
         Item handItem = HoldingSlot.Item.Transfer();
 
-        inventory.AddToInventory(handItem.Transfer(), displaySlot.CurrentSlot);
+        inventory.AddToInventory(handItem, displaySlot.CurrentSlot);
         HoldingSlot.SetItem(placingItem.Transfer());
 
         grabDisplay.SetSlotReference(HoldingSlot);

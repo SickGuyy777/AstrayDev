@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ItemInfo : ScriptableObject
@@ -9,7 +10,7 @@ public abstract class ItemInfo : ScriptableObject
     public ItemObject itemPrefab;
 
 
-    protected abstract ItemComponent[] GetComponents();
+    protected abstract List<ItemComponent> GetComponents();
 
     public Item GetNewItem() => new Item(this, 1, GetComponents());
 }

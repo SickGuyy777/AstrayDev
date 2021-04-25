@@ -44,11 +44,15 @@ public class Inventory : MonoBehaviour
             amountToAdd = itemToAdd.Amount;
 
         Slot bestSlot = Slots[bestSlotIndex];
-        for (int i = 0; i < 3; i++)
+
+        int i = 0;
+        while (amountToAdd > 0)
         {
+            i++;
             if (!bestSlot.IsEmpty && bestSlot.IsFull)
             {
                 bestSlotIndex = GetBestSlot(itemToAdd.Info);
+                
                 if (bestSlotIndex < 0)
                 {
                     remaining += amountToAdd;
@@ -60,13 +64,19 @@ public class Inventory : MonoBehaviour
             
             Slot chosenSlot = startingSlot != null && startingSlot.CanAdd(itemToAdd.Info) ? startingSlot : bestSlot;
             amountToAdd = chosenSlot.AddItem(itemToAdd, amountToAdd);
+
+            if (i >= 100)
+            {
+                Debug.LogError("Would cause stack overflow");
+                break;
+            }
         }
 
         OnChanged?.Invoke();
         return remaining;
     }
 
-    public T[] GetItemsOfType<T>() where T : ItemComponent
+    public List<T> GetItemsOfType<T>() where T : ItemComponent
     {
         List<T> listOfComponents = new List<T>();
         
@@ -81,7 +91,7 @@ public class Inventory : MonoBehaviour
                 listOfComponents.Add(component);
         }
 
-        return listOfComponents.ToArray();
+        return listOfComponents;
     }
 
     public void AddToInventory(Item[] itemsToAdd)

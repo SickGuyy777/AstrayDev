@@ -19,38 +19,36 @@ public class RayGun : Weapon
     [SerializeField] private Color lineColor = Color.white;
     [SerializeField] private float lineWidth = 0.02f;
     [SerializeField] private float lineLifeTime = .5f;
+    private ObjectPool<LineEffect> lineEffectPool;
 
-    private Queue<AmmoComponent> ammo = new Queue<AmmoComponent>();
+    private Queue<AmmoComponent> ammoItems = new Queue<AmmoComponent>();
     private Inventory bulletSupply;
 
-    
+
+    private void Awake()
+    {
+        lineEffectPool = new ObjectPool<LineEffect>(lineEffectPrefab, 5);
+    }
+
     public override void Primary(IWeaponArgsHolder holder)
     {
         if(!canUse)
             return;
 
         if (bulletSupply == null)
-        {
             bulletSupply = holder.GetAmmoSupply();
-            bulletSupply.OnChanged += UpdateAmmo;
-        }
 
         UpdateAmmo();
-        
         StartCoroutine(WaitCD());
         
-        if (ammo.Count <= 0)
-        {
-            Debug.Log("out of ammo");
+        if (ammoItems.Count <= 0)
             return;
-        }
         
-        ammo.Peek().Item.Amount--;
+        ammoItems.Peek().Item.Amount--;
         
-        if (ammo.Peek().Item.Amount <= 0)
-            ammo.Dequeue();
-        
-        
+        if (ammoItems.Peek().Item.IsEmpty)
+            ammoItems.Dequeue();
+
         WeaponArgs weaponArgs = holder.GetWeaponArgs();
 
         for (int i = 0; i < numOfProjectiles; i++)
@@ -58,32 +56,38 @@ public class RayGun : Weapon
             Vector2 offset = new Vector2(Random.Range(-inAccuracy, inAccuracy), Random.Range(-inAccuracy, inAccuracy)) / 150;
             Vector2 newDirection = (Vector2)weaponArgs.ray.direction + offset;
             
-
             WeaponArgs shootArgs = new WeaponArgs(new Ray(weaponArgs.ray.origin, newDirection), mask, weaponArgs.objectsToIgnore);
             Shoot(shootArgs);
         }
     }
-
-    private void UpdateAmmo() => ammo = GetAmmo();
     
-    private Queue<AmmoComponent> GetAmmo()
+    private void UpdateAmmo()
     {
         Queue<AmmoComponent> sameTypeBullets = new Queue<AmmoComponent>();
-        AmmoComponent[] bullets = bulletSupply.GetItemsOfType<AmmoComponent>();
+        List<AmmoComponent> ammoInInventory = bulletSupply.GetItemsOfType<AmmoComponent>();
         
-        foreach (AmmoComponent bullet in bullets)
+        foreach (AmmoComponent bullet in ammoInInventory)
         {
-            if(bullet.IsSameType(ammoType))
+            if(bullet.IsSameType(ammoType) && !bullet.Item.IsEmpty)
                 sameTypeBullets.Enqueue(bullet);
         }
         
-        return sameTypeBullets;
+        ammoItems = sameTypeBullets;
     }
 
     private void Shoot(WeaponArgs shootArgs)
     {
-        LineEffect createdLineEffect = Instantiate(lineEffectPrefab, transform.position, Quaternion.identity);
+        LineEffect createdLineEffect = lineEffectPool.Instantiate(transform.position, Quaternion.identity);
         createdLineEffect.Setup(firePoint.position, shootArgs.hit.point, lineColor, lineWidth, lineLifeTime);
+        
         shootArgs.HitDamageable?.Damage(damage);
+    }
+
+    private void OnDestroy()
+    {
+        if(bulletSupply != null) 
+            bulletSupply.OnChanged -= UpdateAmmo;
+        
+        lineEffectPool.DestroyPool();
     }
 }

@@ -29,12 +29,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/DefaultInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunItemComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipSecondaryComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/GunComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/WeaponInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Guns/WeaponComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/WeaponHolder.cs" />
@@ -45,7 +39,6 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgsHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/CharacterAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Player/Movement.cs" />
@@ -56,10 +49,8 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/InteractionSystem/IInteractable.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/InteractionSystem/RangeInteractor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/LineEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/ItemDisplaySlot.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgs.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/DamageableObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
@@ -68,18 +59,27 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/BulletInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/AmmoComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/AmmoInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerCharacter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
         <option value="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AstarPath.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryImporter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/DefaultInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Ammo/AmmoInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/LineEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Ammo/AmmoComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipSecondaryComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Utilities/ObjectPool.cs" />
       </list>
     </option>
   </component>
@@ -137,6 +137,7 @@
       <workItem from="1619105105348" duration="9085000" />
       <workItem from="1619185452373" duration="8704000" />
       <workItem from="1619216084963" duration="3821000" />
+      <workItem from="1619356549634" duration="4344000" />
     </task>
     <servers />
   </component>
@@ -149,10 +150,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="794" y="221" key="RiderGenerateDialog" timestamp="1619195935693">
+    <state x="794" y="221" key="RiderGenerateDialog" timestamp="1619356747006">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="221" key="RiderGenerateDialog/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1619195935693" />
+    <state x="794" y="221" key="RiderGenerateDialog/-3440.-349.3440.1400/0.0.1920.1040@0.0.1920.1040" timestamp="1619356747006" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1618758159340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -163,13 +164,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Project/Items/Item.cs</url>
-          <line>172</line>
+          <line>182</line>
           <properties documentPath="C:\Users\Justin\Desktop\Game Dev\Games\AstrayDevProject\AstrayDev\Assets\_Project\Items\Item.cs" initialLine="169">
             <startOffsets>
-              <option value="4078" />
+              <option value="4178" />
             </startOffsets>
             <endOffsets>
-              <option value="4104" />
+              <option value="4204" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

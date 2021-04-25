@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Items/WeaponInfo")]
@@ -7,7 +9,7 @@ public class WeaponInfo : ItemInfo
     public Weapon weaponPrefab;
     
     
-    protected override ItemComponent[] GetComponents()
+    protected override List<ItemComponent> GetComponents()
     {
         ItemComponent[] components = null;
             
@@ -29,7 +31,7 @@ public class WeaponInfo : ItemInfo
                 break;
         }
 
-        return components;
+        return components.ToList();
     }
 }
 

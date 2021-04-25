@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,14 +41,35 @@ public class ObjectPool<T> where T : MonoBehaviour, IPoolObject<T>
         
         PrecreateObject();
     }
+    
+    public void Destroy(T objectToDestroy)
+    {
+        objectToDestroy.gameObject.SetActive(false);
+        objects.Enqueue(objectToDestroy);
+    }
 
     public IEnumerator Destroy(T objectToDestroy, float seconds = 0)
     {
-        yield return new WaitForSeconds(seconds);
+        if (seconds > 0);
+            yield return new WaitForSeconds(seconds);
         
         objectToDestroy.gameObject.SetActive(false);
         objects.Enqueue(objectToDestroy);
     }
+
+    public void DestroyPool()
+    {
+        foreach (T poolObject in objects)
+        {
+            if(poolObject == null || poolObject.gameObject == null)
+                continue;
+            
+            GameObject.Destroy(poolObject.gameObject);
+        }
+        
+        objects.Clear();
+    }
+    
 
     private void PreCreateObjects()
     {

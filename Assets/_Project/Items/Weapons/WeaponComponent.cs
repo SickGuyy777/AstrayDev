@@ -16,4 +16,6 @@ public class WeaponComponent : ItemComponent
         
         return gunObj;
     }
+
+    public override ItemComponent Copy() => new WeaponComponent(weaponPrefab);
 }

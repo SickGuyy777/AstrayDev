@@ -1,15 +1,27 @@
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
-public class LineEffect : MonoBehaviour
+public class LineEffect : MonoBehaviour, IPoolObject<LineEffect>
 {
-    [SerializeField] private LineRenderer lr;
+    private LineRenderer lr;
     private float speed;
 
     private Color endStartColor;
     private Color endFinalColor;
+    
+    public ObjectPool<LineEffect> CurrentPool { get; set; }
 
 
+    public void OnPreStarted()
+    {
+        lr = GetComponent<LineRenderer>();
+    }
+
+    public void OnStart()
+    {
+        
+    }
+    
     public void Setup(Vector2 start, Vector2 end, Color color, float size = .1f, float duration = .5f)
     {
         lr.startColor = color;
@@ -29,7 +41,7 @@ public class LineEffect : MonoBehaviour
         endFinalColor = lr.endColor;
         endFinalColor.a = 0;
         
-        Destroy(gameObject, duration);
+        StartCoroutine(CurrentPool.Destroy(this, duration));
     }
     
     private void Update()

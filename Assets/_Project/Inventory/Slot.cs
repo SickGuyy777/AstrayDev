@@ -46,8 +46,7 @@ public class Slot
         else
             Item.CopyAttributes(itemToAdd);
         
-        itemToAdd.Amount -= amountToAdd;
-        Item.Amount += amountToAdd;
+        Item.Amount += itemToAdd.TransferAmount(amountToAdd);
 
         return remaining;
     }

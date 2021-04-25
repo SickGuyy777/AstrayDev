@@ -5,4 +5,6 @@ public abstract class ItemComponent
 
 
     public void SetItem(Item aItem) => this.Item = aItem;
+
+    public abstract ItemComponent Copy();
 }
