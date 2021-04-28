@@ -9,7 +9,6 @@ public class HealthManager : MonoBehaviour
     
     [Header("Damageables")]
     [SerializeField] private List<DamageableObject> damageables = new List<DamageableObject>();
-
     public float MaxHealth => maxHealth;
     public float Health
     {
@@ -37,11 +36,13 @@ public class HealthManager : MonoBehaviour
     
     private void Awake()
     {
+        
         foreach (var damageable in damageables)
         {
             damageable.OnDamaged += Damage;
         }
     }
+    
 
     private void Damage(float damage) => Health -= damage;
 }
