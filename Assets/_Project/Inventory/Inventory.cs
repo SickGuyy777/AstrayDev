@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     public Slot[] Slots => slots;
     private InventoryFilter filter;
     public System.Action OnChanged;
+    public bool slowmo = false;
 
     
     private void Awake()
@@ -126,5 +127,21 @@ public class Inventory : MonoBehaviour
             return emptySlot;
 
         return -1;
+    }
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (slowmo == false)
+            {
+                Time.timeScale = 0.1f;
+                slowmo = true;
+            }
+            else
+            {
+                Time.timeScale = 1.0f;
+                slowmo = false;
+            }
+        }
     }
 }
