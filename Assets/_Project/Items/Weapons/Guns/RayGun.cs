@@ -1,5 +1,3 @@
-
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -12,7 +10,6 @@ public class RayGun : Weapon
     [SerializeField] private float damage = 1f;
     [SerializeField] private float inAccuracy = 5f;
     [SerializeField] private float numOfProjectiles = 1;
-    
     [SerializeField] private LayerMask mask;
     
     [Header("LineEffect")] 

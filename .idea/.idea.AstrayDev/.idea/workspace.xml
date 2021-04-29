@@ -87,9 +87,9 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Environment/Crates/Crate.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
       </list>
     </option>
   </component>

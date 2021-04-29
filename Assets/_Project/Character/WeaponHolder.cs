@@ -61,28 +61,28 @@ public class WeaponHolder : MonoBehaviour
                 }
             }
         }
-
-        currentWeaponIndex = currentWeaponIndex;
+        
         EquipWeapon(currentWeaponIndex);
     }
+
+    public void Primary(IWeaponArgsHolder holder) => HoldingWeapon?.Primary(holder);
     
     public void EquipWeapon(int index)
     {
         if(!hasWeapon)
             return;
-        Debug.Log(HoldingWeapon.gameObject.name);
+
         HoldingWeapon?.gameObject.SetActive(false);
 
         currentWeaponIndex = index;
         
         Weapon newWeapon = equipedWeapons[index];
         newWeapon.gameObject.SetActive(true);
+        
+        newWeapon.WaitCD(.2f);
     }
 
-    public void UnEquipWeapon()
-    {
-        HoldingWeapon?.gameObject.SetActive(false);
-    }
+    public void UnEquipWeapon() => HoldingWeapon?.gameObject.SetActive(false);
 
     private void DestroyEquipedWeapons()
     {
@@ -100,11 +100,8 @@ public class WeaponHolder : MonoBehaviour
     {
         UnEquipWeapon();
         
-        currentWeaponIndex = currentWeaponIndex + addIndex;
-        
-        Debug.Log("Index: " + (currentWeaponIndex ));
-        Debug.Log("Equiped Weapons: " + equipedWeapons.Count);
-        
+        currentWeaponIndex += addIndex;
+
         EquipWeapon(currentWeaponIndex);
     }
 }

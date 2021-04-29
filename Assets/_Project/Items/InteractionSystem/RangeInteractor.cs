@@ -1,20 +1,33 @@
+using System.Collections;
 using UnityEngine;
 
 public class RangeInteractor : MonoBehaviour
 {
     [SerializeField] private float range = 1;
-
+    [SerializeField] private float checkRate = .02f;
+    
     private IInteractable selectedInteractable;
     private GameObject selectedInteractableObject;
 
 
-    private void OnEnable() => TickClock.OnTick += UpdatedSelectedInteractable;
-    
-    private void OnDisable() => TickClock.OnTick -= UpdatedSelectedInteractable;
+    private void Awake()
+    {
+        StartCoroutine(StartUpdateInteractable());
+    }
+
+    private IEnumerator StartUpdateInteractable()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(checkRate);
+            UpdatedSelectedInteractable();
+        }
+    }
 
     public void Interact(PlayerController player)
     {
-        selectedInteractable?.Interact(player);
+        if(selectedInteractableObject != null)
+            selectedInteractable?.Interact(player);
     }
 
     private void UpdatedSelectedInteractable()
