@@ -2732,6 +2732,10 @@ MonoBehaviour:
   itemInfosToAdd:
   - info: {fileID: 11400000, guid: 1c094f5fc323b9349a07868885f75688, type: 2}
     amount: 99
+  - info: {fileID: 11400000, guid: 4c21fb223b5a40745bafaac5d741e8ed, type: 2}
+    amount: 99
+  - info: {fileID: 11400000, guid: 9954c07d44e5e0643a0ad334728b3eda, type: 2}
+    amount: 99
 --- !u!1 &1791961849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,10 +2848,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 371817594, guid: 01464cea5d1785f48ac9761975c7717f, type: 3}
-      propertyPath: m_Name
-      value: InventoryCursor
-      objectReference: {fileID: 0}
     - target: {fileID: 1042366758, guid: 01464cea5d1785f48ac9761975c7717f, type: 3}
       propertyPath: m_Sprite
       value: 

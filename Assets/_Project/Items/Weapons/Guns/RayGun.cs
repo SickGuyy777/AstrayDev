@@ -68,10 +68,7 @@ public class RayGun : Weapon
 
         for (int i = 0; i < numOfProjectiles; i++)
         {
-            float x = Random.Range(-inAccuracy, inAccuracy) / 150;
-            float y = Random.Range(-inAccuracy, inAccuracy) / 150;
-            
-            Vector2 offset = new Vector2(x, y);
+            Vector2 offset = new Vector2(Random.Range(-inAccuracy, inAccuracy), Random.Range(-inAccuracy, inAccuracy)) / 150;
             Vector2 newDirection = (Vector2)weaponArgs.ray.direction + offset;
             
             WeaponArgs shootArgs = new WeaponArgs(new Ray(weaponArgs.ray.origin, newDirection), mask, weaponArgs.objectsToIgnore);
