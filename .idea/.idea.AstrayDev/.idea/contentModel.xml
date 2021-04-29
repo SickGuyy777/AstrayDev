@@ -27,6 +27,11 @@
             </e>
             <e p="WeaponHolder.cs" t="Include" />
           </e>
+          <e p="Dialogue" t="Include">
+            <e p="Dialogue.cs" t="Include" />
+            <e p="DialogueManager.cs" t="Include" />
+            <e p="DialogueTrigger.cs" t="Include" />
+          </e>
           <e p="Environment" t="Include">
             <e p="Crates" t="Include">
               <e p="Crate.cs" t="Include" />
