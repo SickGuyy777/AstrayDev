@@ -30,17 +30,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/MutantSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/9e/79b2e448/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../PoolingSystem/ObjectPool.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/LootTable/LootTable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Effects/LineEffect.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Environment/Crates/Crate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/BasicMutantAI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Player/Movement.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/CharacterMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/Interactor.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Pickup.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/IPickup.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/InteractionSystem/IInteractable.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/InteractionSystem/RangeInteractor.cs" />
@@ -56,7 +54,6 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AstarPath.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryImporter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/DefaultInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponInfo.cs" />
@@ -67,27 +64,32 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipSecondaryComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Utilities/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/../../../PoolingSystem/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/TickClock.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/TickClockObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/DamageableObject.cs" />
         <option value="$PROJECT_DIR$/../../../../../../../2020.3.3f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.2d.tilemap/Editor/GridPaintPaletteClipboard.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/AIVision.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/RangeVision.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponArgs.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/HealthManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/BasicMutantAI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/MutantSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/HealthManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/sliderscrpt.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Utilities/ObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/RangeVision.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryImporter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/LootTable/LootChance.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/LootTable/LootTable.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Environment/Crates/Crate.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
       </list>
     </option>
   </component>
@@ -145,7 +147,9 @@
       <workItem from="1619105105348" duration="9085000" />
       <workItem from="1619185452373" duration="8704000" />
       <workItem from="1619216084963" duration="3821000" />
-      <workItem from="1619356549634" duration="15602000" />
+      <workItem from="1619356549634" duration="16858000" />
+      <workItem from="1619611295143" duration="1305000" />
+      <workItem from="1619702893490" duration="1898000" />
     </task>
     <servers />
   </component>
@@ -172,13 +176,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Project/Items/Item.cs</url>
-          <line>182</line>
+          <line>180</line>
           <properties documentPath="C:\Users\Justin\Desktop\Game Dev\Games\AstrayDevProject\AstrayDev\Assets\_Project\Items\Item.cs" initialLine="169">
             <startOffsets>
-              <option value="4178" />
+              <option value="4172" />
             </startOffsets>
             <endOffsets>
-              <option value="4204" />
+              <option value="4198" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

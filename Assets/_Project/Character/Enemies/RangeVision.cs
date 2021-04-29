@@ -7,7 +7,6 @@ public class RangeVision : AIVision
     
     protected override PlayerController DetectPlayer()
     {
-        Debug.Log("yooo");
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
 
         foreach (Collider2D collider2d in colliders)

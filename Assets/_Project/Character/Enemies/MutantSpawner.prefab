@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmount: 5
   mutantPrefab: {fileID: 8803666965227211080, guid: ebd5c57dee6d6274bb1dfcbffd74f4f4, type: 3}
-  spawnRate: 2
+  spawnRate: 3

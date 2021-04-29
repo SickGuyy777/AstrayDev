@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float deceleration = 12;
     [SerializeField] private float lookSpeed = 10f;
     
-    
+
     public Vector2 Velocity { get; private set; }
     
     private Rigidbody2D rb;

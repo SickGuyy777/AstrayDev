@@ -27,6 +27,11 @@
             </e>
             <e p="WeaponHolder.cs" t="Include" />
           </e>
+          <e p="Environment" t="Include">
+            <e p="Crates" t="Include">
+              <e p="Crate.cs" t="Include" />
+            </e>
+          </e>
           <e p="Inventory" t="Include">
             <e p="Inventory.cs" t="Include" />
             <e p="InventoryFilter.cs" t="Include" />
@@ -59,6 +64,10 @@
             <e p="ItemComponent.cs" t="Include" />
             <e p="ItemInfo.cs" t="Include" />
             <e p="ItemObject.cs" t="Include" />
+            <e p="LootTable" t="Include">
+              <e p="LootChance.cs" t="Include" />
+              <e p="LootTable.cs" t="Include" />
+            </e>
             <e p="Weapons" t="Include">
               <e p="Guns" t="Include">
                 <e p="LineEffect.cs" t="Include" />
@@ -261,6 +270,7 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="sliderscrpt.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">
             <e p="Fonts" t="Include">

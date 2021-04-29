@@ -40,4 +40,17 @@ public struct SerializableItem
 {
     public ItemInfo info;
     public int amount;
+    private Item item;
+
+
+    public SerializableItem(ItemInfo info, int amount)
+    {
+        this.info = info;
+        this.amount = amount;
+
+        item = info.GetNewItem();
+        item.Amount = amount;
+    }
+
+    public Item GetItem() => item;
 }

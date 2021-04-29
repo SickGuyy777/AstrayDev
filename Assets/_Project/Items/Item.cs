@@ -130,14 +130,12 @@ public class Item
         
         dropAmount = dropAmount <= 0 ? Amount : amount;
         
-        for (int i = 0; i < dropAmount; i++)
-        {
-            float x = Random.Range(-.5f, .5f);
-            float y = Random.Range(-.5f, .5f);
-            Vector2 randOffset = new Vector2(x, y);
+        float x = Random.Range(-.5f, .5f);
+        float y = Random.Range(-.5f, .5f);
+        Vector2 randOffset = new Vector2(x, y);
             
-            GameObject.Instantiate(Prefab, position + randOffset, Quaternion.identity, null);
-        }
+        ItemObject createdObject = GameObject.Instantiate(Prefab, position + randOffset, Quaternion.identity, null);
+        createdObject.Item.Amount = dropAmount;
 
         Amount -= dropAmount;
     }
