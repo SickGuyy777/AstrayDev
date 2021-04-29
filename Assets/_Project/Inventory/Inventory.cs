@@ -22,6 +22,24 @@ public class Inventory : MonoBehaviour
         }
             
     }
+    public bool slowmo;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (slowmo == false)
+            {
+                slowmo = true;
+                Time.timeScale = 0.1f;
+                Time.fixedDeltaTime = Time.timeScale * 0.02f;
+            }
+            else
+            {
+                slowmo = false;
+                Time.timeScale = 1;
+            }
+        }
+    }
 
     public bool IsItemTypeAllowed(Item itemToAdd) => filter == null ||  filter != null && filter.ContainedInWhitelist(itemToAdd);
 
