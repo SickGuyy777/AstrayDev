@@ -1,5 +1,4 @@
 
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -28,13 +27,12 @@ public class RayGun : Weapon
 
     private void Awake()
     {
-        int poolSize = Mathf.CeilToInt(Mathf.CeilToInt(Mathf.Clamp(numOfProjectiles * (lineLifeTime / useRate), numOfProjectiles, int.MaxValue)));
-        lineEffectPool = new ObjectPool<LineEffect>(lineEffectPrefab, poolSize);
+        lineEffectPool = new ObjectPool<LineEffect>(lineEffectPrefab, 5);
     }
-    
+
     public override void Primary(IWeaponArgsHolder holder)
     {
-        if(!canUse || !gameObject.activeInHierarchy)
+        if(!canUse)
             return;
 
         Shoot(holder);
@@ -42,9 +40,6 @@ public class RayGun : Weapon
     
     private void UpdateAmmo()
     {
-        if(!gameObject.activeInHierarchy)
-            return;
-        
         Queue<AmmoComponent> sameTypeBullets = new Queue<AmmoComponent>();
         List<AmmoComponent> ammoInInventory = bulletSupply.GetItemsOfType<AmmoComponent>();
         
@@ -59,14 +54,11 @@ public class RayGun : Weapon
 
     private void Shoot(IWeaponArgsHolder holder)
     {
-        if(!gameObject.activeInHierarchy)
-            return;
-        
         if (bulletSupply == null)
             bulletSupply = holder.GetAmmoSupply();
 
         UpdateAmmo();
-        WaitCD();
+        StartCoroutine(WaitCD());
         
         if (ammoItems.Count <= 0)
             return;

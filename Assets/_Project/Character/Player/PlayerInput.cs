@@ -8,6 +8,5 @@ public static class PlayerInput
     public static bool InteractKeyDown => Input.GetKeyDown(KeyCode.E);
     public static bool InventoryKeyDown => Input.GetKeyDown(KeyCode.Tab);
     public static float ScrollDelta => Input.mouseScrollDelta.y;
-    public static int ScrollDeltaRaw => (int) Mathf.Clamp(ScrollDelta * float.MaxValue, -1, 1);
     public static bool IsScrolling => ScrollDelta != 0;
 }

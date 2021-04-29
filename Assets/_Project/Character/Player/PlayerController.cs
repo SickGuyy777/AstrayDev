@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour, IWeaponArgsHolder
             interactor.Interact(this);
 
         if (PlayerInput.IsScrolling)
-            weaponHolder.ScrollEquip(PlayerInput.ScrollDeltaRaw);
+            weaponHolder.ScrollEquip((int) Mathf.Clamp(PlayerInput.ScrollDelta * float.MaxValue, -1, 1));
         
         if (PlayerInput.PrimaryFire && !inventoryShown)
             weaponHolder.HoldingWeapon?.Primary(this);

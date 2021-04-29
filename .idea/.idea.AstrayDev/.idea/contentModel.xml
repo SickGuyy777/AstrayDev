@@ -63,7 +63,7 @@
             <e p="Item.cs" t="Include" />
             <e p="ItemComponent.cs" t="Include" />
             <e p="ItemInfo.cs" t="Include" />
-            <e p="ItemPickup.cs" t="Include" />
+            <e p="ItemObject.cs" t="Include" />
             <e p="LootTable" t="Include">
               <e p="LootChance.cs" t="Include" />
               <e p="LootTable.cs" t="Include" />

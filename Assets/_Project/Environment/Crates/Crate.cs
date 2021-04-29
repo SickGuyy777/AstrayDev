@@ -17,6 +17,7 @@ public class Crate : MonoBehaviour
     private void Die()
     {
         Item[] loot = DropLoot();
+        Debug.Log(loot.Length);
         Destroy(this.gameObject);
     }
 

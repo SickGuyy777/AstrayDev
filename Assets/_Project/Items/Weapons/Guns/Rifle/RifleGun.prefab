@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2221d6c37b2b5843ad0384f50298fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRate: 0.12
+  useTime: 0.12
   ammoType: 0
   firePoint: {fileID: 911469930880716446}
   damage: 1.5

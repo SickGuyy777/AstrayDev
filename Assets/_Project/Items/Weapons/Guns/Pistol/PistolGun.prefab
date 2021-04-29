@@ -75,11 +75,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2221d6c37b2b5843ad0384f50298fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRate: 0.5
+  useTime: 0.5
   ammoType: 1
   firePoint: {fileID: 2927286993849887857}
   damage: 4
-  inAccuracy: 6
+  inAccuracy: 9
   numOfProjectiles: 1
   mask:
     serializedVersion: 2

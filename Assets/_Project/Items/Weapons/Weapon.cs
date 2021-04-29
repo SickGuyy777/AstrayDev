@@ -3,20 +3,19 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] protected float useRate = .5f;
+    [SerializeField] private float useTime = .5f;
     protected Item item;
     protected bool canUse = true;
 
 
     public abstract void Primary(IWeaponArgsHolder holder);
 
-    protected void WaitCD()
+    protected IEnumerator WaitCD()
     {
         canUse = false;
-        Invoke(nameof(ResetCD), useRate);
+        yield return new WaitForSeconds(useTime);
+        canUse = true;
     }
-
-    private void ResetCD() => canUse = true;
 
     public void SetUp(Item itemReference) => this.item = itemReference;
 }
