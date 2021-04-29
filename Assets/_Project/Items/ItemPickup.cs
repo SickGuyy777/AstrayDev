@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ItemObject : MonoBehaviour, IInteractable
+public class ItemPickup : MonoBehaviour, IInteractable
 {
     [SerializeField] private ItemInfo info;
     

@@ -5,23 +5,23 @@ public class WeaponHolder : MonoBehaviour
 {
     [SerializeField] private Transform handPos;
     [SerializeField] private Inventory[] weaponInventories;
-    
-    public Weapon HoldingWeapon { get; private set; }
 
-    private List<WeaponComponent> weaponComponents = new List<WeaponComponent>();
-    private bool hasWeapon => weaponComponents.Count > 0;
+    public Weapon HoldingWeapon => currentWeaponIndex >= 0 && currentWeaponIndex < equipedWeapons.Count ? equipedWeapons[currentWeaponIndex] : null;
 
-    private int weaponIndex;
+    private List<Weapon> equipedWeapons = new List<Weapon>();
+    private bool hasWeapon => equipedWeapons.Count > 0;
+
+    private int weaponIndex = 0;
     private int currentWeaponIndex
     {
         get => weaponIndex;
 
         set
         {
-            if (value > weaponComponents.Count - 1)
+            if (value >= equipedWeapons.Count)
                 value = 0;
-            else if (value < 0)
-                value = weaponComponents.Count - 1;
+            else if(value < 0)
+                value = equipedWeapons.Count - 1;
 
             weaponIndex = value;
         }
@@ -36,16 +36,10 @@ public class WeaponHolder : MonoBehaviour
             weaponInventory.OnChanged += UpdateWeapons;
         }
     }
-    
-    private void Update()
-    {
-        if(HoldingWeapon != null && !hasWeapon)
-            UnEquipWeapon();
-    }
-    
+
     private void UpdateWeapons()
     {
-        weaponComponents.Clear();
+        DestroyEquipedWeapons();
 
         foreach (Inventory inventory in weaponInventories)
         {
@@ -54,17 +48,21 @@ public class WeaponHolder : MonoBehaviour
             
             foreach (Slot slot in inventory.Slots)
             {
-                Item item = slot.Item;
-                if(item.IsEmpty || item == null)
+                if(slot.IsEmpty)
                     continue;
 
-                WeaponComponent weaponComponent = item.GetComponent<WeaponComponent>();
-                
-                if(weaponComponent != null)
-                    weaponComponents.Add(weaponComponent);
+                WeaponComponent weaponComponent = slot.Item.GetComponent<WeaponComponent>();
+
+                if (weaponComponent != null)
+                {
+                    Weapon createdWeapon = weaponComponent.Instantiate(handPos.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z), handPos);
+                    createdWeapon.gameObject.SetActive(false);
+                    equipedWeapons.Add(createdWeapon);
+                }
             }
         }
-        
+
+        currentWeaponIndex = currentWeaponIndex;
         EquipWeapon(currentWeaponIndex);
     }
     
@@ -72,26 +70,41 @@ public class WeaponHolder : MonoBehaviour
     {
         if(!hasWeapon)
             return;
-        
-        if(HoldingWeapon != null)
-            Destroy(HoldingWeapon.gameObject);
-        
+        Debug.Log(HoldingWeapon.gameObject.name);
+        HoldingWeapon?.gameObject.SetActive(false);
+
         currentWeaponIndex = index;
-        WeaponComponent weaponComponent = weaponComponents[currentWeaponIndex];
-        Weapon createdWeapon = weaponComponent.Instantiate(handPos.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z), handPos);
-        HoldingWeapon = createdWeapon;
+        
+        Weapon newWeapon = equipedWeapons[index];
+        newWeapon.gameObject.SetActive(true);
     }
 
     public void UnEquipWeapon()
     {
-        if(HoldingWeapon == null || hasWeapon)
-            return;
-        
-        if(HoldingWeapon != null)
-            Destroy(HoldingWeapon.gameObject);
-        
-        HoldingWeapon = null;
+        HoldingWeapon?.gameObject.SetActive(false);
     }
 
-    public void ScrollEquip(int addIndex) => EquipWeapon(currentWeaponIndex + Mathf.Clamp(addIndex, -1, 1));
+    private void DestroyEquipedWeapons()
+    {
+        UnEquipWeapon();
+        
+        foreach (Weapon weapon in equipedWeapons)
+        {
+            Destroy(weapon.gameObject);
+        }
+        
+        equipedWeapons.Clear();
+    }
+
+    public void ScrollEquip(int addIndex)
+    {
+        UnEquipWeapon();
+        
+        currentWeaponIndex = currentWeaponIndex + addIndex;
+        
+        Debug.Log("Index: " + (currentWeaponIndex ));
+        Debug.Log("Equiped Weapons: " + equipedWeapons.Count);
+        
+        EquipWeapon(currentWeaponIndex);
+    }
 }
