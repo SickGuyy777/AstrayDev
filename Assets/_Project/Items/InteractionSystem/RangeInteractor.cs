@@ -1,31 +1,20 @@
-using System.Collections;
 using UnityEngine;
 
 public class RangeInteractor : MonoBehaviour
 {
     [SerializeField] private float range = 1;
-    [SerializeField] private float searchCooldown = 0.02f;
-    
+
     private IInteractable selectedInteractable;
     private GameObject selectedInteractableObject;
 
-    private void Start()
-    {
-        StartCoroutine(SearchForInteractables());
-    }
+
+    private void OnEnable() => TickClock.OnTick += UpdatedSelectedInteractable;
+    
+    private void OnDisable() => TickClock.OnTick -= UpdatedSelectedInteractable;
 
     public void Interact(PlayerController player)
     {
         selectedInteractable?.Interact(player);
-    }
-    
-    private IEnumerator SearchForInteractables()
-    {
-        while (true)
-        {
-            UpdatedSelectedInteractable();
-            yield return new WaitForSeconds(searchCooldown);
-        }
     }
 
     private void UpdatedSelectedInteractable()
@@ -57,7 +46,7 @@ public class RangeInteractor : MonoBehaviour
         foreach (Collider2D col in colliders)
         {
             float magnitude = (col.transform.position - transform.position).magnitude;
-            IInteractable interactable = col.GetComponent<IInteractable>();
+            IInteractable interactable = col.gameObject.GetComponent<IInteractable>();
             if (interactable != null && magnitude < lowestMagnitude)
             {
                 lowestMagnitude = magnitude;

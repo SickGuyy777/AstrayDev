@@ -49,7 +49,7 @@ public class Item
     public string Name => Info.name;
     public int MaxStack => Info.maxStack;
     public Sprite Icon => Info?.itemIcon;
-    public ItemObject Prefab => Info?.itemPrefab;
+    public ItemPickup Prefab => Info?.itemPrefab;
     public bool IsEmpty => Amount <= 0;
     public bool IsFull => amount >= info.maxStack;
     public List<ItemComponent> Components { get; private set; }
@@ -134,8 +134,8 @@ public class Item
         float y = Random.Range(-.5f, .5f);
         Vector2 randOffset = new Vector2(x, y);
             
-        ItemObject createdObject = GameObject.Instantiate(Prefab, position + randOffset, Quaternion.identity, null);
-        createdObject.Item.Amount = dropAmount;
+        ItemPickup createdPickup = GameObject.Instantiate(Prefab, position + randOffset, Quaternion.identity, null);
+        createdPickup.Item.Amount = dropAmount;
 
         Amount -= dropAmount;
     }
