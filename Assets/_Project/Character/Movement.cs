@@ -20,13 +20,17 @@ public class Movement : MonoBehaviour
 
     public void Move(Vector2 direction, float deltaTime)
     {
+
+        
+
         direction.Normalize();
 
-        bool isMoving = direction != Vector2.zero;
-        Vector2 targetVelocity = isMoving ? direction * maxSpeed : Vector2.zero;
-        float accelerationType = isMoving ? acceleration : deceleration;
+            bool isMoving = direction != Vector2.zero;
+            Vector2 targetVelocity = isMoving ? direction * maxSpeed : Vector2.zero;
+            float accelerationType = isMoving ? acceleration : deceleration;
 
-        Velocity = Vector2.Lerp(Velocity, targetVelocity, accelerationType * deltaTime);
+            Velocity = Vector2.Lerp(Velocity, targetVelocity, accelerationType * deltaTime);
+        
     }
 
     public void LookInDirection(Vector2 direction, float deltaTime)

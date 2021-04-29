@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour, IWeaponArgsHolder
     private Movement movement;
     private WeaponHolder weaponHolder;
     private CharacterAnimator charAnimator;
+    public static bool slow=false;
     
     public Inventory BackPack => backPack;
     private bool inventoryShown => backPackUI.activeSelf;
@@ -27,9 +28,12 @@ public class PlayerController : MonoBehaviour, IWeaponArgsHolder
 
     private void Update()
     {
+       
         HandleInput();
+
+
+            UpdateMovement();
         
-        UpdateMovement();
     }
 
     private void HandleInput()
@@ -80,4 +84,15 @@ public class PlayerController : MonoBehaviour, IWeaponArgsHolder
     public WeaponArgs GetWeaponArgs() => new WeaponArgs(new Ray(transform.position, transform.right), new LayerMask(), this.gameObject);
     
     public Inventory GetAmmoSupply() => BackPack;
+    public static void motion()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (slow == false)
+            {
+                slow = true;
+            }
+            else slow = false;
+        }
+    }
 }
