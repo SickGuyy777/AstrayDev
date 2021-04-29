@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
+    public Slider sliders;
     [Header("Setup")]
     [SerializeField] private float maxHealth = 10;
     [SerializeField] private float health = 10;
@@ -42,6 +44,6 @@ public class HealthManager : MonoBehaviour
             damageable.OnDamaged += Damage;
         }
     }
-    
+   
     private void Damage(float damage) => Health -= damage;
 }
