@@ -85,11 +85,11 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Utilities/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/RangeVision.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryImporter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/LootTable/LootChance.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/LootTable/LootTable.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Environment/Crates/Crate.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/LootTable/LootChance.cs" />
       </list>
     </option>
   </component>
@@ -149,7 +149,7 @@
       <workItem from="1619216084963" duration="3821000" />
       <workItem from="1619356549634" duration="16858000" />
       <workItem from="1619611295143" duration="1305000" />
-      <workItem from="1619702893490" duration="1898000" />
+      <workItem from="1619702893490" duration="2319000" />
     </task>
     <servers />
   </component>
