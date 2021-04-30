@@ -32,6 +32,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/AIVision.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Weapons/Melee/AreaTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/9e/79b2e448/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../PoolingSystem/ObjectPool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Dialogue/DialogueTrigger.cs" root0="FORCE_HIGHLIGHTING" />
@@ -40,8 +41,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/InventoryDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/ItemDisplaySlot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/GunComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/AmmoComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/BulletInfo.cs" />
@@ -72,7 +71,6 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/BasicMutantAI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/MutantSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/HealthManager.cs" />
         <option value="$PROJECT_DIR$/Assets/sliderscrpt.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Utilities/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/RangeVision.cs" />
@@ -91,6 +89,9 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/InteractionSystem/RangeInteractor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Dialogue/DialogueTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Melee/AreaTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/HealthManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Melee/MeleeWeapon.cs" />
       </list>
     </option>
   </component>
@@ -151,6 +152,7 @@
       <workItem from="1619356549634" duration="16858000" />
       <workItem from="1619611295143" duration="1305000" />
       <workItem from="1619702893490" duration="10333000" />
+      <workItem from="1619789078282" duration="3933000" />
     </task>
     <servers />
   </component>

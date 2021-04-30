@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
-    public Slider sliders;
     [Header("Setup")]
     [SerializeField] private float maxHealth = 10;
     [SerializeField] private float health = 10;
@@ -20,7 +19,6 @@ public class HealthManager : MonoBehaviour
         set
         {
             value = Mathf.Clamp(value, 0, MaxHealth);
-            OnHealthChanged?.Invoke();
 
             if (value <= 0)
             {
@@ -29,12 +27,13 @@ public class HealthManager : MonoBehaviour
             }
 
             health = value;
+            OnHealthChanged?.Invoke();
         }
 
     }
 
-    public event System.Action OnHealthChanged;
-    public event System.Action OnDied;
+    public event Action OnHealthChanged;
+    public event Action OnDied;
 
     
     private void Awake()

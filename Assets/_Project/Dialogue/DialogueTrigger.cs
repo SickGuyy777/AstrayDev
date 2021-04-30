@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour, IInteractable
@@ -8,6 +6,11 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     private ISelectionResponse selectionResponse;
 
     
+    private void Awake()
+    {
+        selectionResponse = GetComponent<ISelectionResponse>();
+    }
+
     public void Select()
     {
         selectionResponse?.OnSelect();
