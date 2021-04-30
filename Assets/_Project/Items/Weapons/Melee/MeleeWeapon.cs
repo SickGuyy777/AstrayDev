@@ -17,7 +17,7 @@ public class MeleeWeapon : Weapon
             return;
         
         DamageTrigger(.15f);
-        WaitCD();``
+        WaitCD();
     }
     
     private void PlayAnimation(float duration)
