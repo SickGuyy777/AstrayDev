@@ -10,10 +10,11 @@ public class PauseButtons : MonoBehaviour
     public void Start()
     {
         PausePanel.SetActive(false);
+        Time.timeScale = 1;
     }
     public void PauseButton()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.01f;
         PausePanel.SetActive(true);
         PauseBTN.SetActive(false);
     }
