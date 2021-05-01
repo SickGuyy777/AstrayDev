@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour, IWeaponArgsHolder
         weaponHolder = GetComponent<WeaponHolder>();
         charAnimator = GetComponent<CharacterAnimator>();
         
-        backPackUI.SetActive(false);
+        InventoryOn();
+        InventoryOff();
     }
 
     private void Update()
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour, IWeaponArgsHolder
             interactor.Interact(this);
 
         if (PlayerInput.IsScrolling)
-            weaponHolder.ScrollEquip(PlayerInput.ScrollDeltaRaw);
+           weaponHolder.ScrollEquip(PlayerInput.ScrollDeltaRaw);
         
         if (PlayerInput.PrimaryFire && !inventoryShown)
             weaponHolder.Primary(this);
@@ -59,16 +60,12 @@ public class PlayerController : MonoBehaviour, IWeaponArgsHolder
 
     private void InventoryOn()
     {
-        Time.timeScale = .3f;
-        Time.fixedDeltaTime *= Time.timeScale;
-        
         InventoryCursor.Instance?.Drop();
         backPackUI.SetActive(true);
     }
 
     private void InventoryOff()
     {
-        Time.timeScale = 1;
         InventoryCursor.Instance?.Drop();
         backPackUI.SetActive(false);
     }

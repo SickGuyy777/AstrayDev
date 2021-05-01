@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 [System.Serializable]
 public class Slot
 {
@@ -8,12 +10,18 @@ public class Slot
     public bool IsEmpty => Item == null || Item.IsEmpty;
     public bool IsFull => !IsEmpty && Item != null && Amount >= MaxStack;
 
+    public event Action OnSlotChanged = delegate { };
+
 
     public Slot(Item item = null)
     {
         Item itemToSet = item ?? new Item(null, 0);
         SetItem(itemToSet);
+        
+        Item.OnChanged += Change;
     }
+
+    private void Change() => OnSlotChanged.Invoke();
 
     public bool CanAdd(ItemInfo info) => !IsFull && Item.IsSameItemType(info) || IsEmpty;
     
@@ -27,7 +35,7 @@ public class Slot
 
         if (!isSameItem && !IsEmpty)
             return itemToAdd.Amount;
-
+        
         int remaining = 0;
         
         if (amountToAdd <= 0)
@@ -46,13 +54,14 @@ public class Slot
         else
             Item.CopyAttributes(itemToAdd);
         
-        Item.Amount += itemToAdd.TransferAmount(amountToAdd);
 
+        Item.Amount += itemToAdd.TransferAmount(amountToAdd);
+        
         return remaining;
     }
 
-    public bool IsSameItemType(ItemInfo info) => Item.IsSameItemType(info);
+    public bool IsSameItemType(ItemInfo info) => !IsEmpty && Item.IsSameItemType(info);
 
-    public void SetItem(Item item) => Item = item;
+    public void SetItem(Item item) => this.Item = item;
 }    
 

@@ -39,6 +39,7 @@
             </e>
           </e>
           <e p="Inventory" t="Include">
+            <e p="CompoundInventory.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
             <e p="InventoryFilter.cs" t="Include" />
             <e p="InventoryImporter.cs" t="Include" />
@@ -46,6 +47,9 @@
             <e p="SecondaryWeaponFilter.cs" t="Include" />
             <e p="Slot.cs" t="Include" />
             <e p="UI" t="Include">
+              <e p="DefaultDisplaySlot.cs" t="Include" />
+              <e p="DisplaySlot.cs" t="Include" />
+              <e p="GunDisplaySlot.cs" t="Include" />
               <e p="InventoryDisplay.cs" t="Include" />
               <e p="InventoryObject.cs" t="Include" />
               <e p="ItemDisplaySlot.cs" t="Include" />
@@ -75,6 +79,8 @@
               <e p="LootTable.cs" t="Include" />
             </e>
             <e p="Weapons" t="Include">
+              <e p="GunComponent.cs" t="Include" />
+              <e p="GunInfo.cs" t="Include" />
               <e p="Guns" t="Include">
                 <e p="LineEffect.cs" t="Include" />
                 <e p="RayGun.cs" t="Include" />

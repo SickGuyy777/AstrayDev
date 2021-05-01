@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(ItemDisplaySlot))]
+[RequireComponent(typeof(DisplaySlot))]
 public class ItemDragable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public static ItemDragable currentSelectedDragable;
-    public ItemDisplaySlot DisplaySlot { get; private set; }
+    public DisplaySlot DisplaySlot { get; private set; }
 
 
-    private void Awake() => DisplaySlot = GetComponent<ItemDisplaySlot>();
+    private void Awake() => DisplaySlot = GetComponent<DisplaySlot>();
 
     public void OnPointerEnter(PointerEventData eventData) => currentSelectedDragable = this;
 

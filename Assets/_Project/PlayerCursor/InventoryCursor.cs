@@ -4,12 +4,14 @@ using UnityEngine.EventSystems;
 public class InventoryCursor : MonoBehaviour
 {
     public static InventoryCursor Instance;
-    [SerializeField] private ItemDisplaySlot grabDisplay;
+    [SerializeField] private DisplaySlot grabDisplay;
+    [SerializeField] private CompoundInventory playerInventory;
+    
     
     public Slot HoldingSlot { get; private set; } = new Slot();
 
     private bool Dragging => !HoldingSlot.IsEmpty;
-    private ItemDisplaySlot lastItemSlot;
+    private DisplaySlot lastItemSlot;
     private RectTransform rectTransform;
 
 
@@ -35,7 +37,7 @@ public class InventoryCursor : MonoBehaviour
 
     private void UpdateDragging()
     {
-        ItemDisplaySlot hoveringDisplaySlot = ItemDragable.currentSelectedDragable?.DisplaySlot;
+        DisplaySlot hoveringDisplaySlot = ItemDragable.currentSelectedDragable?.DisplaySlot;
         bool selectedASlot = hoveringDisplaySlot != null;
         bool hoveringOverUI = EventSystem.current.IsPointerOverGameObject() || selectedASlot;
         
@@ -76,7 +78,7 @@ public class InventoryCursor : MonoBehaviour
         }
     }
     
-    private void GrabItem(ItemDisplaySlot displaySlot, int grabAmount = 0)
+    private void GrabItem(DisplaySlot displaySlot, int grabAmount = 0)
     {
         lastItemSlot = displaySlot;
         
@@ -89,19 +91,19 @@ public class InventoryCursor : MonoBehaviour
         Inventory inventory = displaySlot.Inventory;
 
         HoldingSlot.SetItem(item.Transfer(grabAmount));
-        grabDisplay.SetSlotReference(HoldingSlot);
+        grabDisplay.Setup(playerInventory.CompoundedInventory, HoldingSlot);
         
         inventory.OnChanged?.Invoke();
     }
 
-    private void PlaceItem(ItemDisplaySlot slot, int placeAmount = -1)
+    private void PlaceItem(DisplaySlot slot, int placeAmount = -1)
     {
         bool empty = slot.CurrentSlot.IsEmpty;
         bool sameItem = slot.CurrentSlot.IsSameItemType(HoldingSlot.Item.Info);
         
         Inventory inventory = slot.Inventory;
         
-        if(!inventory.IsItemTypeAllowed(HoldingSlot.Item.Clone().Transfer()))
+        if(!inventory.IsItemTypeAllowed(HoldingSlot.Item.Clone().Transfer(placeAmount)))
             return;
         
         if(empty || sameItem && !slot.CurrentSlot.IsFull)
@@ -110,7 +112,7 @@ public class InventoryCursor : MonoBehaviour
             SwapWithHand(slot);
     }
     
-    private void AddItem(ItemDisplaySlot slot, int addAmount)
+    private void AddItem(DisplaySlot slot, int addAmount)
     {
         bool empty = slot.CurrentSlot.IsEmpty;
         bool sameItem = slot.CurrentSlot.IsSameItemType(HoldingSlot.Item.Info);
@@ -128,12 +130,12 @@ public class InventoryCursor : MonoBehaviour
         if(!canAdd)
             return;
         
-        inventory.AddToInventory(HoldingSlot.Item, slot.CurrentSlot, addAmount);
+        inventory.AddToSlot(HoldingSlot.Item, slot.CurrentSlot, addAmount);
         lastItemSlot = slot;
-        grabDisplay.SetSlotReference(HoldingSlot);
+        grabDisplay.Setup(playerInventory.CompoundedInventory, HoldingSlot);
     }
     
-    private void SwapWithHand(ItemDisplaySlot displaySlot)
+    private void SwapWithHand(DisplaySlot displaySlot)
     {
         if(HoldingSlot == null) 
             return;
@@ -146,17 +148,19 @@ public class InventoryCursor : MonoBehaviour
         Item placingItem = displaySlot.CurrentSlot.Item.Transfer();
         Item handItem = HoldingSlot.Item.Transfer();
 
-        inventory.AddToInventory(handItem, displaySlot.CurrentSlot);
+        inventory.AddToSlot(handItem, displaySlot.CurrentSlot);
         HoldingSlot.SetItem(placingItem.Transfer());
 
-        grabDisplay.SetSlotReference(HoldingSlot);
+        grabDisplay.Setup(playerInventory.CompoundedInventory, HoldingSlot);
     }
 
     public void Drop(int amount = -1)
     {
         if(lastItemSlot == null)
             return;
-        
+
+        amount = amount <= 0 ? HoldingSlot.Amount : amount;
+        Debug.Log(amount);
         HoldingSlot?.Item?.Drop(lastItemSlot.Inventory.transform.position, amount);
     }
 }

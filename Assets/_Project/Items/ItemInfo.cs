@@ -8,6 +8,7 @@ public abstract class ItemInfo : ScriptableObject
     public int maxStack = 16;
     public Sprite itemIcon;
     public ItemPickup itemPrefab;
+    public ItemDisplaySlot displaySlot;
 
 
     protected abstract List<ItemComponent> GetComponents();

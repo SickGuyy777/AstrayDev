@@ -1,45 +1,59 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+[System.Serializable]
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private int inventorySize = 30;
+    [SerializeField] private int size;
     [SerializeField] private Slot[] slots;
-
-    public Slot[] Slots => slots;
     private InventoryFilter filter;
-    public System.Action OnChanged;
 
+    public CompoundInventory CompoundInventory { get; private set; }
+    public Slot[] Slots => slots;
     
+    public Action OnChanged;
+
+
     private void Awake()
     {
         filter = GetComponent<InventoryFilter>();
+        
+        Set(size);
+    }
 
-        slots = new Slot[inventorySize];
-        for (int i = 0; i < inventorySize; i++)
+    public void Set(int size)
+    {
+        slots = new Slot[size];
+        
+        for (int i = 0; i < size; i++)
         {
             Slots[i] = new Slot();
+            Slots[i].OnSlotChanged += Change;
         }
-            
+
+        OnChanged?.Invoke();
     }
+    
+    private void Change() => this.OnChanged?.Invoke();
+
+    public void SetCompound(CompoundInventory compoundInventory) => this.CompoundInventory = compoundInventory;
     
     public bool IsItemTypeAllowed(Item itemToAdd) => filter == null ||  filter != null && filter.ContainedInWhitelist(itemToAdd);
 
     public bool IsFullForItemType(ItemInfo info) => GetBestSlot(info) == -1;
 
-    public int AddToInventory(Item itemToAdd, Slot startingSlot = null, int amountToAdd = 0)
+    public void AddToInventory(Item itemToAdd, Slot startingSlot = null, int amountToAdd = 0)
     {
-        if (!IsItemTypeAllowed(itemToAdd) | IsFullForItemType(itemToAdd.Info))
-            return itemToAdd.Amount;
+        if (!IsItemTypeAllowed(itemToAdd) || IsFullForItemType(itemToAdd.Info))
+            return;
 
         int bestSlotIndex = GetBestSlot(itemToAdd.Info);
+        
         if (bestSlotIndex < 0)
-            return itemToAdd.Amount;
-
-        int remaining = 0;
-        if (amountToAdd > itemToAdd.Amount)
-            remaining = amountToAdd - itemToAdd.Amount;
-
+            return;
+        
         if (amountToAdd <= 0 || amountToAdd > itemToAdd.Amount)
             amountToAdd = itemToAdd.Amount;
 
@@ -54,10 +68,8 @@ public class Inventory : MonoBehaviour
                 bestSlotIndex = GetBestSlot(itemToAdd.Info);
                 
                 if (bestSlotIndex < 0)
-                {
-                    remaining += amountToAdd;
+                
                     break;
-                }
 
                 bestSlot = Slots[bestSlotIndex];
             }
@@ -71,10 +83,20 @@ public class Inventory : MonoBehaviour
                 break;
             }
         }
-
-        OnChanged?.Invoke();
-        return remaining;
     }
+    
+    public void AddToSlot(Item itemToAdd, Slot slot, int amountToAdd = 0)
+    {
+        if (!IsItemTypeAllowed(itemToAdd) || !slot.CanAdd(itemToAdd.Info))
+            return;
+        
+        if (amountToAdd <= 0 || amountToAdd > itemToAdd.Amount)
+            amountToAdd = itemToAdd.Amount;
+
+        slot.AddItem(itemToAdd, amountToAdd);
+    }
+
+    public Item[] GetItems() => Slots.Select(slot => slot.Item).ToArray();
 
     public List<T> GetItemsOfType<T>() where T : ItemComponent
     {

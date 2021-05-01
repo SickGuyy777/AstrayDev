@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/InventoryFilter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/UI/GunDisplaySlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/TickClockObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/RangeVision.cs" root0="FORCE_HIGHLIGHTING" />
@@ -28,39 +29,29 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../FPS/Assets/_Project/Effects/LineEffect.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Environment/Crates/Crate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/UI/DefaultDisplaySlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Weapons/GunComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/DefaultInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/PlayerCursor/PlayerCursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/AIVision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Weapons/Melee/AreaTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Items/Weapons/GunInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/9e/79b2e448/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../PoolingSystem/ObjectPool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Dialogue/DialogueTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Character/Enemies/BasicMutantAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/UI/DisplaySlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Inventory/CompoundInventory.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/GunComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/AmmoComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/BulletInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/AmmoComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Bullets/AmmoInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/IWeaponArgsHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerCharacter.cs" />
-        <option value="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AstarPath.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/DefaultInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Ammo/AmmoInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/LineEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Ammo/AmmoComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipSecondaryComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/EquipPrimaryComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/../../../PoolingSystem/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/TickClockObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/DamageableObject.cs" />
@@ -70,21 +61,16 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/BasicMutantAI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/MutantSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
         <option value="$PROJECT_DIR$/Assets/sliderscrpt.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Utilities/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/RangeVision.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryImporter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/LootTable/LootTable.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/LootTable/LootChance.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemPickup.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Enemies/TickClock.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Environment/Crates/Crate.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/InteractionSystem/RangeInteractor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Guns/RayGun.cs" />
@@ -92,6 +78,26 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Melee/AreaTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Character/HealthManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/Melee/MeleeWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/ItemInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/ItemDragable.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/DisplaySlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/DefaultDisplaySlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/InventoryDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/CompoundInventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/DisplaySlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/WeaponComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/GunComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Weapons/GunInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/ItemDisplaySlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Slot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/UI/GunDisplaySlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/InventoryImporter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Character/WeaponHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/PlayerCursor/InventoryCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Items/Item.cs" />
       </list>
     </option>
   </component>
@@ -152,7 +158,7 @@
       <workItem from="1619356549634" duration="16858000" />
       <workItem from="1619611295143" duration="1305000" />
       <workItem from="1619702893490" duration="10333000" />
-      <workItem from="1619789078282" duration="3933000" />
+      <workItem from="1619789078282" duration="29352000" />
     </task>
     <servers />
   </component>
@@ -179,13 +185,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Project/Items/Item.cs</url>
-          <line>180</line>
+          <line>187</line>
           <properties documentPath="C:\Users\Justin\Desktop\Game Dev\Games\AstrayDevProject\AstrayDev\Assets\_Project\Items\Item.cs" initialLine="169">
             <startOffsets>
-              <option value="4172" />
+              <option value="4445" />
             </startOffsets>
             <endOffsets>
-              <option value="4198" />
+              <option value="4471" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

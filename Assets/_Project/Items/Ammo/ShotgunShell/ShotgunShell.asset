@@ -16,4 +16,5 @@ MonoBehaviour:
   maxStack: 99
   itemIcon: {fileID: -7803065417098437583, guid: 2062ffa195f26ae4db64936277ca5794, type: 3}
   itemPrefab: {fileID: 613420914264479460, guid: 2a9480078db268e418856b6eb205d53e, type: 3}
+  displaySlot: {fileID: 2095112121925384183, guid: 1fa83e18cad655f4082a8517c935ec37, type: 3}
   AmmoType: 2

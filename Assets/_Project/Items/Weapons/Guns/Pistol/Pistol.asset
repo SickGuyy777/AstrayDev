@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d98ab50b5aa0d854fabef639995a17e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e745288f6e52e74caf771738779096d, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
   itemName: Pistol
   maxStack: 1
   itemIcon: {fileID: 8585716222786727153, guid: 3fde28d4ad52a884eb9729884d83beef, type: 3}
   itemPrefab: {fileID: 393963516775047493, guid: 3d24e3df181c87348a42214d99bce837, type: 3}
+  displaySlot: {fileID: 5554357794303595903, guid: 4ace49ac371313544b6924a6b4086232, type: 3}
   weaponType: 1
   weaponPrefab: {fileID: 5762898485788881661, guid: 04a6cc9c620b9e943b421a0f53957a8a, type: 3}
+  ammoType: 1

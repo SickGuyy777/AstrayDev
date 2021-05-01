@@ -71,7 +71,7 @@ public class WeaponHolder : MonoBehaviour
     {
         if(!hasWeapon)
             return;
-
+        
         HoldingWeapon?.gameObject.SetActive(false);
 
         currentWeaponIndex = index;
@@ -82,7 +82,11 @@ public class WeaponHolder : MonoBehaviour
         newWeapon.WaitCD(.2f);
     }
 
-    public void UnEquipWeapon() => HoldingWeapon?.gameObject.SetActive(false);
+    public void UnEquipWeapon()
+    {
+        currentWeaponIndex = 0;
+        HoldingWeapon?.gameObject.SetActive(false);
+    }
 
     private void DestroyEquipedWeapons()
     {
@@ -98,8 +102,11 @@ public class WeaponHolder : MonoBehaviour
 
     public void ScrollEquip(int addIndex)
     {
-        UnEquipWeapon();
+        if(equipedWeapons.Count <= 1)
+            return;
         
+        HoldingWeapon?.gameObject.SetActive(false);
+
         currentWeaponIndex += addIndex;
 
         EquipWeapon(currentWeaponIndex);

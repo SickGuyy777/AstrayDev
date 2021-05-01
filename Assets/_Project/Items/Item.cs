@@ -23,6 +23,8 @@ public class Item
             }
             
             info = value;
+            OnChanged.Invoke();
+            OnChangedType.Invoke();
         }
     }
 
@@ -40,9 +42,11 @@ public class Item
             {
                 this.Components.Clear();
                 info = null;
+                OnChangedType.Invoke();
             }
             
             amount = value;
+            OnChanged.Invoke();
         }
     }
 
@@ -50,9 +54,12 @@ public class Item
     public int MaxStack => Info.maxStack;
     public Sprite Icon => Info?.itemIcon;
     public ItemPickup Prefab => Info?.itemPrefab;
-    public bool IsEmpty => Amount <= 0;
+    public bool IsEmpty => Amount <= 0 || Info == null;
     public bool IsFull => amount >= info.maxStack;
     public List<ItemComponent> Components { get; private set; }
+
+    public Action OnChanged = delegate { };
+    public event Action OnChangedType = delegate { };
 
 
     public Item(ItemInfo info, int amount, List<ItemComponent> components = null)
@@ -128,15 +135,15 @@ public class Item
         if(IsEmpty)
             return;
         
-        dropAmount = dropAmount <= 0 ? Amount : amount;
+        dropAmount = dropAmount <= 0 ? Amount : dropAmount;
         
         float x = Random.Range(-.5f, .5f);
         float y = Random.Range(-.5f, .5f);
         Vector2 randOffset = new Vector2(x, y);
-            
         ItemPickup createdPickup = GameObject.Instantiate(Prefab, position + randOffset, Quaternion.identity, null);
         createdPickup.Item.Amount = dropAmount;
 
+        Debug.Log(dropAmount);
         Amount -= dropAmount;
     }
 

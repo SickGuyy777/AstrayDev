@@ -1,40 +1,37 @@
+
 using TMPro;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 
-public class ItemDisplaySlot : MonoBehaviour
+public abstract class ItemDisplaySlot : MonoBehaviour
 {
-    [SerializeField] private Inventory inventory;
-    
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text amountText;
 
-    public Slot CurrentSlot { get; private set; }
-    public Inventory Inventory => inventory;
+    protected Item itemReference;
+    protected Inventory inventory;
+    
+    private RectTransform rectTransform;
+    public RectTransform RectTransform => rectTransform;
+    
 
-    public int SlotIndex { get; private set; } = 0;
-
-
-    private void Start() => CurrentSlot ??= inventory?.Slots[SlotIndex];
-
-    public void SetSlotReference(Slot slot) => this.CurrentSlot = slot;
-
-    public void Setup(Inventory aInventory, int slotIndex)
+    public void Setup(Inventory aInventory, Slot slot)
     {
+        rectTransform = GetComponent<RectTransform>();
+
         this.inventory = aInventory;
-        SlotIndex = slotIndex;
+        itemReference = slot.Item;
+        
+        UpdateDisplay();
     }
-
-    private void Update()
+    
+    protected virtual void UpdateDisplay()
     {
-        if (CurrentSlot != null)
-        {
-            icon.sprite = CurrentSlot.Item.Icon;
-            icon.color = !CurrentSlot.IsEmpty ? Color.white : Color.clear;
+        icon.sprite = itemReference.Icon;
+        icon.color = !itemReference.IsEmpty ? Color.white : Color.clear;
 
-            bool showAmountText = CurrentSlot.Amount > 1 && !CurrentSlot.IsEmpty;
+        bool showAmountText = itemReference.Amount > 1 && !itemReference.IsEmpty;
             
-            amountText.text = showAmountText? CurrentSlot.Amount.ToString("0") : "";
-        }
+        amountText.text = showAmountText? itemReference.Amount.ToString("0") : "";
     }
 }

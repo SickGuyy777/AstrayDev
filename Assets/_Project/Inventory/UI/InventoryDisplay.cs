@@ -1,19 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryDisplay : MonoBehaviour
 {
     [SerializeField] private Inventory inventoryReference;
-    [SerializeField] private Transform group;
-    [SerializeField] private ItemDisplaySlot displaySlotPrefab;
+    [SerializeField] private GridLayoutGroup group;
+    [SerializeField] private DisplaySlot displaySlotPrefab;
 
     
     private void Awake()
     {
-        for (int i = 0; i < inventoryReference.Slots.Length; i++)
+        foreach (Slot slot in inventoryReference.Slots)
         {
-            ItemDisplaySlot displaySlot = Instantiate(displaySlotPrefab, Vector2.zero, Quaternion.identity, group.transform);
-            displaySlot.Setup(inventoryReference, i);
-            displaySlot.SetSlotReference(inventoryReference.Slots[i]);
+            DisplaySlot displaySlot = Instantiate(displaySlotPrefab, Vector2.zero, Quaternion.identity, group.transform);
+            RectTransform rectTransform = displaySlot.gameObject.GetComponent<RectTransform>();
+            rectTransform.sizeDelta = group.cellSize;
+            displaySlot.Setup(inventoryReference, slot);
         }
     }
 }
