@@ -61,7 +61,6 @@ public class ObjectPool<T> where T : MonoBehaviour, IPoolObject<T>
 
     public IEnumerator Destroy(T objectToDestroy, float seconds = 0)
     {
-        if (seconds > 0);
             yield return new WaitForSeconds(seconds);
 
         Destroy(objectToDestroy);
