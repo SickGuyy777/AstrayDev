@@ -160,7 +160,6 @@ public class InventoryCursor : MonoBehaviour
             return;
 
         amount = amount <= 0 ? HoldingSlot.Amount : amount;
-        Debug.Log(amount);
         HoldingSlot?.Item?.Drop(lastItemSlot.Inventory.transform.position, amount);
     }
 }
