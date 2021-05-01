@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(DisplaySlot))]
-public class ItemDragable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class DisplaySlotDragBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public static ItemDragable currentSelectedDragable;
+    public static DisplaySlotDragBehaviour currentSelectedDragable;
     public DisplaySlot DisplaySlot { get; private set; }
 
 

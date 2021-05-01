@@ -8,7 +8,7 @@ public class InventoryDisplay : MonoBehaviour
     [SerializeField] private DisplaySlot displaySlotPrefab;
 
     
-    private void Awake()
+    private void Start()
     {
         foreach (Slot slot in inventoryReference.Slots)
         {

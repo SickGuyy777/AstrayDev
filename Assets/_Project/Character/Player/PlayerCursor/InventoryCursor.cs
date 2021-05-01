@@ -37,7 +37,7 @@ public class InventoryCursor : MonoBehaviour
 
     private void UpdateDragging()
     {
-        DisplaySlot hoveringDisplaySlot = ItemDragable.currentSelectedDragable?.DisplaySlot;
+        DisplaySlot hoveringDisplaySlot = DisplaySlotDragBehaviour.currentSelectedDragable?.DisplaySlot;
         bool selectedASlot = hoveringDisplaySlot != null;
         bool hoveringOverUI = EventSystem.current.IsPointerOverGameObject() || selectedASlot;
         

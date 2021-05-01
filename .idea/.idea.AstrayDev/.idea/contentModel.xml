@@ -21,9 +21,20 @@
             </e>
             <e p="HealthManager.cs" t="Include" />
             <e p="IDamageable.cs" t="Include" />
+            <e p="InteractionSystem" t="Include">
+              <e p="ChangeMaterialSelectionResponse.cs" t="Include" />
+              <e p="IInteractable.cs" t="Include" />
+              <e p="ISelectionResponse.cs" t="Include" />
+              <e p="RangeInteractor.cs" t="Include" />
+            </e>
+            <e p="IWeaponArgsHolder.cs" t="Include" />
             <e p="Movement.cs" t="Include" />
             <e p="Player" t="Include">
               <e p="PlayerController.cs" t="Include" />
+              <e p="PlayerCursor" t="Include">
+                <e p="InventoryCursor.cs" t="Include" />
+                <e p="PlayerCursor.cs" t="Include" />
+              </e>
               <e p="PlayerInput.cs" t="Include" />
             </e>
             <e p="WeaponHolder.cs" t="Include" />
@@ -40,59 +51,55 @@
           </e>
           <e p="Inventory" t="Include">
             <e p="CompoundInventory.cs" t="Include" />
+            <e p="Filters" t="Include">
+              <e p="InventoryFilter.cs" t="Include" />
+              <e p="PrimaryWeaponFilter.cs" t="Include" />
+              <e p="SecondaryWeaponFilter.cs" t="Include" />
+            </e>
             <e p="Inventory.cs" t="Include" />
-            <e p="InventoryFilter.cs" t="Include" />
             <e p="InventoryImporter.cs" t="Include" />
-            <e p="PrimaryWeaponFilter.cs" t="Include" />
-            <e p="SecondaryWeaponFilter.cs" t="Include" />
-            <e p="Slot.cs" t="Include" />
             <e p="UI" t="Include">
-              <e p="DefaultDisplaySlot.cs" t="Include" />
               <e p="DisplaySlot.cs" t="Include" />
-              <e p="GunDisplaySlot.cs" t="Include" />
+              <e p="DisplaySlotDragBehaviour.cs" t="Include" />
               <e p="InventoryDisplay.cs" t="Include" />
-              <e p="InventoryObject.cs" t="Include" />
-              <e p="ItemDisplaySlot.cs" t="Include" />
-              <e p="ItemDragable.cs" t="Include" />
             </e>
           </e>
           <e p="Items" t="Include">
-            <e p="Ammo" t="Include">
+            <e p="_ItemComponents" t="Include">
               <e p="AmmoComponent.cs" t="Include" />
+              <e p="EquipPrimaryComponent.cs" t="Include" />
+              <e p="EquipSecondaryComponent.cs" t="Include" />
+              <e p="GunComponent.cs" t="Include" />
+              <e p="ItemComponent.cs" t="Include" />
+              <e p="WeaponComponent.cs" t="Include" />
+            </e>
+            <e p="Ammo" t="Include">
               <e p="AmmoInfo.cs" t="Include" />
             </e>
+            <e p="DefaultDisplaySlot.cs" t="Include" />
             <e p="DefaultInfo.cs" t="Include" />
-            <e p="EquipPrimaryComponent.cs" t="Include" />
-            <e p="EquipSecondaryComponent.cs" t="Include" />
-            <e p="InteractionSystem" t="Include">
-              <e p="ChangeMaterialSelectionResponse.cs" t="Include" />
-              <e p="IInteractable.cs" t="Include" />
-              <e p="ISelectionResponse.cs" t="Include" />
-              <e p="RangeInteractor.cs" t="Include" />
-            </e>
             <e p="Item.cs" t="Include" />
-            <e p="ItemComponent.cs" t="Include" />
+            <e p="ItemDisplaySlot.cs" t="Include" />
             <e p="ItemInfo.cs" t="Include" />
             <e p="ItemPickup.cs" t="Include" />
             <e p="LootTable" t="Include">
               <e p="LootChance.cs" t="Include" />
               <e p="LootTable.cs" t="Include" />
             </e>
+            <e p="Slot.cs" t="Include" />
             <e p="Weapons" t="Include">
-              <e p="GunComponent.cs" t="Include" />
               <e p="GunInfo.cs" t="Include" />
               <e p="Guns" t="Include">
+                <e p="GunDisplaySlot.cs" t="Include" />
                 <e p="LineEffect.cs" t="Include" />
                 <e p="RayGun.cs" t="Include" />
               </e>
-              <e p="IWeaponArgsHolder.cs" t="Include" />
               <e p="Melee" t="Include">
                 <e p="AreaTrigger.cs" t="Include" />
                 <e p="MeleeWeapon.cs" t="Include" />
               </e>
               <e p="Weapon.cs" t="Include" />
               <e p="WeaponArgs.cs" t="Include" />
-              <e p="WeaponComponent.cs" t="Include" />
               <e p="WeaponInfo.cs" t="Include" />
             </e>
           </e>
@@ -100,10 +107,11 @@
             <e p="Menu Scripts" t="Include">
               <e p="Buttons.cs" t="Include" />
             </e>
-          </e>
-          <e p="PlayerCursor" t="Include">
-            <e p="InventoryCursor.cs" t="Include" />
-            <e p="PlayerCursor.cs" t="Include" />
+            <e p="Pause Menu" t="Include">
+              <e p="BTNS Scripts" t="Include">
+                <e p="PauseButtons.cs" t="Include" />
+              </e>
+            </e>
           </e>
           <e p="Utilities" t="Include">
             <e p="ObjectPool.cs" t="Include" />

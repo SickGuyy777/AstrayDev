@@ -142,8 +142,7 @@ public class Item
         Vector2 randOffset = new Vector2(x, y);
         ItemPickup createdPickup = GameObject.Instantiate(Prefab, position + randOffset, Quaternion.identity, null);
         createdPickup.Item.Amount = dropAmount;
-
-        Debug.Log(dropAmount);
+        
         Amount -= dropAmount;
     }
 
