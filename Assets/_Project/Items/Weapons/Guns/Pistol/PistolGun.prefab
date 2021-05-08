@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6968312495998154783}
   - component: {fileID: 5762898485788881661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PistolGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ MonoBehaviour:
   numOfProjectiles: 1
   mask:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 695
   lineEffectPrefab: {fileID: 1690355991132869052, guid: ddd60f34c62448646af3b71101d80982, type: 3}
   lineColor: {r: 0.92648184, g: 0.9716981, b: 0.48126557, a: 0.4}
   lineWidth: 0.04

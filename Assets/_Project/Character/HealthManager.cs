@@ -12,6 +12,8 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private List<DamageableObject> damageables = new List<DamageableObject>();
     
     public float MaxHealth => maxHealth;
+    public float HealthPercentage => Mathf.InverseLerp(0, maxHealth, health);
+    public float ReversedHealthPercentage => Mathf.InverseLerp(maxHealth, 0, health);
     public float Health
     {
         get => health;
@@ -22,6 +24,8 @@ public class HealthManager : MonoBehaviour
 
             if (value <= 0)
             {
+                health = value;
+                OnHealthChanged?.Invoke();
                 OnDied?.Invoke();
                 return;
             }

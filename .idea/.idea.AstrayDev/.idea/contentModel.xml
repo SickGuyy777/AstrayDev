@@ -4,6 +4,7 @@
     <e p="C:\Users\Justin\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Justin\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_AstrayDev.778603680.00" t="ExcludeRecursive" />
     <e p="C:\Users\Justin\Desktop\Game Dev\Games\AstrayDevProject\AstrayDev" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -30,6 +31,9 @@
             <e p="IWeaponArgsHolder.cs" t="Include" />
             <e p="Movement.cs" t="Include" />
             <e p="Player" t="Include">
+              <e p="HeartDisplay" t="Include">
+                <e p="HeartDisplay.cs" t="Include" />
+              </e>
               <e p="PlayerController.cs" t="Include" />
               <e p="PlayerCursor" t="Include">
                 <e p="InventoryCursor.cs" t="Include" />
@@ -88,9 +92,9 @@
             </e>
             <e p="Slot.cs" t="Include" />
             <e p="Weapons" t="Include">
-              <e p="GunInfo.cs" t="Include" />
               <e p="Guns" t="Include">
                 <e p="GunDisplaySlot.cs" t="Include" />
+                <e p="GunInfo.cs" t="Include" />
                 <e p="LineEffect.cs" t="Include" />
                 <e p="RayGun.cs" t="Include" />
               </e>
@@ -117,188 +121,6 @@
             <e p="ObjectPool.cs" t="Include" />
           </e>
         </e>
-        <e p="AstarPathfindingProject" t="Include">
-          <e p="AstarPathfindingProject.asmdef" t="Include" />
-          <e p="Behaviors" t="Include">
-            <e p="AIDestinationSetter.cs" t="Include" />
-            <e p="Patrol.cs" t="Include" />
-          </e>
-          <e p="Core" t="Include">
-            <e p="AI" t="Include">
-              <e p="AIBase.cs" t="Include" />
-              <e p="AILerp.cs" t="Include" />
-              <e p="AIPath.cs" t="Include" />
-              <e p="IAstarAI.cs" t="Include" />
-              <e p="NavmeshController.cs" t="Include" />
-              <e p="Seeker.cs" t="Include" />
-              <e p="TurnBasedAI.cs" t="Include" />
-            </e>
-            <e p="astarclasses.cs" t="Include" />
-            <e p="AstarData.cs" t="Include" />
-            <e p="AstarMath.cs" t="Include" />
-            <e p="AstarPath.cs" t="Include" />
-            <e p="GraphUpdateScene.cs" t="Include" />
-            <e p="GraphUpdateShape.cs" t="Include" />
-            <e p="Misc" t="Include">
-              <e p="AnimationLink.cs" t="Include" />
-              <e p="ArrayPool.cs" t="Include" />
-              <e p="AstarDebugger.cs" t="Include" />
-              <e p="BinaryHeap.cs" t="Include" />
-              <e p="Draw.cs" t="Include" />
-              <e p="EditorResourceHelper.cs" t="Include" />
-              <e p="GraphEditorBase.cs" t="Include" />
-              <e p="GraphModifier.cs" t="Include" />
-              <e p="GraphUpdateProcessor.cs" t="Include" />
-              <e p="GraphUtilities.cs" t="Include" />
-              <e p="HierarchicalGraph.cs" t="Include" />
-              <e p="Int3.cs" t="Include" />
-              <e p="ListPool.cs" t="Include" />
-              <e p="MovementUtilities.cs" t="Include" />
-              <e p="NodeLink.cs" t="Include" />
-              <e p="NodeLink2.cs" t="Include" />
-              <e p="NodeLink3.cs" t="Include" />
-              <e p="ObjectPool.cs" t="Include" />
-              <e p="PathInterpolator.cs" t="Include" />
-              <e p="PathPool.cs" t="Include" />
-              <e p="PathProcessor.cs" t="Include" />
-              <e p="PathReturnQueue.cs" t="Include" />
-              <e p="StackPool.cs" t="Include" />
-              <e p="ThreadControlQueue.cs" t="Include" />
-              <e p="WindowsStoreCompatibility.cs" t="Include" />
-              <e p="WorkItemProcessor.cs" t="Include" />
-            </e>
-            <e p="Nodes" t="Include">
-              <e p="GraphNode.cs" t="Include" />
-            </e>
-            <e p="Path.cs" t="Include" />
-            <e p="PathHandler.cs" t="Include" />
-            <e p="Serialization" t="Include">
-              <e p="JsonConverters.cs" t="Include" />
-              <e p="JsonSerializer.cs" t="Include" />
-              <e p="SimpleJsonReplacement.cs" t="Include" />
-              <e p="SimpleZipReplacement.cs" t="Include" />
-              <e p="TinyJson.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Editor" t="Include">
-            <e p="AIBaseEditor.cs" t="Include" />
-            <e p="AILerpEditor.cs" t="Include" />
-            <e p="AnimationLinkEditor.cs" t="Include" />
-            <e p="AstarPathEditor.cs" t="Include" />
-            <e p="AstarPathfindingProjectEditor.asmdef" t="Include" />
-            <e p="AstarUpdateChecker.cs" t="Include" />
-            <e p="AstarUpdateWindow.cs" t="Include" />
-            <e p="CustomGraphEditorAttribute.cs" t="Include" />
-            <e p="EditorAssets" t="Include">
-              <e p="Materials" t="Include">
-                <e p="Navmesh.cginc" t="Include" />
-                <e p="Navmesh.shader" t="Include" />
-                <e p="NavmeshOutline.shader" t="Include" />
-              </e>
-            </e>
-            <e p="GraphEditors" t="Include">
-              <e p="GraphEditor.cs" t="Include" />
-              <e p="GridGeneratorEditor.cs" t="Include" />
-              <e p="NavMeshGeneratorEditor.cs" t="Include" />
-              <e p="PointGeneratorEditor.cs" t="Include" />
-            </e>
-            <e p="GraphUpdateSceneEditor.cs" t="Include" />
-            <e p="Legacy" t="Include">
-              <e p="LegacyAIPathEditor2.cs" t="Include" />
-              <e p="LegacyEditorHelper2.cs" t="Include" />
-            </e>
-            <e p="ModifierEditors" t="Include">
-              <e p="RaycastModifierEditor.cs" t="Include" />
-              <e p="SmoothModifierEditor.cs" t="Include" />
-            </e>
-            <e p="SeekerEditor.cs" t="Include" />
-          </e>
-          <e p="Generators" t="Include">
-            <e p="Base.cs" t="Include" />
-            <e p="GridGenerator.cs" t="Include" />
-            <e p="NavmeshBase.cs" t="Include" />
-            <e p="NavMeshGenerator.cs" t="Include" />
-            <e p="NodeClasses" t="Include">
-              <e p="GridNode.cs" t="Include" />
-              <e p="GridNodeBase.cs" t="Include" />
-              <e p="PointNode.cs" t="Include" />
-              <e p="TriangleMeshNode.cs" t="Include" />
-            </e>
-            <e p="PointGenerator.cs" t="Include" />
-            <e p="QuadtreeGraph.cs" t="Include" />
-            <e p="Utilities" t="Include">
-              <e p="BBTree.cs" t="Include" />
-              <e p="EuclideanEmbedding.cs" t="Include" />
-              <e p="GraphTransform.cs" t="Include" />
-              <e p="GridLookup.cs" t="Include" />
-              <e p="NavMeshRenderer.cs" t="Include" />
-              <e p="NavmeshTile.cs" t="Include" />
-              <e p="ObjImporter.cs" t="Include" />
-              <e p="PointKDTree.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Legacy" t="Include">
-            <e p="Editor" t="Include">
-              <e p="LegacyAIPathEditor.cs" t="Include" />
-              <e p="LegacyEditorHelper.cs" t="Include" />
-              <e p="LegacyRichAIEditor.cs" t="Include" />
-              <e p="LegacyRVOControllerEditor.cs" t="Include" />
-            </e>
-            <e p="LegacyAIPath.cs" t="Include" />
-            <e p="MiscLegacy.cs" t="Include" />
-          </e>
-          <e p="link.xml" t="Include" />
-          <e p="Modifiers" t="Include">
-            <e p="AlternativePath.cs" t="Include" />
-            <e p="FunnelModifier.cs" t="Include" />
-            <e p="Modifiers.cs" t="Include" />
-            <e p="RaycastModifier.cs" t="Include" />
-            <e p="SimpleSmoothModifier.cs" t="Include" />
-            <e p="StartEndModifier.cs" t="Include" />
-          </e>
-          <e p="Navmesh" t="Include">
-            <e p="NavmeshUpdates.cs" t="Include" />
-            <e p="RelevantGraphSurface.cs" t="Include" />
-          </e>
-          <e p="PackageTools" t="Include">
-            <e p="Editor" t="Include">
-              <e p="EditorBase.cs" t="Include" />
-              <e p="EditorGUIx.cs" t="Include" />
-              <e p="EnumFlagDrawer.cs" t="Include" />
-              <e p="PackageToolsEditor.asmdef" t="Include" />
-            </e>
-            <e p="EnumFlagAttribute.cs" t="Include" />
-            <e p="UniqueComponentAttribute.cs" t="Include" />
-            <e p="VersionedMonoBehaviour.cs" t="Include" />
-          </e>
-          <e p="Pathfinders" t="Include">
-            <e p="ABPath.cs" t="Include" />
-          </e>
-          <e p="Plugins" t="Include">
-            <e p="dependencies.txt" t="Include" />
-            <e p="DotNetZip" t="Include">
-              <e p="DotNetZipLicense.txt" t="Include" />
-            </e>
-          </e>
-          <e p="TurnBased" t="Include">
-            <e p="BlockManager.cs" t="Include" />
-            <e p="SingleNodeBlocker.cs" t="Include" />
-          </e>
-          <e p="Utilities" t="Include">
-            <e p="AstarChecksum.cs" t="Include" />
-            <e p="AstarMemory.cs" t="Include" />
-            <e p="AstarParallel.cs" t="Include" />
-            <e p="AstarProfiler.cs" t="Include" />
-            <e p="DotNetReplacements.cs" t="Include" />
-            <e p="Funnel.cs" t="Include" />
-            <e p="GraphGizmoHelper.cs" t="Include" />
-            <e p="GraphUpdateUtilities.cs" t="Include" />
-            <e p="PathUtilities.cs" t="Include" />
-            <e p="ProfileHelper.cs" t="Include" />
-            <e p="RetainedGizmos.cs" t="Include" />
-            <e p="UnityReferenceHelper.cs" t="Include" />
-          </e>
-        </e>
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -314,94 +136,351 @@
               <e p="readme.txt" t="Include" />
             </e>
           </e>
+          <e p="MelonsUltilities" t="Include">
+            <e p="Assets" t="Include">
+              <e p="Cinemachine" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="com.unity.cinemachine.Editor.asmdef" t="Include" />
+                  <e p="EditorResources" t="Include">
+                    <e p="CMWaveform.compute" t="Include" />
+                    <e p="CMWaveform.shader" t="Include" />
+                    <e p="StdLib.hlsl" t="Include" />
+                  </e>
+                  <e p="Editors" t="Include">
+                    <e p="Cinemachine3rdPersonFollowEditor.cs" t="Include" />
+                    <e p="CinemachineBasicMultiChannelPerlinEditor.cs" t="Include" />
+                    <e p="CinemachineBlenderSettingsEditor.cs" t="Include" />
+                    <e p="CinemachineBlendListCameraEditor.cs" t="Include" />
+                    <e p="CinemachineBrainEditor.cs" t="Include" />
+                    <e p="CinemachineClearShotEditor.cs" t="Include" />
+                    <e p="CinemachineColliderEditor.cs" t="Include" />
+                    <e p="CinemachineComposerEditor.cs" t="Include" />
+                    <e p="CinemachineConfinerEditor.cs" t="Include" />
+                    <e p="CinemachineExternalCameraEditor.cs" t="Include" />
+                    <e p="CinemachineFramingTransposerEditor.cs" t="Include" />
+                    <e p="CinemachineFreeLookEditor.cs" t="Include" />
+                    <e p="CinemachineGroupComposerEditor.cs" t="Include" />
+                    <e p="CinemachineHardLockToTargetEditor.cs" t="Include" />
+                    <e p="CinemachineHardLookAtEditor.cs" t="Include" />
+                    <e p="CinemachineMixingCameraEditor.cs" t="Include" />
+                    <e p="CinemachineNoiseSettingsEditor.cs" t="Include" />
+                    <e p="CinemachineOrbitalTransposerEditor.cs" t="Include" />
+                    <e p="CinemachinePathEditor.cs" t="Include" />
+                    <e p="CinemachinePOVEditor.cs" t="Include" />
+                    <e p="CinemachineSameAsFollowTargetEditor.cs" t="Include" />
+                    <e p="CinemachineScreenComposerGuides.cs" t="Include" />
+                    <e p="CinemachineSmoothPathEditor.cs" t="Include" />
+                    <e p="CinemachineStateDrivenCameraEditor.cs" t="Include" />
+                    <e p="CinemachineStoryboardEditor.cs" t="Include" />
+                    <e p="CinemachineTargetGroupEditor.cs" t="Include" />
+                    <e p="CinemachineTrackedDollyEditor.cs" t="Include" />
+                    <e p="CinemachineTransposerEditor.cs" t="Include" />
+                    <e p="CinemachineVirtualCameraBaseEditor.cs" t="Include" />
+                    <e p="CinemachineVirtualCameraEditor.cs" t="Include" />
+                  </e>
+                  <e p="Experimental" t="Include">
+                    <e p="CinemachineNewFreeLookEditor.cs" t="Include" />
+                    <e p="CinemachineNewVirtualCameraEditor.cs" t="Include" />
+                    <e p="VcamStageEditor.cs" t="Include" />
+                  </e>
+                  <e p="Helpers" t="Include">
+                    <e p="CinemachineTriggerActionEditor.cs" t="Include" />
+                  </e>
+                  <e p="Impulse" t="Include">
+                    <e p="CinemachineCollisionImpulseSourceEditor.cs" t="Include" />
+                    <e p="CinemachineImpulseChannelPropertyDrawer.cs" t="Include" />
+                    <e p="CinemachineImpulseChannels.cs" t="Include" />
+                    <e p="CinemachineImpulseDefinitionPropertyDrawer.cs" t="Include" />
+                    <e p="CinemachineImpulseEnvelopePropertyDrawer.cs" t="Include" />
+                    <e p="CinemachineImpulseListenerEditor.cs" t="Include" />
+                    <e p="CinemachineImpulseSourceEditor.cs" t="Include" />
+                  </e>
+                  <e p="Menus" t="Include">
+                    <e p="CinemachineMenu.cs" t="Include" />
+                  </e>
+                  <e p="PostProcessing" t="Include">
+                    <e p="CinemachinePostProcessingEditor.cs" t="Include" />
+                    <e p="CinemachineVolumeSettingsEditor.cs" t="Include" />
+                  </e>
+                  <e p="PropertyDrawers" t="Include">
+                    <e p="AxisStatePropertyDrawer.cs" t="Include" />
+                    <e p="CinemachineBlendDefinitionPropertyDrawer.cs" t="Include" />
+                    <e p="CinemachineTagFieldPropertyDrawer.cs" t="Include" />
+                    <e p="EmbeddedAssetPropertyDrawer.cs" t="Include" />
+                    <e p="LensSettingsPropertyDrawer.cs" t="Include" />
+                    <e p="NoiseSettingsPropertyDrawer.cs" t="Include" />
+                    <e p="OrbitalTransposerHeadingPropertyDrawer.cs" t="Include" />
+                    <e p="VcamTargetPropertyDrawer.cs" t="Include" />
+                  </e>
+                  <e p="Timeline" t="Include">
+                    <e p="CinemachineShotClipEditor.cs" t="Include" />
+                    <e p="CinemachineShotEditor.cs" t="Include" />
+                  </e>
+                  <e p="Utility" t="Include">
+                    <e p="BaseEditor.cs" t="Include" />
+                    <e p="CinemachineLensPresets.cs" t="Include" />
+                    <e p="EmbeddedAssetHelpers.cs" t="Include" />
+                    <e p="InspectorUtility.cs" t="Include" />
+                    <e p="ReflectionHelpers.cs" t="Include" />
+                    <e p="SaveDuringPlay.cs" t="Include" />
+                    <e p="ScriptableObjectUtility.cs" t="Include" />
+                    <e p="SerializedPropertyHelper.cs" t="Include" />
+                  </e>
+                  <e p="Windows" t="Include">
+                    <e p="AboutWindow.cs" t="Include" />
+                    <e p="CinemachineColliderPrefs.cs" t="Include" />
+                    <e p="CinemachineSettings.cs" t="Include" />
+                    <e p="WaveformWindow.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="license.txt" t="Include" />
+                <e p="Runtime" t="Include">
+                  <e p="AssemblyInfo.cs" t="Include" />
+                  <e p="Behaviours" t="Include">
+                    <e p="Cinemachine3rdPersonAim.cs" t="Include" />
+                    <e p="CinemachineBlendListCamera.cs" t="Include" />
+                    <e p="CinemachineBrain.cs" t="Include" />
+                    <e p="CinemachineCameraOffset.cs" t="Include" />
+                    <e p="CinemachineClearShot.cs" t="Include" />
+                    <e p="CinemachineCollider.cs" t="Include" />
+                    <e p="CinemachineConfiner.cs" t="Include" />
+                    <e p="CinemachineDollyCart.cs" t="Include" />
+                    <e p="CinemachineExternalCamera.cs" t="Include" />
+                    <e p="CinemachineFollowZoom.cs" t="Include" />
+                    <e p="CinemachineFreeLook.cs" t="Include" />
+                    <e p="CinemachineMixingCamera.cs" t="Include" />
+                    <e p="CinemachinePath.cs" t="Include" />
+                    <e p="CinemachinePipeline.cs" t="Include" />
+                    <e p="CinemachinePixelPerfect.cs" t="Include" />
+                    <e p="CinemachineRecomposer.cs" t="Include" />
+                    <e p="CinemachineSmoothPath.cs" t="Include" />
+                    <e p="CinemachineStateDrivenCamera.cs" t="Include" />
+                    <e p="CinemachineStoryboard.cs" t="Include" />
+                    <e p="CinemachineTargetGroup.cs" t="Include" />
+                    <e p="CinemachineVirtualCamera.cs" t="Include" />
+                  </e>
+                  <e p="com.unity.cinemachine.asmdef" t="Include" />
+                  <e p="Components" t="Include">
+                    <e p="Cinemachine3rdPersonFollow.cs" t="Include" />
+                    <e p="CinemachineBasicMultiChannelPerlin.cs" t="Include" />
+                    <e p="CinemachineComposer.cs" t="Include" />
+                    <e p="CinemachineFramingTransposer.cs" t="Include" />
+                    <e p="CinemachineGroupComposer.cs" t="Include" />
+                    <e p="CinemachineHardLockToTarget.cs" t="Include" />
+                    <e p="CinemachineHardLookAt.cs" t="Include" />
+                    <e p="CinemachineOrbitalTransposer.cs" t="Include" />
+                    <e p="CinemachinePOV.cs" t="Include" />
+                    <e p="CinemachineSameAsFollowTarget.cs" t="Include" />
+                    <e p="CinemachineTrackedDolly.cs" t="Include" />
+                    <e p="CinemachineTransposer.cs" t="Include" />
+                  </e>
+                  <e p="Core" t="Include">
+                    <e p="AxisState.cs" t="Include" />
+                    <e p="CameraState.cs" t="Include" />
+                    <e p="CinemachineBlend.cs" t="Include" />
+                    <e p="CinemachineBlenderSettings.cs" t="Include" />
+                    <e p="CinemachineComponentBase.cs" t="Include" />
+                    <e p="CinemachineCore.cs" t="Include" />
+                    <e p="CinemachineDebug.cs" t="Include" />
+                    <e p="CinemachineExtension.cs" t="Include" />
+                    <e p="CinemachineInputAxisDriver.cs" t="Include" />
+                    <e p="CinemachinePathBase.cs" t="Include" />
+                    <e p="CinemachinePropertyAttribute.cs" t="Include" />
+                    <e p="CinemachineVirtualCameraBase.cs" t="Include" />
+                    <e p="GaussianFilter.cs" t="Include" />
+                    <e p="ICinemachineCamera.cs" t="Include" />
+                    <e p="ICinemachineComponent.cs" t="Include" />
+                    <e p="LensSettings.cs" t="Include" />
+                    <e p="NoiseSettings.cs" t="Include" />
+                    <e p="Predictor.cs" t="Include" />
+                    <e p="RuntimeUtility.cs" t="Include" />
+                    <e p="SignalSourceAsset.cs" t="Include" />
+                    <e p="SplineHelpers.cs" t="Include" />
+                    <e p="TargetPositionCache.cs" t="Include" />
+                    <e p="UnityVectorExtensions.cs" t="Include" />
+                    <e p="UpdateTracker.cs" t="Include" />
+                  </e>
+                  <e p="Experimental" t="Include">
+                    <e p="CinemachineNewFreeLook.cs" t="Include" />
+                    <e p="CinemachineNewVirtualCamera.cs" t="Include" />
+                  </e>
+                  <e p="Helpers" t="Include">
+                    <e p="CinemachineInputProvider.cs" t="Include" />
+                    <e p="CinemachineTouchInputMapper.cs" t="Include" />
+                    <e p="CinemachineTriggerAction.cs" t="Include" />
+                    <e p="GroupWeightManipulator.cs" t="Include" />
+                  </e>
+                  <e p="Impulse" t="Include">
+                    <e p="CinemachineCollisionImpulseSource.cs" t="Include" />
+                    <e p="CinemachineFixedSignal.cs" t="Include" />
+                    <e p="CinemachineImpulseDefinition.cs" t="Include" />
+                    <e p="CinemachineImpulseListener.cs" t="Include" />
+                    <e p="CinemachineImpulseManager.cs" t="Include" />
+                    <e p="CinemachineImpulseSource.cs" t="Include" />
+                    <e p="CinemachineIndependentImpulseListener.cs" t="Include" />
+                  </e>
+                  <e p="PostProcessing" t="Include">
+                    <e p="CinemachinePostProcessing.cs" t="Include" />
+                    <e p="CinemachineVolumeSettings.cs" t="Include" />
+                  </e>
+                  <e p="Timeline" t="Include">
+                    <e p="CinemachineMixer.cs" t="Include" />
+                    <e p="CinemachineShot.cs" t="Include" />
+                    <e p="CinemachineShotPlayable.cs" t="Include" />
+                    <e p="CinemachineTrack.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Tests" t="Include">
+                  <e p="Editor" t="Include">
+                    <e p="com.unity.cinemachine.EditorTests.asmdef" t="Include" />
+                    <e p="DampingTests.cs" t="Include" />
+                  </e>
+                  <e p="Runtime" t="Include">
+                    <e p="com.unity.cinemachine.Tests.asmdef" t="Include" />
+                    <e p="RuntimeExampleTest.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="Billboarding" t="Include">
+              <e p="Billboard.cs" t="Include" />
+            </e>
+            <e p="Camera" t="Include">
+              <e p="CameraFollowHead.cs" t="Include" />
+            </e>
+            <e p="Grid" t="Include">
+              <e p="Grid.cs" t="Include" />
+              <e p="PathFinding" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="PathMakerEditor.cs" t="Include" />
+                  <e p="PathMakerMenuItem.cs" t="Include" />
+                </e>
+                <e p="PathFinder.cs" t="Include" />
+                <e p="PathMaker.cs" t="Include" />
+                <e p="PathNode.cs" t="Include" />
+                <e p="PathObstacle.cs" t="Include" />
+                <e p="TestMovement.cs" t="Include" />
+              </e>
+            </e>
+            <e p="HealthSystem" t="Include">
+              <e p="DamageableObject.cs" t="Include" />
+              <e p="HealthManager.cs" t="Include" />
+              <e p="IDamageable.cs" t="Include" />
+            </e>
+            <e p="InteractionSystem" t="Include">
+              <e p="ChangeMaterialSelectionResponse.cs" t="Include" />
+              <e p="CircleInteractor.cs" t="Include" />
+              <e p="IInteractable.cs" t="Include" />
+              <e p="ISelectionResponse.cs" t="Include" />
+            </e>
+            <e p="Movement" t="Include">
+              <e p="2D" t="Include">
+                <e p="Movement2D.cs" t="Include" />
+                <e p="PlayerController2D.cs" t="Include" />
+              </e>
+              <e p="3D" t="Include">
+                <e p="PlayerController.cs" t="Include" />
+                <e p="PlayerMovement.cs" t="Include" />
+              </e>
+            </e>
+            <e p="PoolingSystem" t="Include">
+              <e p="ObjectPool.cs" t="Include" />
+            </e>
+            <e p="SoundSystem" t="Include">
+              <e p="Sound.cs" t="Include" />
+              <e p="SoundCreator.cs" t="Include" />
+              <e p="WorldSound.cs" t="Include" />
+            </e>
+          </e>
           <e p="SpriteOutline" t="Include">
             <e p="Shaders" t="Include">
               <e p="SpriteOutline.shader" t="Include" />
             </e>
           </e>
+          <e p="TextMesh Pro" t="Include">
+            <e p="Examples &amp; Extras" t="Include">
+              <e p="Fonts" t="Include">
+                <e p="Anton OFL.txt" t="Include" />
+                <e p="Bangers - OFL.txt" t="Include" />
+                <e p="Oswald-Bold - OFL.txt" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="Benchmark01.cs" t="Include" />
+                <e p="Benchmark01_UGUI.cs" t="Include" />
+                <e p="Benchmark02.cs" t="Include" />
+                <e p="Benchmark03.cs" t="Include" />
+                <e p="Benchmark04.cs" t="Include" />
+                <e p="CameraController.cs" t="Include" />
+                <e p="ChatController.cs" t="Include" />
+                <e p="DropdownSample.cs" t="Include" />
+                <e p="EnvMapAnimator.cs" t="Include" />
+                <e p="ObjectSpin.cs" t="Include" />
+                <e p="ShaderPropAnimator.cs" t="Include" />
+                <e p="SimpleScript.cs" t="Include" />
+                <e p="SkewTextExample.cs" t="Include" />
+                <e p="TeleType.cs" t="Include" />
+                <e p="TextConsoleSimulator.cs" t="Include" />
+                <e p="TextMeshProFloatingText.cs" t="Include" />
+                <e p="TextMeshSpawner.cs" t="Include" />
+                <e p="TMP_DigitValidator.cs" t="Include" />
+                <e p="TMP_ExampleScript_01.cs" t="Include" />
+                <e p="TMP_FrameRateCounter.cs" t="Include" />
+                <e p="TMP_PhoneNumberValidator.cs" t="Include" />
+                <e p="TMP_TextEventCheck.cs" t="Include" />
+                <e p="TMP_TextEventHandler.cs" t="Include" />
+                <e p="TMP_TextInfoDebugTool.cs" t="Include" />
+                <e p="TMP_TextSelector_A.cs" t="Include" />
+                <e p="TMP_TextSelector_B.cs" t="Include" />
+                <e p="TMP_UiFrameRateCounter.cs" t="Include" />
+                <e p="TMPro_InstructionOverlay.cs" t="Include" />
+                <e p="VertexColorCycler.cs" t="Include" />
+                <e p="VertexJitter.cs" t="Include" />
+                <e p="VertexShakeA.cs" t="Include" />
+                <e p="VertexShakeB.cs" t="Include" />
+                <e p="VertexZoom.cs" t="Include" />
+                <e p="WarpTextExample.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Fonts" t="Include">
+              <e p="LiberationSans - OFL.txt" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="LineBreaking Following Characters.txt" t="Include" />
+              <e p="LineBreaking Leading Characters.txt" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF SSD.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Mobile.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+            <e p="Sprites" t="Include">
+              <e p="EmojiOne Attribution.txt" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="sliderscrpt.cs" t="Include" />
-        <e p="TextMesh Pro" t="Include">
-          <e p="Examples &amp; Extras" t="Include">
-            <e p="Fonts" t="Include">
-              <e p="Anton OFL.txt" t="Include" />
-              <e p="Bangers - OFL.txt" t="Include" />
-              <e p="Oswald-Bold - OFL.txt" t="Include" />
-            </e>
-            <e p="Scripts" t="Include">
-              <e p="Benchmark01.cs" t="Include" />
-              <e p="Benchmark01_UGUI.cs" t="Include" />
-              <e p="Benchmark02.cs" t="Include" />
-              <e p="Benchmark03.cs" t="Include" />
-              <e p="Benchmark04.cs" t="Include" />
-              <e p="CameraController.cs" t="Include" />
-              <e p="ChatController.cs" t="Include" />
-              <e p="DropdownSample.cs" t="Include" />
-              <e p="EnvMapAnimator.cs" t="Include" />
-              <e p="ObjectSpin.cs" t="Include" />
-              <e p="ShaderPropAnimator.cs" t="Include" />
-              <e p="SimpleScript.cs" t="Include" />
-              <e p="SkewTextExample.cs" t="Include" />
-              <e p="TeleType.cs" t="Include" />
-              <e p="TextConsoleSimulator.cs" t="Include" />
-              <e p="TextMeshProFloatingText.cs" t="Include" />
-              <e p="TextMeshSpawner.cs" t="Include" />
-              <e p="TMP_DigitValidator.cs" t="Include" />
-              <e p="TMP_ExampleScript_01.cs" t="Include" />
-              <e p="TMP_FrameRateCounter.cs" t="Include" />
-              <e p="TMP_PhoneNumberValidator.cs" t="Include" />
-              <e p="TMP_TextEventCheck.cs" t="Include" />
-              <e p="TMP_TextEventHandler.cs" t="Include" />
-              <e p="TMP_TextInfoDebugTool.cs" t="Include" />
-              <e p="TMP_TextSelector_A.cs" t="Include" />
-              <e p="TMP_TextSelector_B.cs" t="Include" />
-              <e p="TMP_UiFrameRateCounter.cs" t="Include" />
-              <e p="TMPro_InstructionOverlay.cs" t="Include" />
-              <e p="VertexColorCycler.cs" t="Include" />
-              <e p="VertexJitter.cs" t="Include" />
-              <e p="VertexShakeA.cs" t="Include" />
-              <e p="VertexShakeB.cs" t="Include" />
-              <e p="VertexZoom.cs" t="Include" />
-              <e p="WarpTextExample.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Fonts" t="Include">
-            <e p="LiberationSans - OFL.txt" t="Include" />
-          </e>
-          <e p="Resources" t="Include">
-            <e p="LineBreaking Following Characters.txt" t="Include" />
-            <e p="LineBreaking Leading Characters.txt" t="Include" />
-          </e>
-          <e p="Shaders" t="Include">
-            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
-            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
-            <e p="TMP_Bitmap.shader" t="Include" />
-            <e p="TMP_SDF Overlay.shader" t="Include" />
-            <e p="TMP_SDF SSD.shader" t="Include" />
-            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
-            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
-            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
-            <e p="TMP_SDF-Mobile.shader" t="Include" />
-            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
-            <e p="TMP_SDF-Surface.shader" t="Include" />
-            <e p="TMP_SDF.shader" t="Include" />
-            <e p="TMP_Sprite.shader" t="Include" />
-            <e p="TMPro.cginc" t="Include" />
-            <e p="TMPro_Mobile.cginc" t="Include" />
-            <e p="TMPro_Properties.cginc" t="Include" />
-            <e p="TMPro_Surface.cginc" t="Include" />
-          </e>
-          <e p="Sprites" t="Include">
-            <e p="EmojiOne Attribution.txt" t="Include" />
-          </e>
-        </e>
       </e>
-      <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
-      <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />
       <e p="AstrayDev.sln" t="IncludeFlat" />
+      <e p="Cinemachine.csproj" t="IncludeRecursive" />
+      <e p="com.unity.cinemachine.editor.csproj" t="IncludeRecursive" />
+      <e p="com.unity.cinemachine.EditorTests.csproj" t="IncludeRecursive" />
+      <e p="com.unity.cinemachine.Tests.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="PackageToolsEditor.csproj" t="IncludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
     </e>
   </component>

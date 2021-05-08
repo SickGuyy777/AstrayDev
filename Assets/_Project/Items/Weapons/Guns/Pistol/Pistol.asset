@@ -20,3 +20,4 @@ MonoBehaviour:
   weaponType: 1
   weaponPrefab: {fileID: 5762898485788881661, guid: 04a6cc9c620b9e943b421a0f53957a8a, type: 3}
   ammoType: 1
+  magazineSize: 14

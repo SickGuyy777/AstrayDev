@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour, IWeaponArgsHolder
     private Movement movement;
     private WeaponHolder weaponHolder;
     private CharacterAnimator charAnimator;
+    private HealthManager healthManager;
 
     public Inventory BackPack => backPack;
     private bool inventoryShown => backPackUI.activeSelf;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour, IWeaponArgsHolder
         movement = GetComponent<Movement>();
         weaponHolder = GetComponent<WeaponHolder>();
         charAnimator = GetComponent<CharacterAnimator>();
+        healthManager = GetComponent<HealthManager>();
         
         InventoryOn();
         InventoryOff();
