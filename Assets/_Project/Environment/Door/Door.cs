@@ -39,7 +39,8 @@ public class Door : MonoBehaviour
             spriteRenderer.enabled = !value;
             doorCollider.enabled = !value;
 
-            animator.SetBool(openendHash, value);
+            if (animator)
+                animator.SetBool(openendHash, value);
         }
     }
 
@@ -47,7 +48,7 @@ public class Door : MonoBehaviour
     {
         Debug.Log($"{obj.name} has entered the room.", obj);
         
-        if (obj.CompareTag("Player"))
+        if (obj.GetComponent<PlayerController>())
             IsOpen = true;
     }
 
@@ -55,7 +56,7 @@ public class Door : MonoBehaviour
     {
         Debug.Log($"{obj.name} has exited the room.", obj);
 
-        if (obj.CompareTag("Player"))
+        if (obj.GetComponent<PlayerController>())
             IsOpen = false;
     }
 }
