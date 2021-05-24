@@ -6,20 +6,13 @@ public class ChangeMaterialSelectionResponse : MonoBehaviour, ISelectionResponse
     private Renderer thisRenderer;
     private Material defaultMaterial;
 
-    
     private void Awake()
     {
         thisRenderer = GetComponentInChildren<Renderer>();
         defaultMaterial = thisRenderer.material;
     }
 
-    public void OnSelect()
-    {
-        thisRenderer.material = material;
-    }
+    public void OnSelect() => thisRenderer.material = material;
 
-    public void OnDeselect()
-    {
-        thisRenderer.material = defaultMaterial;
-    }
+    public void OnDeselect() => thisRenderer.material = defaultMaterial;
 }
