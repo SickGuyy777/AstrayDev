@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class HeartDisplay : MonoBehaviour
     [SerializeField] private Color deadColor = Color.grey;
     
     
-    //private SoundCreater soundCreator;
+    private SoundCreator soundCreator;
     private Animator anim;
     private Color originalColor;
 
@@ -23,7 +24,7 @@ public class HeartDisplay : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        //soundCreator = GetComponent<SoundCreator>();
+        soundCreator = GetComponent<SoundCreator>();
         originalColor = targetGraphic.color;
 
         UpdateHealthRate();
@@ -48,6 +49,6 @@ public class HeartDisplay : MonoBehaviour
     //Called In Animation
     public void Beat()
     {
-        //soundCreator.PlaySound("Beat");
+        soundCreator.PlaySound("Beat");
     }
 }
